@@ -1,0 +1,191 @@
+[OK]      ABESITGRILOrientation
+   folder:        ABESIT GRIL Orientation (28 July - 29 July, 2026)
+   actual:        /events/abesit-gril-orientation-28-july-29-july-2026
+
+[OK]      ABESITGhaziabadDGXUserTraining
+   folder:        ABESIT, Ghaziabad DGX User Training (28 Jan - 1 Feb, 2025)
+   actual:        /events/abesit-ghaziabad-dgx-user-training-28-jan-1-feb-2025
+
+[OK]      ABESITGhaziabadGRILOrientation2025
+   folder:        ABESIT, Ghaziabad GRIL Orientation (2 Sep, 2025)
+   actual:        /events/abesit-ghaziabad-gril-orientation-2-sep-2025
+
+[OK]      ABESITGhaziabadGRILOrientation2024
+   folder:        ABESIT, Ghaziabad GRIL Orientation (10 Sep, 2024)
+   actual:        /events/abesit-ghaziabad-gril-orientation-10-sep-2024
+
+[OK]      ABESITGhaziabadGRILOrientation2023
+   folder:        ABESIT, Ghaziabad GRIL Orientation (23 Nov, 2023)
+   actual:        /events/abesit-ghaziabad-gril-orientation-23-nov-2023
+
+[OK]      ABESITGhaziabadAIEnabledWorkshop2025
+   folder:        ABESIT, Ghaziabad Roadmap to Being AI Enabled Workshop (6 - 7 Aug, 2025)
+   actual:        /events/abesit-ghaziabad-roadmap-to-being-ai-enabled-workshop-6-7-aug-2025
+
+[OK]      ABESITGhaziabadAIEnabledWorkshop2024
+   folder:        ABESIT, Ghaziabad Roadmap to Being AI Enabled Workshop (11 Sep, 2024)
+   actual:        /events/abesit-ghaziabad-roadmap-to-being-ai-enabled-workshop-11-sep-2024
+
+[OK]      AccelerateDiscoveryDehradun
+   folder:        Accelerate Discovery in Higher Education and Research Seminar at Dehradun (29 Jul, 2022)
+   actual:        /events/accelerate-discovery-in-higher-education-and-research-seminar-at-dehradun-29-jul-2022
+
+[OK]      AISparxConventionKovalam
+   folder:        AI - SPARX Convention at Kovalam (9 - 11 Aug, 2024)
+   actual:        /events/ai-sparx-convention-at-kovalam-9-11-aug-2024
+
+[OK]      AISummit
+   folder:        AI Summit (16 - 20 Feb 2026)
+   actual:        /events/ai-summit-16-20-feb-2026
+
+[OK]      BMLUniversity
+   folder:        BML University (19 - 23 Jan, 2026)
+   actual:        /events/bml-university-19-23-jan-2026
+
+[OK]      BMSBengaluruSystemAdminTraining
+   folder:        BMS, Bengaluru System Admin Training (3 - 5 Mar, 2025)
+   actual:        /events/bms-bengaluru-system-admin-training-3-5-mar-2025
+
+[OK]      CSJMUKanpur
+   folder:        CSJMU Kanpur (12 - 30 Jan, 2026)
+   actual:        /events/csjmu-kanpur-12-30-jan-2026
+
+[OK]      GalgotiasUniversityDGXUserTraining
+   folder:        Galgotias University DGX User Training (16 - 20 Mar, 2026)
+   actual:        /events/galgotias-university-dgx-user-training-16-20-mar-2026
+
+[OK]      GBUGreaterNoidaAIEnabledWorkshop
+   folder:        GBU, Greater Noida Roadmap to Being AI Enabled Workshop (19 Sep, 2024)
+   actual:        /events/gbu-greater-noida-roadmap-to-being-ai-enabled-workshop-19-sep-2024
+
+[OK]      GLBITMGRILOrientation2024
+   folder:        GLBITM, Greater Noida GRIL Orientation (9 Sep, 2024)
+   actual:        /events/glbitm-greater-noida-gril-orientation-9-sep-2024
+
+[OK]      GLBITMGRILOrientation2023
+   folder:        GLBITM, Greater Noida GRIL Orientation (22 Nov, 2023)
+   actual:        /events/glbitm-greater-noida-gril-orientation-22-nov-2023
+
+[OK]      GLBITMOnlineTrainings28Nov2024
+   folder:        GLBITM, Greater Noida Online Trainings (28 Nov, 2024)
+   actual:        /events/glbitm-greater-noida-online-trainings-28-nov-2024
+
+[OK]      GLBITMOnlineTrainings29Nov2024
+   folder:        GLBITM, Greater Noida Online Trainings (29 Nov, 2024)
+   actual:        /events/glbitm-greater-noida-online-trainings-29-nov-2024
+
+[OK]      GLBITMAIEnabledWorkshop
+   folder:        GLBITM, Greater Noida Roadmap to Being AI Enabled Workshop (9 Sep, 2024)
+   actual:        /events/glbitm-greater-noida-roadmap-to-being-ai-enabled-workshop-9-sep-2024
+
+[OK]      GujaratTechnologicalUniversityAhmedabadFDP
+   folder:        Gujarat Technological University, Ahmedabad FDP (9 - 11, Sep, 2025)
+   actual:        /events/gujarat-technological-university-ahmedabad-fdp-9-11-sep-2025
+
+[OK]      HigherEducationLeadersConclaveShimla
+   folder:        Higher Education Leader_s Conclave, Shimla (7 May, 2022)
+   actual:        /events/higher-education-leader-s-conclave-shimla-7-may-2022
+
+[OK]      JainCollegeOfEngineeringInstallationTraining
+   folder:        Jain College Of Engineering, Belagavi Installation & Training (14 - 23 Apr, 2025)
+   actual:        /events/jain-college-of-engineering-belagavi-installation-training-14-23-apr-2025
+
+[OK]      JainCollegeOfEngineeringOnlineTraining
+   folder:        Jain College Of Engineering, Belagavi Online Training (10 - 11 Mar, 2025)
+   actual:        /events/jain-college-of-engineering-belagavi-online-training-10-11-mar-2025
+
+[OK]      KIETInstallationTraining
+   folder:        KIET Group Of Institutions, Ghaziabad Installation & Training (15 - 23 Mar, 2024)
+   actual:        /events/kiet-group-of-institutions-ghaziabad-installation-training-15-23-mar-2024
+
+[OK]      KIETAIEnabledWorkshop
+   folder:        KIET Group Of Institutions, Ghaziabad Roadmap to Being AI Enabled Workshop (27 Jun, 2024)
+   actual:        /events/kiet-group-of-institutions-ghaziabad-roadmap-to-being-ai-enabled-workshop-27-jun-2024
+
+[OK]      KIETGhaziabadFDP
+   folder:        KIET, Ghaziabad FDP (14 Feb, 2025)
+   actual:        /events/kiet-ghaziabad-fdp-14-feb-2025
+
+[OK]      KLEInstallationTraining
+   folder:        KLE, Hubbali Installation & Training (27 Feb - 4 Mar, 2025)
+   actual:        /events/kle-hubbali-installation-training-27-feb-4-mar-2025
+
+[OK]      KLESystemAdminTraining
+   folder:        KLE, Hubbali System Admin Training (16 - 17 May, 2025)
+   actual:        /events/kle-hubbali-system-admin-training-16-17-may-2025
+
+[OK]      KLSGogteAILabInauguration
+   folder:        KLS Gogte, Belagavi AI Lab Inaugration by AICTE Chairman (1 Dec, 2024)
+   actual:        /events/kls-gogte-belagavi-ai-lab-inaugration-by-aicte-chairman-1-dec-2024
+
+[OK]      KLSGogteInstallationTraining
+   folder:        KLS Gogte, Belagavi Installation & Training (18 - 22 Aug, 2025)
+   actual:        /events/kls-gogte-belagavi-installation-training-18-22-aug-2025
+
+[OK]      MSRamaiahUniversityFDP
+   folder:        MS Ramaiah University, Bangalore FDP (19 - 20 May, 2025)
+   actual:        /events/ms-ramaiah-university-bangalore-fdp-19-20-may-2025
+
+[OK]      NvidiaAISummitMumbai
+   folder:        NVIDIA AI Summit, Mumbai (23 - 25 Oct, 2024)
+   actual:        /events/nvidia-ai-summit-mumbai-23-25-oct-2024
+
+[OK]      NvidiaGTCSanJose2025
+   folder:        NVIDIA GTC, San Jose (17 -21 Mar, 2025)
+   actual:        /events/nvidia-gtc-san-jose-17-21-mar-2025
+
+[OK]      NvidiaGTCSanJose2024
+   folder:        NVIDIA GTC, San Jose (18 - 21 Mar, 2024)
+   actual:        /events/nvidia-gtc-san-jose-18-21-mar-2024
+
+[OK]      PresidencyUniversityBengaluru
+   folder:        Presidency University, Bengaluru (11 - 16 December, 2025)
+   actual:        /events/presidency-university-bengaluru-11-16-december-2025
+
+[OK]      RVCollegeOfEngineeringInstallationTraining
+   folder:        RV College Of Engineering, Bengaluru Installation & Training (27 Feb - 6 Mar, 2024)
+   actual:        /events/rv-college-of-engineering-bengaluru-installation-training-27-feb-6-mar-2024
+
+[OK]      ShardaUniversityAgraCybersecurityConclave
+   folder:        Sharda University, Agra AI & Cybersecurity Conclave2K25 (22 Apr, 2025)
+   actual:        /events/sharda-university-agra-ai-cybersecurity-conclave2k25-22-apr-2025
+
+[OK]      ShardaUniversityDGXTraining
+   folder:        Sharda University, Greater Noida DGX System Admin Training & User Training (3 - 8 Nov, 2025)
+   actual:        /events/sharda-university-greater-noida-dgx-system-admin-training-user-training-3-8-nov-2025
+
+[OK]      ShardaUniversityAIEnabledWorkshop
+   folder:        Sharda University, Greater Noida Roadmap to Being AI Enabled Workshop (3 - 4 Oct, 2024)
+   actual:        /events/sharda-university-greater-noida-roadmap-to-being-ai-enabled-workshop-3-4-oct-2024
+
+[OK]      ShardaUniversityCertificateDistribution
+   folder:        Sharda University, Greater Noida Training Certificate Distribution (26 Sep, 2024)
+   actual:        /events/sharda-university-greater-noida-training-certificate-distribution-26-sep-2024
+
+[OK]      SRMAP
+   folder:        SRM, AP (11 May - 13 May, 2026)
+   actual:        /events/srm-ap-11-may-13-may-2026
+
+[OK]      TechMahindraUniversityHyderabad
+   folder:        Tech Mahindra University,Hyderabad (18 December - 20 December 2025)
+   actual:        /events/tech-mahindra-university-hyderabad-18-december-20-december-2025
+
+[OK]      VIPSDGXUserTraining
+   folder:        VIPS DGX User Training (20 – 24 July, 2026)
+   actual:        /events/vips-dgx-user-training-20-24-july-2026
+
+[OK]      VIPSDGXSystemAdminTraining
+   folder:        VIPS, New Delhi DGX System Admin Training (18 - 20 Dec, 2024)
+   actual:        /events/vips-new-delhi-dgx-system-admin-training-18-20-dec-2024
+
+[OK]      VIPSDGXUserTraining2025
+   folder:        VIPS, New Delhi DGX User Training (13 - 17 Jan, 2025)
+   actual:        /events/vips-new-delhi-dgx-user-training-13-17-jan-2025
+
+[OK]      VIPSFDP
+   folder:        VIPS, New Delhi FDP (8 - 9 Oct, 2025)
+   actual:        /events/vips-new-delhi-fdp-8-9-oct-2025
+
+[OK]      VTUDLICertification
+   folder:        VTU, Bangalore DLI Certification at NVIDIA HQ, Bangalore (17 Apr, 2025)
+   actual:        /events/vtu-bangalore-dli-certification-at-nvidia-hq-bangalore-17-apr-2025

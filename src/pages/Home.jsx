@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
-const HeroSection = () => {
+const HeroSection = ({ aboutRef }) => {
   // Animation on scroll with Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -19,6 +19,17 @@ const HeroSection = () => {
 
     return () => observer.disconnect();
   }, []);
+
+  // Handle scroll to about section
+  const scrollToAbout = (e) => {
+    e.preventDefault();
+    if (aboutRef && aboutRef.current) {
+      aboutRef.current.scrollIntoView({ 
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+  };
 
   return (
     <section className="hero relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-white pt-32 pb-16 md:pt-36 md:pb-20">
@@ -86,8 +97,8 @@ const HeroSection = () => {
                 </svg>
               </a>
 
-              <a
-                href="#contact"
+              <button
+                onClick={scrollToAbout}
                 className="inline-flex items-center gap-2 font-semibold text-sm sm:text-base text-slate-900 hover:text-[#76B900] transition-colors duration-200"
               >
                 <svg
@@ -104,7 +115,7 @@ const HeroSection = () => {
                   <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
                 </svg>
                 How to Buy
-              </a>
+              </button>
             </div>
           </motion.div>
 

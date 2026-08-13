@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, forwardRef } from "react";
 import {
   Cpu,
   Cloud,
@@ -66,7 +66,7 @@ const journeyItems = [
   },
 ];
 
-export default function About() {
+const About = forwardRef((props, ref) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -107,7 +107,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="bg-white py-16 md:py-24">
+    <section id="about" ref={ref} className="bg-white py-16 md:py-24 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* New About Section with Mission, Vision, Values */}
         <div className="grid items-start gap-12 lg:gap-16 lg:grid-cols-2">
@@ -334,7 +334,11 @@ export default function About() {
             })}
           </div>
         </div>
-       </div>
+      </div>
     </section>
   );
-}
+});
+
+About.displayName = 'About';
+
+export default About;

@@ -1,24 +1,30 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# Event images
+/public/events/**/*.png
+/public/events/**/*.jpg
+/public/events/**/*.jpeg
+/public/events/**/*.gif
+/public/events/**/*.webp
+/public/events/**/*.svg
+/public/events/**/*.jfif
+/public/events/**/*.heic
+/public/events/**/*.heif
 
-node_modules
-dist
-dist-ssr
-*.local
+# Event videos
+/public/events/**/*.mp4
+/public/events/**/*.mov
+/public/events/**/*.avi
+/public/events/**/*.mkv
+/public/events/**/*.webm
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+# Node modules
+node_modules/
+
+# Build files
+dist/
+build/
+.vite/
+
+# Environment files
+.env
+.env.local
+.env.*.local

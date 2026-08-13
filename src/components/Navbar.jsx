@@ -23,6 +23,7 @@ export default function Navbar() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
 
+  // Scroll tracking effect (existing functionality - DO NOT REMOVE)
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -38,6 +39,15 @@ export default function Navbar() {
 
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // NEW: Scroll to top on route change
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "instant",
+    });
+  }, [location.pathname]);
 
   // Solutions data with icons and descriptions
   const solutions = [
@@ -243,7 +253,7 @@ export default function Navbar() {
           {/* Login Button */}
           <div className="hidden lg:block">
             <Link
-              to="/login"
+              to="https://hr.servergi.com:8071/givapp/login"
               className="group flex items-center gap-2 rounded-xl bg-green-600 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-green-700 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
               aria-label="Login to your account"
             >
