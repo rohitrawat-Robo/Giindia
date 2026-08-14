@@ -101,14 +101,17 @@ export default function Navbar() {
     },
   ];
 
+  // UPDATED: Menu items with all requested navigation links
   const menuItems = [
     { label: "Home", path: "/" },
-    { label: "About", path: "/about" },
+    { label: "About Us", path: "/about" },
     { label: "Solutions", path: "/solutions" },
     { label: "GRIL", path: "/gril" },
     { label: "Events", path: "/events" },
+    { label: "Award", path: "/award" },
+    { label: "Nvidia Elite Partner", path: "/nvidia-elite-partner" },
     { label: "Career", path: "/career" },
-    { label: "Contact", path: "/contact" },
+    { label: "Contact Us", path: "/contact" },
   ];
 
   // Close mobile menu when any link is clicked
@@ -145,7 +148,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             to="/"
-            className="flex items-center gap-3 transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg"
+            className="flex items-center gap-3 transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg flex-shrink-0"
             aria-label="Go to homepage"
           >
             <img
@@ -155,9 +158,9 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu - Updated with smaller text and spacing */}
           <nav
-            className="hidden items-center gap-6 xl:gap-8 lg:flex"
+            className="hidden items-center gap-1 xl:gap-2 lg:flex"
             role="navigation"
             aria-label="Desktop navigation"
           >
@@ -171,12 +174,12 @@ export default function Navbar() {
                     onMouseLeave={() => setMegaMenu(false)}
                   >
                     <button
-                      className={`flex items-center gap-1 px-3 py-2 text-sm font-medium transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
+                      className={`flex items-center gap-0.5 px-2.5 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
                         location.pathname === "/solutions"
                           ? "text-green-600 font-bold border-b-2 border-green-600"
                           : scrolled
-                          ? "text-gray-700 hover:text-green-600"
-                          : "text-white hover:text-green-400"
+                          ? "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                          : "text-white hover:text-green-400 hover:bg-white/10"
                       }`}
                       aria-expanded={megaMenu}
                       aria-haspopup="true"
@@ -184,7 +187,7 @@ export default function Navbar() {
                     >
                       Solutions
                       <ChevronDown
-                        size={16}
+                        size={14}
                         className={`transition-transform duration-200 ${
                           megaMenu ? "rotate-180" : ""
                         }`}
@@ -235,7 +238,7 @@ export default function Navbar() {
                 <Link
                   key={item.label}
                   to={item.path}
-                  className={`px-3 py-2 text-sm font-medium transition-all duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
+                  className={`px-2.5 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
                     isActive
                       ? "text-green-600 border-b-2 border-green-600 font-bold"
                       : scrolled
@@ -251,15 +254,15 @@ export default function Navbar() {
           </nav>
 
           {/* Login Button */}
-          <div className="hidden lg:block">
+          <div className="hidden lg:block flex-shrink-0">
             <Link
               to="https://hr.servergi.com:8071/givapp/login"
-              className="group flex items-center gap-2 rounded-xl bg-green-600 px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:bg-green-700 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+              className="group flex items-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-green-700 px-5 py-2 text-xs xl:text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
               aria-label="Login to your account"
             >
               Login
               <ArrowRight
-                size={18}
+                size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1"
               />
             </Link>
@@ -343,7 +346,7 @@ export default function Navbar() {
                   <Link
                     to="/login"
                     onClick={handleMobileClose}
-                    className="group flex w-full items-center justify-center gap-2 rounded-xl bg-green-600 px-6 py-3 font-semibold text-white transition-all duration-300 hover:bg-green-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                    className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-green-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
                   >
                     Login
                     <ArrowRight
