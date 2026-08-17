@@ -32,7 +32,7 @@ import gril23 from '../public/gril23.jpg';
 import gril24 from '../public/gril24.jpg';
 import banner19 from '../public/banner19.jpg';
 import gfxA from '../public/gfx-a.png';
-
+import award from '../public/award-l.jpg'; 
 
 export default {
         gi,
@@ -67,6 +67,7 @@ export default {
         gril23,
         gril24,
         banner19,
-        gfxA
+        gfxA,
+        award
 
 }

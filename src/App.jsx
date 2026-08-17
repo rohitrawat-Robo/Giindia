@@ -9,6 +9,7 @@ import Events from "./components/Events";
 import Award from "./components/Award.jsx";
 import Career from './components/Career';
 import Contact from "./components/ContactUs.jsx";
+import Partner from "./components/Partner.jsx";
 
 // ============================================================
 // EVENTS
@@ -175,6 +176,7 @@ function App() {
           <Route path="/gril" element={<Gril />} />
           <Route path="/events" element={<Events />} />
           <Route path="/award" element={<Award />} />
+          <Route path="/nvidia-elite-partner" element={<Partner />} />
           <Route path="/career" element={<Career />} />
           <Route path="/contact" element={<Contact/>} />
 
