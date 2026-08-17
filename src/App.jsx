@@ -3,12 +3,12 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import About from "./components/About";
-import Services from "./components/Services";
+import Solutions from "./components/Solutions";
 import Gril from "./components/Gril.jsx";
 import Events from "./components/Events";
-import Partners from "./components/Partners";
-import Industries from "./components/Industries";
-import CTA from "./components/CTA";
+import Award from "./components/Award.jsx";
+import Career from './components/Career';
+import Contact from "./components/ContactUs.jsx";
 
 // ============================================================
 // EVENTS
@@ -171,12 +171,12 @@ function App() {
 
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
+          <Route path="/solutions" element={<Solutions />} />
           <Route path="/gril" element={<Gril />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/industries" element={<Industries />} />
-          <Route path="/contact" element={<CTA />} />
+          <Route path="/award" element={<Award />} />
+          <Route path="/career" element={<Career />} />
+          <Route path="/contact" element={<Contact/>} />
 
           {/* ================================================== */}
           {/* 1. ABESIT GRIL ORIENTATION */}

@@ -1,25 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  ArrowRight,
-  Brain,
-  Cpu,
-  Server,
-  Cloud,
-  Database,
-  Network,
-  HardDrive,
-  Sparkles,
-} from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import images from "../../public/images.js";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [megaMenu, setMegaMenu] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
 
@@ -30,7 +16,8 @@ export default function Navbar() {
       setScrolled(scrollY > 20);
 
       // Calculate scroll progress
-      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const windowHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
       const progress = windowHeight > 0 ? (scrollY / windowHeight) * 100 : 0;
       setScrollProgress(progress);
     };
@@ -49,58 +36,6 @@ export default function Navbar() {
     });
   }, [location.pathname]);
 
-  // Solutions data with icons and descriptions
-  const solutions = [
-    {
-      id: "ai",
-      title: "Artificial Intelligence",
-      description: "Next-gen AI solutions for enterprise transformation",
-      icon: Brain,
-    },
-    {
-      id: "ml",
-      title: "Machine Learning",
-      description: "Advanced ML models and training pipelines",
-      icon: Sparkles,
-    },
-    {
-      id: "nvidia",
-      title: "NVIDIA DGX",
-      description: "Enterprise-grade DGX AI computing platforms",
-      icon: Cpu,
-    },
-    {
-      id: "hpc",
-      title: "High Performance Computing",
-      description: "Supercomputing solutions for complex workloads",
-      icon: Server,
-    },
-    {
-      id: "cloud",
-      title: "Cloud Infrastructure",
-      description: "Scalable cloud architecture and deployment",
-      icon: Cloud,
-    },
-    {
-      id: "datacenter",
-      title: "Data Center",
-      description: "Modern data center design and optimization",
-      icon: Database,
-    },
-    {
-      id: "networking",
-      title: "Networking",
-      description: "High-speed enterprise networking solutions",
-      icon: Network,
-    },
-    {
-      id: "storage",
-      title: "Storage Solutions",
-      description: "Enterprise storage and data management",
-      icon: HardDrive,
-    },
-  ];
-
   // UPDATED: Menu items with all requested navigation links
   const menuItems = [
     { label: "Home", path: "/" },
@@ -110,9 +45,17 @@ export default function Navbar() {
     { label: "Events", path: "/events" },
     { label: "Award", path: "/award" },
     { label: "Nvidia Elite Partner", path: "/nvidia-elite-partner" },
-    { label: "Career", path: "/career" },
+    { label: "Career", path: "/career", external: true }, // Marked as external
     { label: "Contact Us", path: "/contact" },
   ];
+
+  // Handle navigation for external links
+  const handleNavigation = (item, e) => {
+    if (item.external) {
+      e.preventDefault();
+      window.open(item.path, "_blank", "noopener,noreferrer");
+    }
+  };
 
   // Close mobile menu when any link is clicked
   const handleMobileClose = () => {
@@ -165,87 +108,23 @@ export default function Navbar() {
             aria-label="Desktop navigation"
           >
             {menuItems.map((item) => {
-              if (item.label === "Solutions") {
-                return (
-                  <div
-                    key={item.label}
-                    className="relative"
-                    onMouseEnter={() => setMegaMenu(true)}
-                    onMouseLeave={() => setMegaMenu(false)}
-                  >
-                    <button
-                      className={`flex items-center gap-0.5 px-2.5 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
-                        location.pathname === "/solutions"
-                          ? "text-green-600 font-bold border-b-2 border-green-600"
-                          : scrolled
-                          ? "text-gray-700 hover:text-green-600 hover:bg-green-50"
-                          : "text-white hover:text-green-400 hover:bg-white/10"
-                      }`}
-                      aria-expanded={megaMenu}
-                      aria-haspopup="true"
-                      aria-label="Solutions menu"
-                    >
-                      Solutions
-                      <ChevronDown
-                        size={14}
-                        className={`transition-transform duration-200 ${
-                          megaMenu ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
-
-                    {/* Mega Menu Dropdown */}
-                    {megaMenu && (
-                      <div
-                        className="absolute left-1/2 mt-2 w-[700px] -translate-x-1/2 rounded-2xl bg-white shadow-2xl ring-1 ring-black/5 p-6 animate-in fade-in slide-in-from-top-5 duration-200"
-                        role="menu"
-                        aria-label="Solutions submenu"
-                      >
-                        <div className="grid grid-cols-2 gap-4">
-                          {solutions.map((solution) => {
-                            const Icon = solution.icon;
-                            return (
-                              <Link
-                                key={solution.id}
-                                to="/solutions"
-                                className="group flex items-start gap-4 rounded-xl p-4 transition-all duration-200 hover:bg-green-50 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-                                role="menuitem"
-                                onClick={handleMobileClose}
-                              >
-                                <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl bg-green-100 text-green-600 transition-all duration-200 group-hover:bg-green-600 group-hover:text-white group-hover:scale-110">
-                                  <Icon size={24} />
-                                </div>
-                                <div>
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-green-600">
-                                    {solution.title}
-                                  </h4>
-                                  <p className="mt-1 text-sm text-gray-600">
-                                    {solution.description}
-                                  </p>
-                                </div>
-                              </Link>
-                            );
-                          })}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
               const isActive = location.pathname === item.path;
+
               return (
                 <Link
                   key={item.label}
                   to={item.path}
+                  onClick={(e) => handleNavigation(item, e)}
+                  target={item.external ? "_blank" : undefined}
+                  rel={item.external ? "noopener noreferrer" : undefined}
                   className={`px-2.5 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
-                    isActive
+                    isActive && !item.external
                       ? "text-green-600 border-b-2 border-green-600 font-bold"
                       : scrolled
-                      ? "text-gray-700 hover:text-green-600 hover:bg-green-50"
-                      : "text-white hover:text-green-400 hover:bg-white/10"
+                        ? "text-gray-700 hover:text-green-600 hover:bg-green-50"
+                        : "text-white hover:text-green-400 hover:bg-white/10"
                   }`}
-                  aria-current={isActive ? "page" : undefined}
+                  aria-current={isActive && !item.external ? "page" : undefined}
                 >
                   {item.label}
                 </Link>
@@ -272,7 +151,9 @@ export default function Navbar() {
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
             className={`rounded-lg p-2 transition-colors lg:hidden focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
-              scrolled ? "text-gray-700 hover:bg-gray-100" : "text-white hover:bg-white/10"
+              scrolled
+                ? "text-gray-700 hover:bg-gray-100"
+                : "text-white hover:bg-white/10"
             }`}
             aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
@@ -328,13 +209,18 @@ export default function Navbar() {
                       <Link
                         key={item.label}
                         to={item.path}
-                        onClick={handleMobileClose}
+                        onClick={(e) => {
+                          handleNavigation(item, e);
+                          handleMobileClose();
+                        }}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
                         className={`block rounded-lg px-4 py-3 text-sm font-medium transition-all duration-200 ${
-                          isActive
+                          isActive && !item.external
                             ? "bg-green-50 text-green-600 font-bold border-l-4 border-green-600"
                             : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
                         }`}
-                        aria-current={isActive ? "page" : undefined}
+                        aria-current={isActive && !item.external ? "page" : undefined}
                       >
                         {item.label}
                       </Link>

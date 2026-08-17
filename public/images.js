@@ -31,7 +31,7 @@ import gril22 from '../public/gril22.jpg';
 import gril23 from '../public/gril23.jpg';
 import gril24 from '../public/gril24.jpg';
 import banner19 from '../public/banner19.jpg';
-
+import gfxA from '../public/gfx-a.png';
 
 
 export default {
@@ -66,6 +66,7 @@ export default {
         gril22,
         gril23,
         gril24,
-        banner19
+        banner19,
+        gfxA
 
 }
