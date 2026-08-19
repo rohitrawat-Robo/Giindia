@@ -113,6 +113,7 @@ const About = forwardRef((props, ref) => {
         <SEO
           title="About Us"
           description="Learn about Global Infoventures' journey as an NVIDIA Elite Partner — our mission, milestones, and enterprise AI deployments across India."
+          keywords={["Global Infoventures", "GIIndia", "NVIDIA Elite Partner", "about us", "AI company India"]}
           path="/about"
         />
       )}

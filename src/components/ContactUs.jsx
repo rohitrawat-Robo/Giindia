@@ -7,6 +7,7 @@ const ContactUs = () => {
       <SEO
         title="Contact Us"
         description="Get in touch with Global Infoventures — NVIDIA Elite Partner based in Noida. Reach out for AI infrastructure, DGX systems, and enterprise solutions."
+        keywords={["contact Global Infoventures", "GIIndia contact", "NVIDIA partner Noida", "AI infrastructure inquiry"]}
         path="/contact"
       />
       <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50" id="contact">

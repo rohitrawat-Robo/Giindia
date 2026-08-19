@@ -1595,6 +1595,7 @@ const Partner = () => {
       <SEO
         title="NVIDIA Elite Partner"
         description="Global Infoventures is an NVIDIA Elite Partner in India, offering direct engineering engagement with NVIDIA's architecture teams and NVIDIA-certified deployment expertise."
+        keywords={["NVIDIA Elite Partner", "NVIDIA certified partner India", "Global Infoventures NVIDIA", "NVIDIA reseller"]}
         path="/nvidia-elite-partner"
       />
       <Hero />

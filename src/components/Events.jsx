@@ -14,6 +14,7 @@ const Events = () => {
       <SEO
         title="Event Gallery"
         description={`Browse photos from ${eventsData.length}+ Global Infoventures events — NVIDIA trainings, DGX installations, GRIL orientations, and university partnerships across India.`}
+        keywords={["Global Infoventures events", "NVIDIA training", "GRIL orientation", "DGX installation", "university AI partnership India"]}
         path="/events"
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

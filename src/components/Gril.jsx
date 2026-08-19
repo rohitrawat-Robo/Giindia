@@ -768,6 +768,7 @@ const GRILPage = () => {
       <SEO
         title="GRIL"
         description="GRIL (Global Research & Innovation Lab) — Global Infoventures' NVIDIA-powered initiative supporting AI research and innovation at academic institutions."
+        keywords={["GRIL", "Global Research Innovation Lab", "NVIDIA university program", "AI research lab India"]}
         path="/gril"
       />
       <KnowingGRIL />

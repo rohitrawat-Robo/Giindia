@@ -78,6 +78,7 @@ const HeroSection = ({ aboutRef }) => {
       <SEO
         title="NVIDIA Elite Partner in India"
         description="Global Infoventures (GIIndia) is an NVIDIA Elite Partner based in Noida, delivering DGX systems, AI infrastructure, and enterprise AI solutions to universities and enterprises across India."
+        keywords={["NVIDIA Elite Partner", "Global Infoventures", "GIIndia", "DGX systems", "AI infrastructure India", "NVIDIA reseller Noida", "enterprise AI solutions"]}
         path="/"
         jsonLd={{
           '@type': 'Organization',

@@ -29,17 +29,20 @@ const SEO = ({
   path = "",           // e.g. "/about" — leave empty for homepage
   image = DEFAULT_OG_IMAGE,
   type = "website",    // "website" | "article" | "event"
+  keywords = [],        // array of strings, e.g. ["NVIDIA", "DGX", "AI infrastructure"]
   noindex = false,
   jsonLd = null,        // pass an object (or array of objects) for structured data
 }) => {
   const fullTitle = title ? `${title} | ${SITE_NAME}` : `${SITE_NAME} — NVIDIA Elite Partner`;
   const canonical = `${SITE_URL}${path}`;
   const jsonLdBlocks = Array.isArray(jsonLd) ? jsonLd : jsonLd ? [jsonLd] : [];
+  const keywordsContent = Array.isArray(keywords) ? keywords.filter(Boolean).join(", ") : keywords;
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
+      {keywordsContent && <meta name="keywords" content={keywordsContent} />}
       <link rel="canonical" href={canonical} />
       {noindex && <meta name="robots" content="noindex, nofollow" />}
 

@@ -43,7 +43,7 @@ export default function Navbar() {
     { label: "Solutions", path: "/solutions" },
     { label: "GRIL", path: "/gril" },
     { label: "Events", path: "/events" },
-    { label: "Award", path: "/etnow" },
+    { label: "Award", path: "/award" },
     { label: "Nvidia Elite Partner", path: "/nvidia-elite-partner" },
     { label: "Career", path: "/career", external: true }, // Marked as external
     { label: "Contact Us", path: "/contact" },

@@ -8,6 +8,7 @@ const Solutions = () => {
       <SEO
         title="Solutions"
         description="Explore Global Infoventures' NVIDIA-powered solutions — AI infrastructure, DGX systems, and enterprise deployment services for research and industry."
+        keywords={["NVIDIA solutions", "DGX systems", "AI infrastructure", "GPU clusters", "AI training infrastructure", "Global Infoventures solutions"]}
         path="/solutions"
       />
       <section className="section section-l section-features bg-white py-16" id="features">

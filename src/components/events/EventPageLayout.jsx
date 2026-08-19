@@ -24,6 +24,7 @@ import {
   ImageOff,
 } from 'lucide-react';
 import eventsData from '../../utils/event';
+import SEO from '../SEO.jsx';
 
 const InfoCard = ({ icon, label, value }) => (
   <div className="p-4 rounded-xl border border-[#E5E7EB] bg-white flex items-start gap-3">
@@ -69,6 +70,7 @@ const EventPageLayout = ({ slug }) => {
   if (!event) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4">
+        <SEO title="Event not found" noindex />
         <h1 className="text-2xl font-bold text-[#0F172A] mb-4">Event not found</h1>
         <p className="text-[#4B5563] mb-4 text-sm">
           No event in eventsData matched slug: <code>{slug}</code>
@@ -84,8 +86,54 @@ const EventPageLayout = ({ slug }) => {
     );
   }
 
+  // Front-load the important keywords: Google typically shows only the
+  // first ~155 characters of a description in search results, so lead
+  // with category + brand + location there. The full sentence continues
+  // after for relevance signals even if it gets truncated on-screen.
+  const seoDescription =
+    `${event.category} by NVIDIA Elite Partner Global Infoventures at ${event.location}` +
+    `${event.year ? ` (${event.year})` : ''}. ${event.description}. ` +
+    `${event.photos} photo${event.photos === 1 ? '' : 's'} from the event.`;
+
+  const seoKeywords = [
+    event.category,
+    event.location,
+    event.year,
+    'Global Infoventures',
+    'GIIndia',
+    'NVIDIA Elite Partner',
+    'NVIDIA',
+  ];
+
   return (
     <div className="min-h-screen bg-white py-12">
+      <SEO
+        title={event.title}
+        description={seoDescription}
+        keywords={seoKeywords}
+        path={`/events/${event.slug}`}
+        image={event.image || undefined}
+        type="event"
+        jsonLd={{
+          '@type': 'Event',
+          name: event.title,
+          description: event.description,
+          startDate: event.date,
+          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+          eventStatus: 'https://schema.org/EventCompleted',
+          location: {
+            '@type': 'Place',
+            name: event.location,
+            address: event.location,
+          },
+          image: event.gallery,
+          organizer: {
+            '@type': 'Organization',
+            name: 'Global Infoventures',
+            url: 'https://www.globalinfoventures.com',
+          },
+        }}
+      />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <button
           type="button"

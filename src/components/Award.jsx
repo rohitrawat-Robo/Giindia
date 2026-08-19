@@ -51,6 +51,7 @@ const Awards = () => {
       <SEO
         title="ET AI Conclave & Awards"
         description="Global Infoventures at the ET AI Conclave & Awards 2026 — recognizing excellence in AI innovation and NVIDIA-powered enterprise deployment."
+        keywords={["ET AI Conclave", "AI Awards", "Global Infoventures award", "NVIDIA Elite Partner recognition"]}
         path="/etnow"
       />
       {/* Animated Background Gradient */}
