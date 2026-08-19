@@ -1,0 +1,60 @@
+// src/data/featuredEvents.js
+//
+// Curated subset of events for the Home page carousel. Pulls real data
+// (image, location, category, parsed date) from src/utils/event.js, which is
+// itself auto-generated from eventsManifest.json -- so nothing here
+// duplicates images or creates new routes/components.
+//
+// To change what's featured: edit the FEATURED array below. `title` is
+// optional -- omit it to fall back to an auto-cleaned version of the folder
+// name.
+
+import eventsData from "../utils/event";
+
+const FEATURED = [
+  {
+    slug: "vips-dgx-user-training-20-24-july-2026",
+    title: "VIPS DGX User Training 2026",
+  },
+  {
+    slug: "ai-summit-16-20-feb-2026",
+    title: "AI Summit 2026",
+  },
+  {
+    slug: "srm-ap-11-may-13-may-2026",
+    title: "SRM AP",
+  },
+  {
+    slug: "galgotias-university-dgx-user-training-16-20-mar-2026",
+    title: "Galgotias University DGX User Training",
+  },
+];
+
+// Fallback: strip a trailing "(...)" date block from the raw folder-name title.
+const stripDateSuffix = (title) => title.replace(/\s*\([^)]*\)\s*$/, "").trim();
+
+const featuredEvents = FEATURED.map(({ slug, title }) => {
+  const event = eventsData.find((e) => e.slug === slug);
+
+  if (!event) {
+    // Slug not found (e.g. folder renamed/removed) -- skip it instead of
+    // rendering a broken card.
+    if (import.meta.env?.DEV) {
+      console.warn(`[featuredEvents] No event found for slug "${slug}"`);
+    }
+    return null;
+  }
+
+  return {
+    id: event.id,
+    slug: event.slug,
+    title: title || stripDateSuffix(event.title),
+    date: event.date,
+    location: event.location,
+    category: event.category,
+    image: event.image, // real photo from the event's own gallery
+    route: `/events/${event.slug}`, // matches the route already in App.jsx
+  };
+}).filter(Boolean);
+
+export default featuredEvents;

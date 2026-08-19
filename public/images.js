@@ -33,6 +33,17 @@ import gril24 from '../public/gril24.jpg';
 import banner19 from '../public/banner19.jpg';
 import gfxA from '../public/gfx-a.png';
 import award from '../public/award-l.jpg'; 
+import a from '../public/a.png';
+import b from '../public/b.png';
+import c from '../public/c.png';
+import d from '../public/d.png';
+import e from '../public/e.png';
+import f from '../public/f.png';
+import dashboard from '../public/dashboard.png';
+import sim from '../public/sim.jpg';
+
+import DGX from '../public/DGX.mp4';
+
 
 export default {
         gi,
@@ -68,6 +79,15 @@ export default {
         gril24,
         banner19,
         gfxA,
-        award
+        award,
+        a,
+        b,
+        c,
+        d,
+        e,  
+        f,
+        dashboard,
+        sim,
+        DGX
 
 }
