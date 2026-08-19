@@ -15,6 +15,7 @@ import {
   Users,
 } from "lucide-react";
 import images from "../../public/images.js";
+import SEO from "./SEO.jsx";
 
 const features = [
   {
@@ -107,7 +108,15 @@ const About = forwardRef((props, ref) => {
   };
 
   return (
-    <section id="about" ref={ref} className="bg-white py-16 md:py-24 scroll-mt-20">
+    <>
+      {!props.embedded && (
+        <SEO
+          title="About Us"
+          description="Learn about Global Infoventures' journey as an NVIDIA Elite Partner — our mission, milestones, and enterprise AI deployments across India."
+          path="/about"
+        />
+      )}
+      <section id="about" ref={ref} className="bg-white py-16 md:py-24 scroll-mt-20">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         {/* New About Section with Mission, Vision, Values */}
         <div className="grid items-start gap-12 lg:gap-16 lg:grid-cols-2">
@@ -336,6 +345,7 @@ const About = forwardRef((props, ref) => {
         </div>
       </div>
     </section>
+    </>
   );
 });
 

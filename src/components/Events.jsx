@@ -4,12 +4,18 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import { ImageOff } from 'lucide-react';
 import eventsData from '../utils/event';
+import SEO from './SEO.jsx';
 
 const Events = () => {
   const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-white py-20">
+      <SEO
+        title="Event Gallery"
+        description={`Browse photos from ${eventsData.length}+ Global Infoventures events — NVIDIA trainings, DGX installations, GRIL orientations, and university partnerships across India.`}
+        path="/events"
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-[#0F172A] mb-4">Event Gallery</h1>

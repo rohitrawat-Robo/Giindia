@@ -1,8 +1,15 @@
 import React from 'react';
+import SEO from './SEO.jsx';
 
 const ContactUs = () => {
   return (
-    <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50" id="contact">
+    <>
+      <SEO
+        title="Contact Us"
+        description="Get in touch with Global Infoventures — NVIDIA Elite Partner based in Noida. Reach out for AI infrastructure, DGX systems, and enterprise solutions."
+        path="/contact"
+      />
+      <section className="py-16 px-4 md:px-8 lg:px-16 bg-gray-50" id="contact">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
@@ -181,6 +188,7 @@ const ContactUs = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

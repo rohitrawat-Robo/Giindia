@@ -4,6 +4,7 @@ import images from "../../public/images.js";
 import AboutUs from "../components/About.jsx"; 
 import Soultions from "../components/Solutions.jsx";
 import FeaturedEvents from "../components/FeaturedEvents.jsx";
+import SEO from "../components/SEO.jsx";
 
 const HeroSection = ({ aboutRef }) => {
   // Animation on scroll with Intersection Observer
@@ -74,6 +75,18 @@ const HeroSection = ({ aboutRef }) => {
 
   return (
     <>
+      <SEO
+        title="NVIDIA Elite Partner in India"
+        description="Global Infoventures (GIIndia) is an NVIDIA Elite Partner based in Noida, delivering DGX systems, AI infrastructure, and enterprise AI solutions to universities and enterprises across India."
+        path="/"
+        jsonLd={{
+          '@type': 'Organization',
+          name: 'Global Infoventures',
+          alternateName: 'GIIndia',
+          url: 'https://www.globalinfoventures.com',
+          logo: 'https://www.globalinfoventures.com/logo.png',
+        }}
+      />
       {/* Hero Section */}
       <section
         className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-white
@@ -225,7 +238,7 @@ const HeroSection = ({ aboutRef }) => {
       </section>
 
       {/* About Section */}
-      <AboutUs />
+      <AboutUs embedded />
 
       {/* Featured Events Section (real events, pulled from src/data/featuredEvents.js) */}
       <FeaturedEvents />

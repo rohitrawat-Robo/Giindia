@@ -1,9 +1,16 @@
 import images from "../../public/images.js";
 import React from 'react';
+import SEO from "./SEO.jsx";
 
 const Solutions = () => {
   return (
-    <section className="section section-l section-features bg-white py-16" id="features">
+    <>
+      <SEO
+        title="Solutions"
+        description="Explore Global Infoventures' NVIDIA-powered solutions — AI infrastructure, DGX systems, and enterprise deployment services for research and industry."
+        path="/solutions"
+      />
+      <section className="section section-l section-features bg-white py-16" id="features">
       <div className="container mx-auto px-4">
         {/* Block @s */}
         <div className="nk-block nk-block-features-s2">
@@ -68,6 +75,7 @@ const Solutions = () => {
         </div>{/* .block @e */}
       </div>
     </section>
+    </>
   );
 };
 

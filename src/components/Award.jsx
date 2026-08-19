@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import images from '../../public/images.js';
+import SEO from './SEO.jsx';
 
 const Awards = () => {
   const [isVideoHovered, setIsVideoHovered] = useState(false);
@@ -47,6 +48,11 @@ const Awards = () => {
 
   return (
     <div className="bg-light min-h-screen overflow-hidden">
+      <SEO
+        title="ET AI Conclave & Awards"
+        description="Global Infoventures at the ET AI Conclave & Awards 2026 — recognizing excellence in AI innovation and NVIDIA-powered enterprise deployment."
+        path="/etnow"
+      />
       {/* Animated Background Gradient */}
       <div 
         className="fixed inset-0 pointer-events-none opacity-30 transition-all duration-1000"

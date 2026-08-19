@@ -25,6 +25,7 @@ import {
 } from "react-icons/fa6";
 import { FaWhatsapp } from "react-icons/fa";
 import images from "../../public/images.js";
+import SEO from "./SEO.jsx";
 
 // --- Data ---
 const data = {
@@ -378,7 +379,7 @@ const Hero = () => {
             <h1
               className="hero-title"
               style={{
-                fontSize: "clamp(2.5rem, 6vw, 4.5rem)",
+                fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
                 fontWeight: "800",
                 lineHeight: "1.1",
                 letterSpacing: "-0.03em",
@@ -1591,6 +1592,11 @@ const Partner = () => {
 
   return (
     <div className="partner-container">
+      <SEO
+        title="NVIDIA Elite Partner"
+        description="Global Infoventures is an NVIDIA Elite Partner in India, offering direct engineering engagement with NVIDIA's architecture teams and NVIDIA-certified deployment expertise."
+        path="/nvidia-elite-partner"
+      />
       <Hero />
       <Partnership />
       <Journey />

@@ -24,6 +24,7 @@ import {
 // IMPORT images FROM images.js
 // ============================================================
 import images from "../../public/images.js";
+import SEO from "./SEO.jsx";
 
 // ============================================================
 // SECTION 1 — KNOWING GRIL (Hero)
@@ -764,6 +765,11 @@ const GRILProjects = () => {
 const GRILPage = () => {
   return (
     <>
+      <SEO
+        title="GRIL"
+        description="GRIL (Global Research & Innovation Lab) — Global Infoventures' NVIDIA-powered initiative supporting AI research and innovation at academic institutions."
+        path="/gril"
+      />
       <KnowingGRIL />
       <WhyGRIL />
       <GRILPlatform />

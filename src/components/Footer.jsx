@@ -82,7 +82,7 @@ export default function Footer() {
             <h6 className="text-white font-bold text-sm mb-4">More</h6>
             <ul className="space-y-2.5">
               <li><Link to="/events" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Events</Link></li>
-              <li><Link to="/award" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Award</Link></li>
+              <li><Link to="/etnow" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Award</Link></li>
               <li><Link to="/nvidia-elite-partner" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Nvidia Elite Partner</Link></li>
               <li><Link to="/career" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Career</Link></li>
             </ul>
