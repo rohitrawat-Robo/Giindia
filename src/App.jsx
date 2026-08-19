@@ -175,7 +175,7 @@ function App() {
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/gril" element={<Gril />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/award" element={<Award />} />
+          <Route path="/etnow" element={<Award />} />
           <Route path="/nvidia-elite-partner" element={<Partner />} />
           <Route path="/career" element={<Career />} />
           <Route path="/contact" element={<Contact/>} />

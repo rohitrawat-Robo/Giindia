@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import images from "../../public/images.js"; // Adjust path as needed
-import AboutUs from "../components/About.jsx"; // Adjust path as needed
+import images from "../../public/images.js"; 
+import AboutUs from "../components/About.jsx"; 
+import Soultions from "../components/Solutions.jsx";
 import FeaturedEvents from "../components/FeaturedEvents.jsx";
 
 const HeroSection = ({ aboutRef }) => {
@@ -542,6 +543,9 @@ const HeroSection = ({ aboutRef }) => {
           </div>
         </div>
       </section>
+
+
+      <Soultions />
 
       {/* Key Features Section */}
       <section

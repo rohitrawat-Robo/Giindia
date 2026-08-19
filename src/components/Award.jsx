@@ -1,192 +1,261 @@
-import React, { useState } from 'react';
-import images from "../../public/images.js";
+import React, { useState, useEffect, useRef } from 'react';
+import images from '../../public/images.js';
 
-const Award = () => {
-  const [selectedAward, setSelectedAward] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const Awards = () => {
+  const [isVideoHovered, setIsVideoHovered] = useState(false);
+  const [isVisible, setIsVisible] = useState({});
+  const [isBannerLoaded, setIsBannerLoaded] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
+  const sectionRef = useRef(null);
+  const textRefs = useRef([]);
 
-  const awardsData = [
-    {
-      id: 1,
-      title: "NVIDIA GEN AI 5-STAR PARTNER AWARD",
-      location: "Mumbai",
-      date: "23 October - 25 October 2024",
-      description: [
-        "We are thrilled to announce that Global Infoventures Pvt. Ltd. has been honoured with the NVIDIA GEN AI 5-STAR PARTNER award in Education!",
-        "This recognition is a testament to the hardwork, dedication and passion of our incredible team, who continuously strive to push boundaries and deliver the best for our clients and community. It also inspires us to keep innovating and enhancing our services.",
-        "A huge thank you to our clients, partners and everyone who has supported us on this journey. We couldn't have done it without you!",
-        "Here's to more achievements, growth and making an impact together!"
-      ],
-      image: images.award || "/images/award-l.jpg",
-      badge: "2024",
-      category: "Education Technology"
-    },
-   
-  ];
+  // Intersection Observer for fade-in animations
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
 
-  const openModal = (award) => {
-    setSelectedAward(award);
-    setIsModalOpen(true);
-    document.body.style.overflow = 'hidden';
-  };
+    textRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-    setSelectedAward(null);
-    document.body.style.overflow = 'unset';
-  };
+    return () => observer.disconnect();
+  }, []);
 
-  // Close modal on escape key
-  React.useEffect(() => {
-    const handleEsc = (event) => {
-      if (event.key === 'Escape') {
-        closeModal();
+  // Mouse tracking for immersive glow effect
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      if (sectionRef.current) {
+        const rect = sectionRef.current.getBoundingClientRect();
+        setMousePosition({
+          x: ((e.clientX - rect.left) / rect.width) * 100,
+          y: ((e.clientY - rect.top) / rect.height) * 100,
+        });
       }
     };
-    window.addEventListener('keydown', handleEsc);
-    return () => window.removeEventListener('keydown', handleEsc);
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
   return (
-    <div className="bg-light min-h-screen font-sans py-12 md:py-16">
-      <main className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          {/* Page Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-3xl md:text-4xl font-bold text-gray-800">Our Awards & Recognition</h1>
-            <p className="text-gray-600 mt-2">Celebrating excellence and innovation</p>
-          </div>
+    <div className="bg-light min-h-screen overflow-hidden">
+      {/* Animated Background Gradient */}
+      <div 
+        className="fixed inset-0 pointer-events-none opacity-30 transition-all duration-1000"
+        style={{
+          background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(59, 130, 246, 0.08) 0%, transparent 50%)`,
+        }}
+      />
 
-          {/* Awards Grid - Card Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {awardsData.map((award) => (
-              <div 
-                key={award.id} 
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 flex flex-col"
-              >
-                {/* Award Image - Fit without cropping */}
-                <div className="relative h-48 overflow-hidden bg-gray-100">
-                  <img
-                    src={award.image}
-                    alt={award.title}
-                    className="w-full h-full object-contain"
-                  />
-                  {award.badge && (
-                    <span className="absolute top-3 right-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                      {award.badge}
-                    </span>
-                  )}
-                  
-                </div>
-
-                {/* Award Content */}
-                <div className="p-5 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-gray-800 mb-1 line-clamp-2">
-                    {award.title}
-                  </h3>
-                  <p className="text-sm text-gray-600 mb-2">
-                    {award.location} • {award.date}
-                  </p>
-                  <p className="text-sm text-gray-700 line-clamp-3 flex-grow">
-                    {Array.isArray(award.description) 
-                      ? award.description[0] 
-                      : award.description}
-                  </p>
-                  <button 
-                    onClick={() => openModal(award)}
-                    className="mt-4 text-blue-600 font-semibold text-sm hover:text-blue-800 transition-colors self-start"
-                  >
-                    Read More →
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </main>
-
-      {/* Modal */}
-      {isModalOpen && selectedAward && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 backdrop-blur-sm"
-          onClick={closeModal}
+      {/* Main Content */}
+      <main className="nk-pages relative z-10">
+        <section 
+          ref={sectionRef}
+          className="section bg-light section-l section-about py-12 md:py-16"
         >
-          <div 
-            className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto relative shadow-2xl"
-            onClick={(e) => e.stopPropagation()}
-          >
-            {/* Close Button */}
-            <button
-              onClick={closeModal}
-              className="absolute top-4 right-4 z-10 w-10 h-10 bg-white rounded-full shadow-lg hover:bg-gray-100 transition-colors flex items-center justify-center"
-            >
-              <svg className="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+          <div className="container mx-auto px-4 max-w-6xl">
+            <div className="nk-block">
+              <div className="flex flex-col items-center">
+                <div className="w-full max-w-4xl">
+                  <div className="nk-block-text">
+                    {/* Animated Heading */}
+                    <h2 
+                      className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-10 text-center transition-all duration-700"
+                      style={{
+                        opacity: isVisible['heading'] ? 1 : 0,
+                        transform: isVisible['heading'] ? 'translateY(0)' : 'translateY(30px)',
+                      }}
+                      id="heading"
+                      ref={el => textRefs.current[0] = el}
+                    >
+                      Economic Times Conclave & Awards (2026) -
+                    </h2>
 
-            <div className="p-6 md:p-8">
-              {/* Award Image - Fit without cropping */}
-              <div className="relative w-full bg-gray-100 rounded-xl overflow-hidden mb-6" style={{ minHeight: '300px' }}>
-                <img
-                  src={selectedAward.image}
-                  alt={selectedAward.title}
-                  className="w-full h-auto object-contain"
-                  style={{ maxHeight: '500px' }}
-                />
-                {selectedAward.badge && (
-                  <span className="absolute top-3 right-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full">
-                    {selectedAward.badge}
-                  </span>
-                )}
-              </div>
+                    <div className="w-full">
+                      {/* BANNER */}
+                      <div 
+                        className="mb-8 overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500"
+                        style={{
+                          opacity: isBannerLoaded ? 1 : 0,
+                          transition: 'opacity 0.8s ease-in-out',
+                        }}
+                      >
+                        <img
+                          src={images.bannerImg}
+                          alt="ET AI Conclave & Awards 2026"
+                          title="ET AI Conclave & Awards 2026"
+                          className="w-full block border-0 rounded-lg transition-transform duration-700 hover:scale-105"
+                          onLoad={() => setIsBannerLoaded(true)}
+                          style={{
+                            transform: `scale(${isBannerLoaded ? 1 : 1.05})`,
+                          }}
+                        />
+                      </div>
 
-              {/* Award Details */}
-              <div className="mb-6">
-                <p className="text-sm uppercase tracking-wider text-blue-600 font-semibold">Award</p>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mt-1">
-                  {selectedAward.title}
-                </h2>
-                <div className="flex flex-wrap items-center gap-2 mt-2">
-                  <span className="text-gray-600">{selectedAward.location}</span>
-                  <span className="text-gray-400">•</span>
-                  <span className="text-gray-600">{selectedAward.date}</span>
-                  {selectedAward.category && (
-                    <>
-                      <span className="text-gray-400">•</span>
-                      <span className="bg-blue-100 text-blue-700 text-sm px-3 py-1 rounded-full">
-                        {selectedAward.category}
-                      </span>
-                    </>
-                  )}
+                      {/* TEXT SECTION */}
+                      <div className="mb-6">
+                        <p 
+                          className="text-sm md:text-base text-justify leading-relaxed"
+                          style={{
+                            opacity: isVisible['text1'] ? 1 : 0,
+                            transform: isVisible['text1'] ? 'translateY(0)' : 'translateY(20px)',
+                            transition: 'all 0.6s ease-out 0.2s',
+                          }}
+                          id="text1"
+                          ref={el => textRefs.current[1] = el}
+                        >
+                          <img
+                            src={images.etnow}
+                            alt="ET AI Conclave & Awards 2026"
+                            title="ET AI Conclave & Awards 2026"
+                            className="float-left mr-4 block border-0 w-16 md:w-20 hover:scale-110 transition-transform duration-300"
+                          />
+                          We are proud to share that GI Ventures has been honored with
+                          a prestigious national award at the
+                          Economic Times Conclave & Awards 2026 for its groundbreaking
+                          contributions to AI infrastructure,
+                          deployment and AI up-skilling.
+                        </p>
+
+                        <p 
+                          className="text-sm md:text-base text-justify mt-4 leading-relaxed"
+                          style={{
+                            opacity: isVisible['text2'] ? 1 : 0,
+                            transform: isVisible['text2'] ? 'translateY(0)' : 'translateY(20px)',
+                            transition: 'all 0.6s ease-out 0.4s',
+                          }}
+                          id="text2"
+                          ref={el => textRefs.current[2] = el}
+                        >
+                          This recognition celebrates our excellence
+                          in the deployment of real-world, scalable AI infrastructure
+                          and strategic AI up-skilling,
+                          reaffirming our commitment to transforming cutting-edge
+                          innovation into practical, high-impact
+                          solutions. By building robust, scalable systems and enabling
+                          seamless integration across industries,
+                          GI Ventures continues to set new benchmarks for
+                          operationalizing AI at scale in India.
+                        </p>
+                      </div>
+
+                      {/* VIDEO */}
+                      <div 
+                        className="mb-8 text-center"
+                        onMouseEnter={() => setIsVideoHovered(true)}
+                        onMouseLeave={() => setIsVideoHovered(false)}
+                        style={{
+                          opacity: isVisible['video'] ? 1 : 0,
+                          transform: isVisible['video'] ? 'translateY(0)' : 'translateY(20px)',
+                          transition: 'all 0.6s ease-out 0.6s',
+                        }}
+                        id="video"
+                        ref={el => textRefs.current[3] = el}
+                      >
+                        <div className="relative overflow-hidden rounded-lg shadow-xl hover:shadow-2xl transition-all duration-500 max-w-3xl mx-auto">
+                          <a
+                            href="https://youtu.be/hKO03ueCnWA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="no-underline block relative"
+                          >
+                            <img
+                              src={images.video}
+                              alt="Watch Video"
+                              className="w-full block border-0 transition-transform duration-700 group-hover:scale-105"
+                            />
+                            {/* Play Button Overlay */}
+                            <div className={`absolute inset-0 bg-black/30 flex items-center justify-center transition-all duration-500 ${isVideoHovered ? 'opacity-100 bg-black/40' : 'opacity-0'}`}>
+                              <div className="w-16 h-16 md:w-20 md:h-20 bg-white/90 rounded-full flex items-center justify-center transform transition-all duration-500 hover:scale-110 hover:bg-white">
+                                <div className="w-0 h-0 border-t-[12px] md:border-t-[15px] border-t-transparent border-l-[20px] md:border-l-[25px] border-l-blue-600 border-b-[12px] md:border-b-[15px] border-b-transparent ml-1 md:ml-2"></div>
+                              </div>
+                            </div>
+                            {/* Pulsing ring animation */}
+                            <div className={`absolute inset-0 border-2 border-white/30 rounded-lg transition-all duration-1000 ${isVideoHovered ? 'scale-110 opacity-0' : 'scale-100 opacity-100'}`}></div>
+                          </a>
+                        </div>
+                        <p className="text-sm text-gray-600 mt-3">
+                          <a
+                            href="https://youtu.be/hKO03ueCnWA"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-blue-600 hover:text-blue-800 transition-all duration-300 hover:underline inline-flex items-center gap-1 hover:gap-2"
+                          >
+                            <span className="inline-block animate-pulse">▶</span> Click to watch the video
+                          </a>
+                        </p>
+                      </div>
+
+                      {/* FOOTER TEXT */}
+                      <div className="mb-4">
+                        <p 
+                          className="text-sm md:text-base text-justify leading-relaxed"
+                          style={{
+                            opacity: isVisible['footer1'] ? 1 : 0,
+                            transform: isVisible['footer1'] ? 'translateY(0)' : 'translateY(20px)',
+                            transition: 'all 0.6s ease-out 0.8s',
+                          }}
+                          id="footer1"
+                          ref={el => textRefs.current[4] = el}
+                        >
+                          Beyond technology, this award highlights our focus on
+                          institutionalized innovation—where AI adoption
+                          is complemented by continuous workforce development. Through
+                          our strategic up-skilling initiatives,
+                          we empower professionals to effectively harness AI
+                          capabilities, enabling sustainable, future-ready
+                          growth.
+                        </p>
+
+                        <p 
+                          className="text-sm md:text-base text-justify mt-4 leading-relaxed"
+                          style={{
+                            opacity: isVisible['footer2'] ? 1 : 0,
+                            transform: isVisible['footer2'] ? 'translateY(0)' : 'translateY(20px)',
+                            transition: 'all 0.6s ease-out 1.0s',
+                          }}
+                          id="footer2"
+                          ref={el => textRefs.current[5] = el}
+                        >
+                          As we continue to drive India's digital
+                          transformation journey, this recognition strengthens our
+                          resolve to create long-term value and
+                          enhance the nation's global competitiveness in AI.
+                        </p>
+
+                        <p 
+                          className="text-sm md:text-base text-justify mt-4 leading-relaxed"
+                          style={{
+                            opacity: isVisible['footer3'] ? 1 : 0,
+                            transform: isVisible['footer3'] ? 'translateY(0)' : 'translateY(20px)',
+                            transition: 'all 0.6s ease-out 1.2s',
+                          }}
+                          id="footer3"
+                          ref={el => textRefs.current[6] = el}
+                        >
+                          We thank you for being a part of our
+                          journey and look forward to many more milestones together.
+                        </p>
+                      </div>
+
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              {/* Description */}
-              <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-4">
-                {Array.isArray(selectedAward.description) 
-                  ? selectedAward.description.map((paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
-                    ))
-                  : <p>{selectedAward.description}</p>
-                }
-              </div>
-
-              {/* Close Button at Bottom */}
-              <div className="mt-8 text-center">
-                <button
-                  onClick={closeModal}
-                  className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-semibold"
-                >
-                  Close
-                </button>
               </div>
             </div>
           </div>
-        </div>
-      )}
+        </section>
+      </main>
     </div>
   );
 };
 
-export default Award;
+export default Awards;

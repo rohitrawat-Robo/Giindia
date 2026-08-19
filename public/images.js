@@ -41,7 +41,9 @@ import e from '../public/e.png';
 import f from '../public/f.png';
 import dashboard from '../public/dashboard.png';
 import sim from '../public/sim.jpg';
-
+import etnow from '../public/etnow.png';
+import bannerImg from '../public/banner-img.jpg';
+import video from '../public/video-youtube.gif';
 import DGX from '../public/DGX.mp4';
 
 
@@ -88,6 +90,9 @@ export default {
         f,
         dashboard,
         sim,
+        etnow,
+        bannerImg,
+        video,
         DGX
 
 }
