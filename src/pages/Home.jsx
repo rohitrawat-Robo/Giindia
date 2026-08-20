@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
-import images from "../../public/images.js"; 
-import AboutUs from "../components/About.jsx"; 
+import images from "../../public/images.js";
+import AboutUs from "../components/About.jsx";
 import Soultions from "../components/Solutions.jsx";
 import FeaturedEvents from "../components/FeaturedEvents.jsx";
 import SEO from "../components/SEO.jsx";
@@ -17,7 +17,7 @@ const HeroSection = ({ aboutRef }) => {
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
@@ -78,14 +78,22 @@ const HeroSection = ({ aboutRef }) => {
       <SEO
         title="NVIDIA Elite Partner in India"
         description="Global Infoventures (GIIndia) is an NVIDIA Elite Partner based in Noida, delivering DGX systems, AI infrastructure, and enterprise AI solutions to universities and enterprises across India."
-        keywords={["NVIDIA Elite Partner", "Global Infoventures", "GIIndia", "DGX systems", "AI infrastructure India", "NVIDIA reseller Noida", "enterprise AI solutions"]}
+        keywords={[
+          "NVIDIA Elite Partner",
+          "Global Infoventures",
+          "GIIndia",
+          "DGX systems",
+          "AI infrastructure India",
+          "NVIDIA reseller Noida",
+          "enterprise AI solutions",
+        ]}
         path="/"
         jsonLd={{
-          '@type': 'Organization',
-          name: 'Global Infoventures',
-          alternateName: 'GIIndia',
-          url: 'https://www.globalinfoventures.com',
-          logo: 'https://www.globalinfoventures.com/logo.png',
+          "@type": "Organization",
+          name: "Global Infoventures",
+          alternateName: "GIIndia",
+          url: "https://www.globalinfoventures.com",
+          logo: "https://www.globalinfoventures.com/logo.png",
         }}
       />
       {/* Hero Section */}
@@ -248,18 +256,18 @@ const HeroSection = ({ aboutRef }) => {
       <section className="key-components-section pt-8 pb-16 md:pt-10 md:pb-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-8 md:mb-10">
-            <h2 className="text-3xl md:text-4xl font-bold text-[#1940b0]">
+          <div className="mb-8 text-center md:mb-10">
+            <h2 className="text-3xl font-bold text-[#1940b0] md:text-4xl">
               Key Components
             </h2>
           </div>
 
           {/* Hexagon Grid */}
-          <div className="flex flex-wrap justify-center items-center gap-6 md:gap-8 lg:gap-10">
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 lg:gap-10">
             {keyComponents.map((item) => (
               <motion.div
                 key={item.id}
-                className="flex flex-col items-center"
+                className="flex flex-col items-center justify-center text-center"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: item.delay }}
@@ -279,7 +287,7 @@ const HeroSection = ({ aboutRef }) => {
                 >
                   {/* Inner Hexagon */}
                   <div
-                    className="flex flex-col items-center justify-center"
+                    className="flex flex-col items-center justify-center text-center"
                     style={{
                       width: "119px",
                       height: "136px",
@@ -292,11 +300,11 @@ const HeroSection = ({ aboutRef }) => {
                     <img
                       src={item.icon}
                       alt={item.label}
-                      className="h-8 md:h-9 w-auto object-contain mb-1"
+                      className="mb-1 h-8 w-auto object-contain md:h-9"
                     />
 
                     {/* Label */}
-                    <span className="text-base md:text-lg font-bold text-[#1940b0]">
+                    <span className="text-base font-bold text-[#1940b0] md:text-lg">
                       {item.label}
                     </span>
                   </div>
@@ -557,7 +565,6 @@ const HeroSection = ({ aboutRef }) => {
           </div>
         </div>
       </section>
-
 
       <Soultions />
 
