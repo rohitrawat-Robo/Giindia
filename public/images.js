@@ -32,7 +32,7 @@ import gril23 from '../public/gril23.jpg';
 import gril24 from '../public/gril24.jpg';
 import banner19 from '../public/banner19.jpg';
 import gfxA from '../public/gfx-a.png';
-import award from '../public/award-l.jpg'; 
+import FY25 from '../public/FY25.jpg'; 
 import a from '../public/a.png';
 import b from '../public/b.png';
 import c from '../public/c.png';
@@ -81,7 +81,7 @@ export default {
         gril24,
         banner19,
         gfxA,
-        award,
+        FY25,
         a,
         b,
         c,
