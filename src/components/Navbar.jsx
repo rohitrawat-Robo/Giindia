@@ -38,22 +38,91 @@ export default function Navbar() {
 
   // UPDATED: Menu items with all requested navigation links
   const menuItems = [
-    { label: "Home", path: "/" },
-    { label: "About Us", path: "/about" },
-    { label: "Solutions", path: "/solutions" },
+    { label: "Home", path: "/", scrollToTop: true },
+    { label: "About Us", path: "/", scrollTo: "about" },
+    { label: "Solutions", path: "/", scrollTo: "features" },
     { label: "GRIL", path: "/gril" },
     { label: "Events", path: "/events" },
     { label: "Award", path: "/award" },
     { label: "Nvidia Elite Partner", path: "/nvidia-elite-partner" },
-    { label: "Career", path: "/career", external: true }, // Marked as external
+    { label: "Career", path: "/career", external: true },
     { label: "Contact Us", path: "/contact" },
   ];
 
-  // Handle navigation for external links
+  // Handle smooth scroll to section
+  const scrollToSection = (sectionId) => {
+    console.log(`Attempting to scroll to: ${sectionId}`);
+    const element = document.getElementById(sectionId);
+
+    if (element) {
+      console.log(`✅ Found element with id: ${sectionId}`);
+      const navbarHeight = 80; // Fixed navbar height (h-20 = 5rem = 80px)
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - navbarHeight;
+
+      console.log(`Scrolling to position: ${offsetPosition}px`);
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+      });
+      return true;
+    } else {
+      console.log(`❌ Element with id "${sectionId}" not found on the page`);
+      console.log(`Available sections on page:`);
+      document.querySelectorAll("section").forEach((sec, index) => {
+        console.log(`  ${index + 1}. id="${sec.id}"`);
+      });
+      return false;
+    }
+  };
+
+  // Scroll to top function
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  // Handle navigation
   const handleNavigation = (item, e) => {
     if (item.external) {
       e.preventDefault();
       window.open(item.path, "_blank", "noopener,noreferrer");
+      return;
+    }
+
+    if (item.scrollToTop) {
+      e.preventDefault();
+      console.log(`🔄 Clicked: ${item.label}, scrolling to top`);
+
+      // If we're not on the home page, navigate home first then scroll to top
+      if (location.pathname !== "/") {
+        console.log(`Navigating to home page first...`);
+        sessionStorage.setItem("scrollToTop", "true");
+        window.location.href = "/";
+      } else {
+        // Already on home page, scroll to top
+        scrollToTop();
+      }
+      return;
+    }
+
+    if (item.scrollTo) {
+      e.preventDefault();
+      console.log(`🔄 Clicked: ${item.label}, scrolling to: ${item.scrollTo}`);
+
+      // If we're not on the home page, navigate home first then scroll
+      if (location.pathname !== "/") {
+        console.log(`Navigating to home page first...`);
+        sessionStorage.setItem("scrollToSection", item.scrollTo);
+        window.location.href = "/";
+      } else {
+        // Already on home page, scroll directly
+        scrollToSection(item.scrollTo);
+      }
     }
   };
 
@@ -62,12 +131,51 @@ export default function Navbar() {
     setMobileOpen(false);
   };
 
+  // Check for section to scroll to after navigation to home
+  useEffect(() => {
+    // Check if we need to scroll to top
+    const scrollToTopFlag = sessionStorage.getItem("scrollToTop");
+    if (scrollToTopFlag && location.pathname === "/") {
+      sessionStorage.removeItem("scrollToTop");
+      console.log(`📦 Scrolling to top after navigation`);
+
+      setTimeout(() => {
+        scrollToTop();
+      }, 200);
+    }
+
+    // Check if we need to scroll to a specific section
+    const scrollToId = sessionStorage.getItem("scrollToSection");
+    if (scrollToId && location.pathname === "/") {
+      sessionStorage.removeItem("scrollToSection");
+      console.log(`📦 Found stored scroll target: ${scrollToId}`);
+
+      // Wait for DOM to be fully rendered
+      const attempts = [200, 500, 800, 1200];
+      attempts.forEach((delay) => {
+        setTimeout(() => {
+          scrollToSection(scrollToId);
+        }, delay);
+      });
+    }
+  }, [location.pathname]);
+
+  // Log all sections when on home page
+  useEffect(() => {
+    if (location.pathname === "/") {
+      console.log("📍 Home page loaded. Available sections:");
+      document.querySelectorAll("section").forEach((sec, index) => {
+        console.log(`  ${index + 1}. id="${sec.id}"`);
+      });
+    }
+  }, [location.pathname]);
+
   return (
     <>
       {/* Scroll Progress Bar */}
-      <div className="fixed left-0 top-0 z-[60] h-1 w-full bg-gray-200">
+      <div className="fixed left-0 top-0 z-[60] h-1 w-full bg-gray-700/30">
         <div
-          className="h-full bg-gradient-to-r from-green-500 to-green-600 transition-all duration-300"
+          className="h-full bg-gradient-to-r from-blue-400 to-blue-500 transition-all duration-300"
           style={{ width: `${scrollProgress}%` }}
           role="progressbar"
           aria-label="Scroll progress"
@@ -78,89 +186,108 @@ export default function Navbar() {
       </div>
 
       {/* Navbar */}
-      <header
+      <nav
         className={`fixed left-0 top-0 z-50 w-full transition-all duration-500 ${
           scrolled
-            ? "bg-white/95 backdrop-blur-md shadow-lg"
-            : "bg-gradient-to-b from-black/30 to-transparent"
+            ? "bg-[#0c2340]/95 backdrop-blur-[16px] shadow-[0_4px_30px_-14px_rgba(12,35,64,0.6)]"
+            : "bg-[#0c2340]"
         }`}
+        style={{ padding: scrolled ? "8px 0" : "16px 0" }}
         role="banner"
         aria-label="Main navigation"
       >
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* Logo */}
-          <Link
-            to="/"
-            className="flex items-center gap-3 transition-opacity hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 rounded-lg flex-shrink-0"
-            aria-label="Go to homepage"
-          >
-            <img
-              src={images.gi}
-              alt="Global Infoventures Logo"
-              className="h-11 w-auto"
-            />
-          </Link>
-
-          {/* Desktop Menu - Updated with smaller text and spacing */}
-          <nav
-            className="hidden items-center gap-1 xl:gap-2 lg:flex"
-            role="navigation"
-            aria-label="Desktop navigation"
-          >
-            {menuItems.map((item) => {
-              const isActive = location.pathname === item.path;
-
-              return (
-                <Link
-                  key={item.label}
-                  to={item.path}
-                  onClick={(e) => handleNavigation(item, e)}
-                  target={item.external ? "_blank" : undefined}
-                  rel={item.external ? "noopener noreferrer" : undefined}
-                  className={`px-2.5 py-2 text-xs xl:text-sm font-medium transition-all duration-200 rounded-lg whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
-                    isActive && !item.external
-                      ? "text-green-600 border-b-2 border-green-600 font-bold"
-                      : scrolled
-                        ? "text-gray-700 hover:text-green-600 hover:bg-green-50"
-                        : "text-white hover:text-green-400 hover:bg-white/10"
-                  }`}
-                  aria-current={isActive && !item.external ? "page" : undefined}
-                >
-                  {item.label}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Login Button */}
-          <div className="hidden lg:block flex-shrink-0">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
             <Link
-              to="https://hr.servergi.com:8071/givapp/login"
-              className="group flex items-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-green-700 px-5 py-2 text-xs xl:text-sm font-semibold text-white transition-all duration-300 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-              aria-label="Login to your account"
+              to="/"
+              onClick={(e) => {
+                e.preventDefault();
+                if (location.pathname === "/") {
+                  scrollToTop();
+                } else {
+                  sessionStorage.setItem("scrollToTop", "true");
+                  window.location.href = "/";
+                }
+              }}
+              className="flex items-center transition-all duration-300 hover:opacity-80 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#0c2340] rounded-lg flex-shrink-0"
+              aria-label="Go to homepage"
             >
-              Login
-              <ArrowRight
-                size={16}
-                className="transition-transform duration-300 group-hover:translate-x-1"
+              <img
+                src={images.gi}
+                alt="Global Infoventures Logo"
+                className="h-11 w-auto block"
               />
             </Link>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={`rounded-lg p-2 transition-colors lg:hidden focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 ${
-              scrolled
-                ? "text-gray-700 hover:bg-gray-100"
-                : "text-white hover:bg-white/10"
-            }`}
-            aria-expanded={mobileOpen}
-            aria-controls="mobile-menu"
-            aria-label={mobileOpen ? "Close menu" : "Open menu"}
-          >
-            {mobileOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
+            {/* Desktop Menu */}
+            <div
+              className="hidden items-center gap-8 lg:flex"
+              role="navigation"
+              aria-label="Desktop navigation"
+            >
+              {menuItems.map((item) => {
+                return (
+                  <Link
+                    key={item.label}
+                    to={item.path}
+                    onClick={(e) => handleNavigation(item, e)}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
+                    className="relative font-medium text-[15px] tracking-wide text-gray-200 hover:text-blue-200 transition-all duration-300 focus:outline-none rounded-lg px-1 py-1"
+                  >
+                    {item.label}
+                  </Link>
+                );
+              })}
+            </div>
+
+            {/* Login Button */}
+            <div className="hidden lg:block flex-shrink-0">
+              <Link
+                to="https://hr.servergi.com:8071/givapp/login"
+                className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 shadow-[0_4px_15px_-4px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-6px_rgba(59,130,246,0.5)] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#0c2340] overflow-hidden"
+                aria-label="Login to your account"
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+                <span className="relative flex items-center gap-2">
+                  Login
+                  <ArrowRight
+                    size={16}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setMobileOpen(!mobileOpen)}
+              className="flex flex-col gap-1.5 rounded-lg p-2 transition-colors lg:hidden focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#0c2340]"
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-menu"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            >
+              <span
+                className={`block w-[26px] h-[2px] rounded-full transition-all duration-300 ${
+                  scrolled ? "bg-blue-300" : "bg-gray-200"
+                } ${mobileOpen ? "rotate-45 translate-y-[6px]" : ""}`}
+              />
+
+              <span
+                className={`block w-[26px] h-[2px] rounded-full transition-all duration-300 ${
+                  scrolled ? "bg-blue-300" : "bg-gray-200"
+                } ${mobileOpen ? "opacity-0" : ""}`}
+              />
+
+              <span
+                className={`block w-[26px] h-[2px] rounded-full transition-all duration-300 ${
+                  scrolled ? "bg-blue-300" : "bg-gray-200"
+                } ${mobileOpen ? "-rotate-45 -translate-y-[6px]" : ""}`}
+              />
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu - Slide-in Sidebar */}
@@ -168,7 +295,7 @@ export default function Navbar() {
           <>
             {/* Overlay */}
             <div
-              className="fixed inset-0 z-40 bg-black/50 backdrop-blur-sm lg:hidden animate-in fade-in duration-300"
+              className="fixed inset-0 z-40 bg-[#0c2340]/90 backdrop-blur-sm lg:hidden animate-in fade-in duration-300"
               onClick={handleMobileClose}
               aria-hidden="true"
             />
@@ -176,14 +303,24 @@ export default function Navbar() {
             {/* Sidebar */}
             <div
               id="mobile-menu"
-              className="fixed left-0 top-0 z-50 h-full w-80 transform bg-white shadow-2xl lg:hidden animate-in slide-in-from-left duration-300"
+              className="fixed right-0 top-0 z-50 h-full w-80 transform bg-[#0c2340] shadow-2xl lg:hidden animate-in slide-in-from-right duration-300"
               role="dialog"
               aria-label="Mobile navigation"
             >
-              <div className="flex h-20 items-center justify-between border-b border-gray-100 px-6">
+              <div className="flex h-20 items-center justify-between border-b border-blue-500/20 px-6">
                 <Link
                   to="/"
-                  onClick={handleMobileClose}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleMobileClose();
+
+                    if (location.pathname === "/") {
+                      scrollToTop();
+                    } else {
+                      sessionStorage.setItem("scrollToTop", "true");
+                      window.location.href = "/";
+                    }
+                  }}
                   className="flex items-center gap-3"
                 >
                   <img
@@ -192,9 +329,10 @@ export default function Navbar() {
                     className="h-10 w-auto"
                   />
                 </Link>
+
                 <button
                   onClick={handleMobileClose}
-                  className="rounded-lg p-2 text-gray-600 transition-colors hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  className="rounded-lg p-2 text-blue-300 transition-all duration-200 hover:bg-blue-500/20 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-blue-400"
                   aria-label="Close menu"
                 >
                   <X size={24} />
@@ -204,7 +342,6 @@ export default function Navbar() {
               <nav className="flex h-[calc(100%-5rem)] flex-col overflow-y-auto px-4 py-6">
                 <div className="space-y-1">
                   {menuItems.map((item) => {
-                    const isActive = location.pathname === item.path;
                     return (
                       <Link
                         key={item.label}
@@ -215,12 +352,7 @@ export default function Navbar() {
                         }}
                         target={item.external ? "_blank" : undefined}
                         rel={item.external ? "noopener noreferrer" : undefined}
-                        className={`block rounded-lg px-4 py-3 text-sm font-medium transition-all duration-200 ${
-                          isActive && !item.external
-                            ? "bg-green-50 text-green-600 font-bold border-l-4 border-green-600"
-                            : "text-gray-700 hover:bg-gray-50 hover:text-green-600"
-                        }`}
-                        aria-current={isActive && !item.external ? "page" : undefined}
+                        className="block rounded-lg px-4 py-3 text-sm font-medium text-gray-300/90 transition-all duration-200 hover:bg-blue-500/10 hover:text-blue-300"
                       >
                         {item.label}
                       </Link>
@@ -228,24 +360,28 @@ export default function Navbar() {
                   })}
                 </div>
 
-                <div className="mt-6 border-t border-gray-100 pt-6">
+                <div className="mt-6 border-t border-blue-500/20 pt-6">
                   <Link
                     to="/login"
                     onClick={handleMobileClose}
-                    className="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-green-600 to-green-700 px-6 py-3 font-semibold text-white transition-all duration-300 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+                    className="group relative flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-blue-500 to-blue-600 px-6 py-3 font-semibold text-white transition-all duration-300 shadow-[0_4px_15px_-4px_rgba(59,130,246,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-6px_rgba(59,130,246,0.4)] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 focus:ring-offset-[#0c2340] overflow-hidden"
                   >
-                    Login
-                    <ArrowRight
-                      size={18}
-                      className="transition-transform duration-300 group-hover:translate-x-1"
-                    />
+                    <span className="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+                    <span className="relative flex items-center gap-2">
+                      Login
+                      <ArrowRight
+                        size={18}
+                        className="transition-transform duration-300 group-hover:translate-x-1"
+                      />
+                    </span>
                   </Link>
                 </div>
               </nav>
             </div>
           </>
         )}
-      </header>
+      </nav>
     </>
   );
 }
