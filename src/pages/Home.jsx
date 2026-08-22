@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import images from "../../public/images.js";
 import AboutUs from "../components/About.jsx";
@@ -7,6 +7,92 @@ import FeaturedEvents from "../components/FeaturedEvents.jsx";
 import SEO from "../components/SEO.jsx";
 
 const HeroSection = ({ aboutRef }) => {
+  const canvasRef = useRef(null);
+
+  // Mesh particle background animation (same effect as NVIDIA Partner page hero)
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let animationFrameId;
+
+    const resizeCanvas = () => {
+      const rect = canvas.parentElement.getBoundingClientRect();
+      canvas.width = rect.width;
+      canvas.height = rect.height;
+    };
+
+    resizeCanvas();
+    window.addEventListener("resize", resizeCanvas);
+
+    // Mesh particles
+    const particles = [];
+    const numParticles = 80;
+    const connectionDistance = 150;
+
+    for (let i = 0; i < numParticles; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.5,
+        vy: (Math.random() - 0.5) * 0.5,
+        radius: Math.random() * 2 + 1,
+      });
+    }
+
+    const drawMesh = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update particles
+      particles.forEach((p) => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      });
+
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < connectionDistance) {
+            const opacity = 1 - distance / connectionDistance;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(118, 185, 0, ${opacity * 0.3})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      // Draw particles
+      particles.forEach((p) => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(118, 185, 0, ${p.radius / 3})`;
+        ctx.fill();
+      });
+
+      animationFrameId = requestAnimationFrame(drawMesh);
+    };
+
+    drawMesh();
+
+    return () => {
+      window.removeEventListener("resize", resizeCanvas);
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+      }
+    };
+  }, []);
+
   // Animation on scroll with Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -98,13 +184,19 @@ const HeroSection = ({ aboutRef }) => {
       />
       {/* Hero Section */}
       <section
-        className="relative flex items-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-white
-             pt-24 pb-10 md:pt-28 md:pb-12"
+        className="relative flex items-center overflow-hidden bg-[#08193A]
+       pt-24 pb-10 md:pt-28 md:pb-12"
       >
-        {/* Background Decorative Elements */}
-        <div className="absolute top-[-35%] right-[-8%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#76B900]/5 to-transparent pointer-events-none" />
+        {/* Animated Mesh Canvas Background */}
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full pointer-events-none"
+        />
 
-        <div className="absolute bottom-[-25%] left-[-8%] w-[350px] h-[350px] rounded-full bg-gradient-to-tr from-[#76B900]/5 to-transparent pointer-events-none" />
+        {/* Background Decorative Elements */}
+        <div className="absolute top-[-35%] right-[-8%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#76B900]/10 to-transparent pointer-events-none" />
+
+        <div className="absolute bottom-[-25%] left-[-8%] w-[350px] h-[350px] rounded-full bg-gradient-to-tr from-[#76B900]/10 to-transparent pointer-events-none" />
 
         {/* Container */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -122,21 +214,21 @@ const HeroSection = ({ aboutRef }) => {
               </span>
 
               {/* Heading */}
-              <h1 className="font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] text-slate-900 leading-tight mb-4">
+              <h1 className="font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] text-white leading-tight mb-4">
                 Experience the power of{" "}
-                <span className="bg-gradient-to-r from-[#76B900] to-[#5A8C00] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#76B900] to-[#8FD400] bg-clip-text text-transparent">
                   G6
                 </span>
               </h1>
 
               {/* Subtitle */}
-              <p className="text-lg sm:text-xl font-semibold text-slate-800 mb-4 max-w-2xl mx-auto lg:mx-0">
+              <p className="text-lg sm:text-xl font-semibold text-white mb-4 max-w-2xl mx-auto lg:mx-0">
                 A comprehensive Software Platform for automation of Education
                 Eco-system
               </p>
 
               {/* Description */}
-              <p className="text-base text-slate-600 max-w-[52ch] mx-auto lg:mx-0 leading-relaxed mb-6">
+              <p className="text-base text-slate-300 max-w-[52ch] mx-auto lg:mx-0 leading-relaxed mb-6">
                 G6 platform is a 'State of Art Amalgamation' of automated
                 business processes and technology. Responsive Interfaces,
                 Business &amp; Predictive Intelligence, Biometric &amp; Smart
@@ -150,11 +242,11 @@ const HeroSection = ({ aboutRef }) => {
                 <a
                   href="#features"
                   className="group inline-flex items-center gap-2.5 px-7 py-3 rounded-xl
-                       font-manrope font-bold text-sm sm:text-base text-white
-                       bg-gradient-to-r from-[#76B900] to-[#5A8C00]
-                       shadow-[0_8px_24px_-8px_rgba(118,185,0,0.4)]
-                       hover:shadow-[0_14px_32px_-10px_rgba(118,185,0,0.5)]
-                       hover:-translate-y-0.5 transition-all duration-300"
+                 font-manrope font-bold text-sm sm:text-base text-white
+                 bg-gradient-to-r from-[#76B900] to-[#5A8C00]
+                 shadow-[0_8px_24px_-8px_rgba(118,185,0,0.4)]
+                 hover:shadow-[0_14px_32px_-10px_rgba(118,185,0,0.5)]
+                 hover:-translate-y-0.5 transition-all duration-300"
                 >
                   <span>Know More</span>
 
@@ -178,8 +270,8 @@ const HeroSection = ({ aboutRef }) => {
                 <button
                   onClick={scrollToAbout}
                   className="inline-flex items-center gap-2 font-semibold
-                       text-sm sm:text-base text-slate-900
-                       hover:text-[#76B900] transition-colors duration-200"
+                 text-sm sm:text-base text-white
+                 hover:text-[#76B900] transition-colors duration-200"
                 >
                   <svg
                     width="15"
@@ -210,8 +302,8 @@ const HeroSection = ({ aboutRef }) => {
                 src="/G6.png"
                 alt="G6 AI Infrastructure"
                 className="w-[80%] sm:w-[70%] md:w-[75%] lg:w-full max-w-[600px] h-auto
-                     drop-shadow-[0_20px_40px_rgba(0,0,0,0.06)]
-                     animate-float"
+               drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]
+               animate-float"
               />
             </motion.div>
           </div>
