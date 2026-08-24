@@ -9,9 +9,9 @@
 // change the shared look, or edit one specific event's file directly if
 // you want that one event to look different from the rest.
 
-import React, { useState, useEffect, useCallback } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect, useCallback } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   ArrowLeft,
   Calendar,
@@ -22,9 +22,9 @@ import {
   ChevronLeft,
   ChevronRight,
   ImageOff,
-} from 'lucide-react';
-import eventsData from '../../utils/event';
-import SEO from '../SEO.jsx';
+} from "lucide-react";
+import eventsData from "../../utils/event";
+import SEO from "../SEO.jsx";
 
 const InfoCard = ({ icon, label, value }) => (
   <div className="p-4 rounded-xl border border-[#E5E7EB] bg-white flex items-start gap-3">
@@ -36,7 +36,7 @@ const InfoCard = ({ icon, label, value }) => (
   </div>
 );
 
-const EventPageLayout = ({ slug }) => {
+const EventPageLayout = ({ slug, content, seo }) => {
   const navigate = useNavigate();
   const event = eventsData.find((item) => item.slug === slug);
 
@@ -47,31 +47,35 @@ const EventPageLayout = ({ slug }) => {
   const showPrev = useCallback(() => {
     if (!event) return;
     setLightboxIndex((i) =>
-      i === null ? null : (i - 1 + event.gallery.length) % event.gallery.length
+      i === null ? null : (i - 1 + event.gallery.length) % event.gallery.length,
     );
   }, [event]);
 
   const showNext = useCallback(() => {
     if (!event) return;
-    setLightboxIndex((i) => (i === null ? null : (i + 1) % event.gallery.length));
+    setLightboxIndex((i) =>
+      i === null ? null : (i + 1) % event.gallery.length,
+    );
   }, [event]);
 
   useEffect(() => {
     if (lightboxIndex === null) return undefined;
     const onKeyDown = (e) => {
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'ArrowRight') showNext();
+      if (e.key === "Escape") closeLightbox();
+      if (e.key === "ArrowLeft") showPrev();
+      if (e.key === "ArrowRight") showNext();
     };
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, [lightboxIndex, closeLightbox, showPrev, showNext]);
 
   if (!event) {
     return (
       <div className="min-h-screen bg-white flex flex-col items-center justify-center px-4">
         <SEO title="Event not found" noindex />
-        <h1 className="text-2xl font-bold text-[#0F172A] mb-4">Event not found</h1>
+        <h1 className="text-2xl font-bold text-[#0F172A] mb-4">
+          Event not found
+        </h1>
         <p className="text-[#4B5563] mb-4 text-sm">
           No event in eventsData matched slug: <code>{slug}</code>
         </p>
@@ -92,52 +96,51 @@ const EventPageLayout = ({ slug }) => {
   // after for relevance signals even if it gets truncated on-screen.
   const seoDescription =
     `${event.category} by NVIDIA Elite Partner Global Infoventures at ${event.location}` +
-    `${event.year ? ` (${event.year})` : ''}. ${event.description}. ` +
-    `${event.photos} photo${event.photos === 1 ? '' : 's'} from the event.`;
+    `${event.year ? ` (${event.year})` : ""}. ${event.description}. ` +
+    `${event.photos} photo${event.photos === 1 ? "" : "s"} from the event.`;
 
-  const seoKeywords = [
+  const seoKeywords = seo?.keywords || [
     event.category,
     event.location,
     event.year,
-    'Global Infoventures',
-    'GIIndia',
-    'NVIDIA Elite Partner',
-    'NVIDIA',
+    "Global Infoventures",
+    "GIIndia",
+    "NVIDIA Elite Partner",
+    "NVIDIA",
   ];
-
   return (
     <div className="min-h-screen bg-white py-12">
       <SEO
-        title={event.title}
-        description={seoDescription}
+        title={seo?.title || event.title}
+        description={seo?.description || seoDescription}
         keywords={seoKeywords}
         path={`/events/${event.slug}`}
         image={event.image || undefined}
         type="event"
         jsonLd={{
-          '@type': 'Event',
+          "@type": "Event",
           name: event.title,
           description: event.description,
           startDate: event.date,
-          eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
-          eventStatus: 'https://schema.org/EventCompleted',
+          eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
+          eventStatus: "https://schema.org/EventCompleted",
           location: {
-            '@type': 'Place',
+            "@type": "Place",
             name: event.location,
             address: event.location,
           },
           image: event.gallery,
           organizer: {
-            '@type': 'Organization',
-            name: 'Global Infoventures',
-            url: 'https://www.globalinfoventures.com',
+            "@type": "Organization",
+            name: "Global Infoventures",
+            url: "https://www.globalinfoventures.com",
           },
         }}
       />
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <button
           type="button"
-          onClick={() => navigate('/events')}
+          onClick={() => navigate("/events")}
           className="mb-6 inline-flex items-center gap-2 px-4 py-2 bg-[#DCFCE7] hover:bg-[#16A34A]/20 rounded-xl transition-colors duration-300 text-[#0F172A] font-medium"
         >
           <ArrowLeft className="w-5 h-5" />
@@ -147,6 +150,13 @@ const EventPageLayout = ({ slug }) => {
         <h1 className="text-3xl md:text-4xl font-bold text-[#0F172A] mb-6">
           {event.title}
         </h1>
+        {content && (
+          <div className="mb-10 rounded-2xl border border-[#E5E7EB] bg-white p-6 md:p-8 shadow-sm">
+            <div className="prose prose-lg max-w-none text-[#374151]">
+              {content}
+            </div>
+          </div>
+        )}
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           <InfoCard
@@ -157,7 +167,7 @@ const EventPageLayout = ({ slug }) => {
           <InfoCard
             icon={<Calendar className="w-5 h-5 text-[#16A34A]" />}
             label="Date"
-            value={event.date || event.year || '—'}
+            value={event.date || event.year || "—"}
           />
           <InfoCard
             icon={<MapPin className="w-5 h-5 text-[#16A34A]" />}
@@ -174,7 +184,9 @@ const EventPageLayout = ({ slug }) => {
         {event.gallery.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-20 bg-[#DCFCE7]/30 rounded-2xl border border-[#E5E7EB]">
             <ImageOff className="w-10 h-10 text-[#16A34A] mb-3" />
-            <p className="text-[#374151]">No photos have been uploaded for this event yet.</p>
+            <p className="text-[#374151]">
+              No photos have been uploaded for this event yet.
+            </p>
           </div>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -196,9 +208,9 @@ const EventPageLayout = ({ slug }) => {
                   onError={(e) => {
                     e.currentTarget.onerror = null;
                     e.currentTarget.src =
-                      'data:image/svg+xml;utf8,' +
+                      "data:image/svg+xml;utf8," +
                       encodeURIComponent(
-                        '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="100%" height="100%" fill="%23DCFCE7"/></svg>'
+                        '<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300"><rect width="100%" height="100%" fill="%23DCFCE7"/></svg>',
                       );
                   }}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
