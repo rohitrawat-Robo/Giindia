@@ -40,14 +40,14 @@ export default function Navbar() {
   const menuItems = [
     { label: "Home", path: "/", scrollToTop: true },
     { label: "G6 Solution", path: "/G6Solution" },
+    { label: "Nvidia Elite Partner", path: "/nvidia-elite-partner" },
     { label: "About Us", path: "/G6Solution", scrollTo: "about" },
     { label: "Solutions", path: "/G6Solution", scrollTo: "features" },
     { label: "GRIL", path: "/gril" },
     { label: "Events", path: "/events" },
     { label: "Award", path: "/award" },
-    { label: "Nvidia Elite Partner", path: "/nvidia-elite-partner" },
-    { label: "Team", path: "/team" },
     { label: "Career", path: "/career", external: true },
+    { label: "Team", path: "/team" },
     { label: "Contact Us", path: "/contact" },
   ];
   // Handle smooth scroll to section
