@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import G6Solution from "./pages/G6Solution"; // Updated import for Home page
 import About from "./components/About";
 import Solutions from "./components/Solutions";
 import Gril from "./components/Gril.jsx";
@@ -9,6 +10,7 @@ import Events from "./components/Events";
 import Career from "./components/Career";
 import Contact from "./components/ContactUs.jsx";
 import Partner from "./components/Partner.jsx";
+import Team from "./components/Team.jsx";
 
 // ============================================================
 // AWARDS
@@ -177,6 +179,7 @@ function App() {
           {/* ================================================== */}
 
           <Route path="/" element={<Home />} />
+          <Route path="/G6Solution" element={<G6Solution />} />
           <Route path="/about" element={<About />} />
           <Route path="/solutions" element={<Solutions />} />
           <Route path="/gril" element={<Gril />} />
@@ -184,6 +187,7 @@ function App() {
           <Route path="/nvidia-elite-partner" element={<Partner />} />
           <Route path="/career" element={<Career />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/team" element={<Team />} />
 
           {/* ================================================== */}
           {/* Award PAGES */}

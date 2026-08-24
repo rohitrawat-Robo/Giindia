@@ -39,16 +39,17 @@ export default function Navbar() {
   // UPDATED: Menu items with all requested navigation links
   const menuItems = [
     { label: "Home", path: "/", scrollToTop: true },
-    { label: "About Us", path: "/", scrollTo: "about" },
-    { label: "Solutions", path: "/", scrollTo: "features" },
+    { label: "G6 Solution", path: "/G6Solution" },
+    { label: "About Us", path: "/G6Solution", scrollTo: "about" },
+    { label: "Solutions", path: "/G6Solution", scrollTo: "features" },
     { label: "GRIL", path: "/gril" },
     { label: "Events", path: "/events" },
     { label: "Award", path: "/award" },
     { label: "Nvidia Elite Partner", path: "/nvidia-elite-partner" },
+    { label: "Team", path: "/team" },
     { label: "Career", path: "/career", external: true },
     { label: "Contact Us", path: "/contact" },
   ];
-
   // Handle smooth scroll to section
   const scrollToSection = (sectionId) => {
     console.log(`Attempting to scroll to: ${sectionId}`);
@@ -96,36 +97,32 @@ export default function Navbar() {
 
     if (item.scrollToTop) {
       e.preventDefault();
-      console.log(`🔄 Clicked: ${item.label}, scrolling to top`);
 
-      // If we're not on the home page, navigate home first then scroll to top
       if (location.pathname !== "/") {
-        console.log(`Navigating to home page first...`);
         sessionStorage.setItem("scrollToTop", "true");
         window.location.href = "/";
       } else {
-        // Already on home page, scroll to top
         scrollToTop();
       }
+
       return;
     }
 
     if (item.scrollTo) {
       e.preventDefault();
-      console.log(`🔄 Clicked: ${item.label}, scrolling to: ${item.scrollTo}`);
 
-      // If we're not on the home page, navigate home first then scroll
-      if (location.pathname !== "/") {
-        console.log(`Navigating to home page first...`);
-        sessionStorage.setItem("scrollToSection", item.scrollTo);
-        window.location.href = "/";
-      } else {
-        // Already on home page, scroll directly
+      // If already on G6 Solution page, scroll directly
+      if (location.pathname === "/G6Solution") {
         scrollToSection(item.scrollTo);
+      } else {
+        // Navigate to G6 Solution first, then scroll
+        sessionStorage.setItem("scrollToSection", item.scrollTo);
+        window.location.href = "/G6Solution";
       }
+
+      return;
     }
   };
-
   // Close mobile menu when any link is clicked
   const handleMobileClose = () => {
     setMobileOpen(false);
