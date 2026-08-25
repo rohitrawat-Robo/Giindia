@@ -30,22 +30,25 @@ const Home = () => {
           {/* Left column */}
           <div>
             <span className="inline-block rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-blue-300">
-              WELCOME TO YOUR COMPANY
+              WELCOME TO GLOBAL INFOVENTURES
             </span>
 
             <h1 className="mt-6 text-5xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl">
-              Powering Business
+              Accelerating
               <br />
-              &amp; AI <span className="text-blue-500">Innovation</span>
+              <span className="text-blue-500">AI Innovation</span>
+              <br />
+              with NVIDIA
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-300 sm:text-lg">
-              We deliver cutting-edge ERP solutions to streamline your business
-              and high-performance AI infrastructure like NVIDIA DGX B200 to
-              accelerate innovation.
+              Global Infoventures is a technology and innovation company helping
+              organizations unlock the power of Artificial Intelligence,
+              enterprise software, and high-performance computing. As an NVIDIA
+              Elite Partner, we enable businesses and institutions to accelerate
+              AI adoption with advanced NVIDIA solutions and future-ready
+              technology.
             </p>
-
-           
           </div>
 
           {/* Right column */}
@@ -89,15 +92,11 @@ const Home = () => {
       {/* ===================== SOLUTION CARDS ===================== */}
       <section className="bg-[#050b18] pb-24">
         <div className="container mx-auto grid grid-cols-1 gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
-          {/* ERP Solutions Card */}
+          {/* G6 Solutions Card */}
           <div className="relative flex h-full overflow-hidden rounded-2xl border border-blue-500/30 bg-gradient-to-b from-[#0b1a3a] to-[#050b18] p-8">
             <div className="pointer-events-none absolute -top-24 -left-24 h-64 w-64 rounded-full bg-blue-600/20 blur-[100px]" />
 
             <div className="relative flex h-full w-full flex-col">
-              <span className="mb-5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-slate-600/60 bg-white/5 text-xs font-semibold text-slate-200">
-                01
-              </span>
-
               <div className="mb-5 flex items-center gap-3">
                 <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-blue-600">
                   <BarChart3 className="h-5 w-5 text-white" />
@@ -105,7 +104,7 @@ const Home = () => {
 
                 <div>
                   <h2 className="text-2xl font-bold text-white">
-                    ERP Solutions
+                    G6 Solutions
                   </h2>
 
                   <p className="text-sm text-slate-400">
@@ -115,9 +114,9 @@ const Home = () => {
               </div>
 
               <p className="mb-6 text-sm leading-relaxed text-slate-300">
-                Our ERP solutions help you manage and integrate all core
-                business processes—finance, HR, inventory, sales, and more—in
-                one unified platform.
+                Our G6 solutions help you manage and integrate all core business
+                processes—finance, HR, inventory, sales, and more—in one unified
+                platform.
               </p>
 
               <ul className="mb-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
@@ -153,7 +152,7 @@ const Home = () => {
                   onClick={() => navigate("/G6Solution")}
                   className="inline-flex items-center gap-2 rounded-lg border border-green-500/50 bg-transparent px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-500/10"
                 >
-                  Explore ERP Solutions
+                  Explore G6 Solutions
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
@@ -165,10 +164,6 @@ const Home = () => {
             <div className="pointer-events-none absolute -bottom-24 -right-16 h-72 w-72 rounded-full bg-green-500/20 blur-[110px]" />
 
             <div className="relative flex h-full w-full flex-col">
-              <span className="mb-5 inline-flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg border border-slate-600/60 bg-white/5 text-xs font-semibold text-slate-200">
-                02
-              </span>
-
               <div className="mb-5 flex items-center gap-3">
                 <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-green-600">
                   <Server className="h-5 w-5 text-white" />
@@ -176,7 +171,7 @@ const Home = () => {
 
                 <div>
                   <h2 className="text-2xl font-bold text-white">
-                    NVIDIA DGX B200
+                    NVIDIA Elite Partner
                   </h2>
 
                   <p className="text-sm text-slate-400">
@@ -224,7 +219,7 @@ const Home = () => {
                   onClick={() => navigate("/nvidia-elite-partner")}
                   className="inline-flex items-center gap-2 rounded-lg border border-green-500/50 bg-transparent px-5 py-3 text-sm font-semibold text-white transition hover:bg-green-500/10"
                 >
-                  Explore Nvidia
+                  Explore Nvidia Partner
                   <ArrowRight className="h-4 w-4" />
                 </button>
               </div>
