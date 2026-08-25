@@ -45,8 +45,10 @@ import etnow from '../public/etnow.png';
 import bannerImg from '../public/banner-img.jpg';
 import video from '../public/video-youtube.gif';
 import DGX from '../public/DGX.mp4';
+import dgxB200 from '../public/dgxB200.png';
 import sharad from '../public/sharad.jpg';
 import aashish from '../public/aashish.jpg';
+import b200 from '../public/b200.png';
 
 export default {
         gi,
@@ -96,6 +98,8 @@ export default {
         video,
         DGX,
         aashish,
-        sharad
+        sharad,
+        dgxB200,
+        b200
 
 }

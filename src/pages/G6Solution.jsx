@@ -623,7 +623,7 @@ const HeroSection = ({ aboutRef }) => {
                   <img
                     src={images.dashboard}
                     alt="AIMS Pre Admission Solution - Software for University, School, College, Institute - India"
-                    className="w-full h-[220px] object-cover rounded-xl shadow-md"
+                    className="w-full h-[320px] object-cover rounded-xl shadow-md"
                   />
                 </div>
 
@@ -645,7 +645,7 @@ const HeroSection = ({ aboutRef }) => {
                   <img
                     src={images.sim}
                     alt="G-6 - Software for University, School, College, Institute - India"
-                    className="w-full h-[220px] object-cover rounded-xl shadow-md"
+                    className="w-full h-[320px] object-cover rounded-xl shadow-md"
                   />
                 </div>
 
