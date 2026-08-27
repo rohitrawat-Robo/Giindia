@@ -285,7 +285,7 @@ const SRMAP = () => {
 
   return (
     <EventPageLayout
-      slug="srm-ap-11-may-13-may-2026"
+      slug="srm-ap-11-may-13-may-202611"
       content={content}
       seo={seoConfig} // Pass SEO config here
     />

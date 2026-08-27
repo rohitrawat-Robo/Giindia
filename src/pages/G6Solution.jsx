@@ -185,7 +185,7 @@ const HeroSection = ({ aboutRef }) => {
       {/* Hero Section */}
       <section
         className="relative flex items-center overflow-hidden bg-[#08193A]
-       pt-24 pb-10 md:pt-28 md:pb-12"
+       pt-10   md:pt-10 md:pb-12"
       >
         {/* Animated Mesh Canvas Background */}
         <canvas
@@ -200,7 +200,7 @@ const HeroSection = ({ aboutRef }) => {
 
         {/* Container */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center ">
             {/* Left Column */}
             <motion.div
               className="text-center lg:text-left"
@@ -210,7 +210,7 @@ const HeroSection = ({ aboutRef }) => {
             >
               {/* Badge */}
               <span className="inline-block font-mono font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#76B900] mb-4 bg-[#76B900]/10 px-4 py-1.5 rounded-full">
-                NVIDIA Elite Partner · Education ERP
+               Education ERP (G6)
               </span>
 
               {/* Heading */}

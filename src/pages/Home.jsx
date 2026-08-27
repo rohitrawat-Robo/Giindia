@@ -26,28 +26,21 @@ const Home = () => {
           <div className="absolute top-[55%] right-0 h-px w-[40%] rotate-[-6deg] bg-gradient-to-l from-blue-300/40 to-transparent" />
         </div>
 
-        <div className="container relative z-10 mx-auto grid grid-cols-1 items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-28">
+        <div className="container relative z-10 mx-auto grid grid-cols-1 items-center gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:px-8 lg:py-10">
           {/* Left column */}
           <div>
-            <span className="inline-block rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-blue-300">
+            <span className="inline-block rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-blue-300 ">
               WELCOME TO GLOBAL INFOVENTURES
             </span>
 
             <h1 className="mt-6 text-5xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl">
-              Accelerating
+              Powering  <span className="text-blue-500">ERP & AI</span>
               <br />
-              <span className="text-blue-500">AI Innovation</span>
-              <br />
-              with NVIDIA
+              Innovation
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-300 sm:text-lg">
-              Global Infoventures is a technology and innovation company helping
-              organizations unlock the power of Artificial Intelligence,
-              enterprise software, and high-performance computing. As an NVIDIA
-              Elite Partner, we enable businesses and institutions to accelerate
-              AI adoption with advanced NVIDIA solutions and future-ready
-              technology.
+              Global Infoventures Pvt. Ltd., founded in 2000, delivers reliable and innovative ERP & AI solutions backed by ISO-certified processes, advanced technology, and a strong commitment to quality and customer satisfaction.
             </p>
           </div>
 
@@ -56,35 +49,13 @@ const Home = () => {
             <div className="relative flex items-center justify-center">
               <div className="absolute h-72 w-72 rounded-full bg-blue-500/20 blur-[100px]" />
               <img
-                src={images.dgxB200}
+                src={images.gi}
                 alt="NVIDIA DGX B200"
                 className="relative z-10 w-full max-w-lg object-contain drop-shadow-2xl"
               />
             </div>
 
-            {/* Floating info badge */}
-            <div className="absolute bottom-2 right-2 z-20 flex items-center gap-3 rounded-xl border border-slate-700/60 bg-[#0b1424]/90 px-4 py-3 shadow-xl backdrop-blur sm:bottom-6 sm:right-6">
-              <svg
-                viewBox="0 0 24 24"
-                className="h-6 w-6 flex-shrink-0 text-green-500"
-                fill="currentColor"
-              >
-                <path
-                  d="M12 2l9 4.9v10.2L12 22l-9-4.9V6.9L12 2z"
-                  opacity="0.15"
-                />
-                <path d="M12 4.2L5 8v8l7 3.8 7-3.8V8l-7-3.8zM8 9.5c1.5-.6 2.9-.6 4 0 1.4.7 1.6 2 1.6 3.3 0 1.6-.6 3-2.2 3.6-1.2.4-2.4.2-3.4-.4v-1.6c.8.6 1.7.9 2.6.6.8-.3 1.1-.9 1.1-1.7 0-.7-.2-1.3-1.1-1.7-1-.4-2.1-.2-3 .4L8 9.5z" />
-              </svg>
-              <div className="leading-tight">
-                <p className="text-[11px] font-bold uppercase tracking-wide text-slate-400">
-                  NVIDIA
-                </p>
-                <p className="text-sm font-bold text-white">DGX B200</p>
-                <p className="text-[11px] text-slate-400">
-                  Built for the Era of AI
-                </p>
-              </div>
-            </div>
+
           </div>
         </div>
       </section>
@@ -114,17 +85,15 @@ const Home = () => {
               </div>
 
               <p className="mb-6 text-sm leading-relaxed text-slate-300">
-                Our G6 solutions help you manage and integrate all core business
-                processes—finance, HR, inventory, sales, and more—in one unified
-                platform.
+                Our Complete College ERP Solution is an all-in-one platform that digitally manages attendance, admissions, students, faculty, fees, finance, examinations, timetable, library, hostel, transport, HR, payroll and more. With automation, real-time analytics, reports, secure access and dedicated portals, it reduces manual work and provides a smart, centralized and cloud-based solution for complete college management.
               </p>
 
               <ul className="mb-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {[
-                  "Streamline Operations",
-                  "Improve Productivity",
-                  "Real-time Insights",
-                  "Scalable & Secure",
+ "Complete Institution Management",
+                  "Smart Automation & Real-Time Attendance",
+                  "Powerful Portals, Analytics & Reports",
+                  "Secure, Scalable & Cloud-Based",
                 ].map((item) => (
                   <li
                     key={item}
@@ -135,18 +104,8 @@ const Home = () => {
                   </li>
                 ))}
               </ul>
-
-              {/* Same height image container */}
-              <div className="mb-8 flex h-56 items-center justify-center overflow-hidden rounded-xl border border-slate-700/60 bg-[#0a1730]">
-                <img
-                  src={images.dashboard}
-                  alt="ERP dashboard preview"
-                  className="h-full w-full object-contain"
-                />
-              </div>
-
               {/* Button stays at bottom */}
-              <div className="mt-auto">
+              <div >
                 <button
                   type="button"
                   onClick={() => navigate("/G6Solution")}
@@ -171,7 +130,7 @@ const Home = () => {
 
                 <div>
                   <h2 className="text-2xl font-bold text-white">
-                    NVIDIA Elite Partner
+                    NVIDIA (Elite Partner)
                   </h2>
 
                   <p className="text-sm text-slate-400">
@@ -181,17 +140,14 @@ const Home = () => {
               </div>
 
               <p className="mb-6 text-sm leading-relaxed text-slate-300">
-                We supply NVIDIA DGX B200 systems, designed for breakthrough AI
-                performance, enabling organizations to train, fine-tune, and
-                deploy large-scale AI models faster than ever.
-              </p>
+                We are proud to be an NVIDIA Elite Partner, delivering advanced AI, accelerated computing, and high-performance infrastructure solutions. Our partnership enables us to provide cutting-edge NVIDIA technologies, GPU platforms, enterprise AI solutions, and expert technical support. We help universities, enterprises, and research institutions build and scale AI environments, accelerating innovation, digital transformation, and future-ready technology adoption.</p>
 
               <ul className="mb-6 grid grid-cols-1 gap-2.5 sm:grid-cols-2">
                 {[
-                  "Next-Gen AI Performance",
-                  "8x NVIDIA Blackwell GPUs",
-                  "High-Speed Memory & Networking",
-                  "Enterprise-Grade Reliability",
+                  "DGX Installation",
+                  "Faclty Development Programme",
+                  "DGX User Training",
+                  "DGX Admin Training",
                 ].map((item) => (
                   <li
                     key={item}
@@ -204,16 +160,10 @@ const Home = () => {
               </ul>
 
               {/* Same height image container */}
-              <div className="mb-8 flex h-56 items-center justify-center overflow-hidden rounded-xl border border-slate-700/60 bg-[#06120b] p-4">
-                <img
-                  src={images.b200}
-                  alt="NVIDIA DGX B200 system"
-                  className="h-full w-full object-contain"
-                />
-              </div>
+             
 
               {/* Button stays at bottom */}
-              <div className="mt-auto">
+              <div>
                 <button
                   type="button"
                   onClick={() => navigate("/nvidia-elite-partner")}
@@ -226,61 +176,10 @@ const Home = () => {
             </div>
           </div>
         </div>
+        
       </section>
 
-      {/* ===================== TRUST / FEATURE STRIP ===================== */}
-      <section className="bg-[#050b18] pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 rounded-2xl bg-white p-8 shadow-xl sm:grid-cols-2 lg:grid-cols-4">
-            {[
-              {
-                icon: Users,
-                iconBg: "bg-blue-50",
-                iconColor: "text-blue-600",
-                title: "Trusted by Businesses",
-                subtitle: "Across Industries",
-              },
-              {
-                icon: ShieldCheck,
-                iconBg: "bg-blue-50",
-                iconColor: "text-blue-600",
-                title: "Innovative Solutions",
-                subtitle: "Built for the Future",
-              },
-              {
-                icon: Headset,
-                iconBg: "bg-green-50",
-                iconColor: "text-green-600",
-                title: "Expert Support",
-                subtitle: "Every Step of the Way",
-              },
-              {
-                icon: Globe,
-                iconBg: "bg-blue-50",
-                iconColor: "text-blue-600",
-                title: "Global Reach",
-                subtitle: "Local Commitment",
-              },
-            ].map(({ icon: Icon, iconBg, iconColor, title, subtitle }) => (
-              <div key={title} className="flex items-center gap-4">
-                <span
-                  className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full ${iconBg}`}
-                >
-                  <Icon className={`h-6 w-6 ${iconColor}`} />
-                </span>
-                <div>
-                  <p className="text-sm font-semibold text-[#0b1a3a]">
-                    {title}
-                  </p>
-                  <p className="text-sm font-semibold text-[#0b1a3a]">
-                    {subtitle}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+
     </div>
   );
 };

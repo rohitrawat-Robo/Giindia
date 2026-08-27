@@ -273,12 +273,12 @@ const Hero = () => {
       id="top"
       style={{
         position: "relative",
-        minHeight: "100vh",
+        minHeight: "60vh",
         display: "flex",
         alignItems: "center",
         background: "#081C3A",
         overflow: "hidden",
-        padding: "80px 0",
+
       }}
     >
       <canvas
@@ -325,11 +325,11 @@ const Hero = () => {
       ></div>
 
       <div
-        className="container"
+        className="relative z-10 mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8"
         style={{
-          maxWidth: "1200px",
+          maxWidth: "",
           margin: "0 auto",
-          padding: "0 20px",
+          padding: "0 0px",
           position: "relative",
           zIndex: 2,
           width: "100%",
@@ -641,8 +641,8 @@ const Hero = () => {
 const Partnership = () => {
   return (
     <section className="py-24 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-66 mb-16">
+      <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-16">
           <div>
             <p className="eyebrow font-body font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
               Elite Partnership
@@ -694,7 +694,7 @@ const Partnership = () => {
 const Journey = () => {
   return (
     <section className="py-24 bg-[#F5F7FA]" id="journey">
-      <div className="container mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
           <p className="eyebrow font-body font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
             Our Journey
@@ -749,7 +749,7 @@ const About = () => {
 
   return (
     <section className="py-24 bg-white" id="about">
-      <div className="container mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <p className="eyebrow font-body font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
@@ -838,7 +838,7 @@ const About = () => {
 const Capabilities = () => {
   return (
     <section className="py-24 bg-white" id="capabilities">
-      <div className="container mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
           <p className="eyebrow font-body font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
             Capabilities
@@ -931,7 +931,7 @@ const Timeline = () => {
         />
       </div>
 
-      <div className="container relative mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         {/* =====================================================
             HEADER
         ====================================================== */}
@@ -1045,10 +1045,9 @@ const Timeline = () => {
                       transition-all
                       duration-700
                       ease-out
-                      ${
-                        yearVisible
-                          ? "translate-y-0 opacity-100"
-                          : "translate-y-5 opacity-0"
+                      ${yearVisible
+                        ? "translate-y-0 opacity-100"
+                        : "translate-y-5 opacity-0"
                       }
                     `}
                   >
@@ -1198,10 +1197,9 @@ const Timeline = () => {
                               hover:border-[#76B900]/30
                               hover:bg-white
                               hover:shadow-[0_12px_30px_-18px_rgba(8,28,58,0.30)]
-                              ${
-                                itemVisible
-                                  ? "translate-x-0 opacity-100"
-                                  : "translate-x-5 opacity-0"
+                              ${itemVisible
+                                ? "translate-x-0 opacity-100"
+                                : "translate-x-5 opacity-0"
                               }
                             `}
                             style={{
@@ -1303,7 +1301,7 @@ const Timeline = () => {
 const Stories = () => {
   return (
     <section className="py-24 bg-[#F5F7FA]" id="stories">
-      <div className="container mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
           <p className="eyebrow font-body font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
             Customer Success
@@ -1387,7 +1385,7 @@ const Future = () => {
 const Contact = () => {
   return (
     <section className="py-24 bg-[#F5F7FA]" id="contact">
-      <div className="container mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
             <p className="eyebrow font-body font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
