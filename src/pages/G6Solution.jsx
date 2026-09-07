@@ -220,7 +220,6 @@ const HeroSection = ({ aboutRef }) => {
                   G6
                 </span>
               </h1>
-
               {/* Subtitle */}
               <p className="text-lg sm:text-xl font-semibold text-white mb-4 max-w-2xl mx-auto lg:mx-0">
                 A comprehensive Software Platform for automation of Education
@@ -623,7 +622,7 @@ const HeroSection = ({ aboutRef }) => {
                   <img
                     src={images.dashboard}
                     alt="AIMS Pre Admission Solution - Software for University, School, College, Institute - India"
-                    className="w-full h-[320px] object-cover rounded-xl shadow-md"
+                    className="rounded-xl shadow-md w-full h-[224px] "  
                   />
                 </div>
 
@@ -639,15 +638,16 @@ const HeroSection = ({ aboutRef }) => {
                 data-delay=".4"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
+                transition={{ duration:  0.6, delay: 0.4 }}
+                
               >
                 <div className="feature-img w-full mb-5">
-                  <img
-                    src={images.sim}
-                    alt="G-6 - Software for University, School, College, Institute - India"
-                    className="w-full h-[320px] object-cover rounded-xl shadow-md"
-                  />
-                </div>
+    <img
+      src={images.sim}
+      alt="G-6 - Software for University, School, College, Institute - India"
+      className="rounded-xl shadow-md w-full h-[350px]  "
+    />
+  </div>
 
                 <h5 className="title title-sm text-lg md:text-xl font-bold text-slate-900">
                   G-6

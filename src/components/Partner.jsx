@@ -324,17 +324,7 @@ const Hero = () => {
         }}
       ></div>
 
-      <div
-        className="relative z-10 mx-auto w-full max-w-[1280px] px-4 sm:px-6 lg:px-8"
-        style={{
-          maxWidth: "",
-          margin: "0 auto",
-          padding: "0 0px",
-          position: "relative",
-          zIndex: 2,
-          width: "100%",
-        }}
-      >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
           className="row align-items-center"
           style={{
@@ -345,36 +335,10 @@ const Hero = () => {
           }}
         >
           <div className="hero-copy">
-            <div
-              className="eyebrow-badge"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "10px",
-                background: "rgba(118,185,0,0.12)",
-                padding: "8px 18px",
-                borderRadius: "100px",
-                color: "#76B900",
-                fontSize: "0.75rem",
-                fontWeight: "700",
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                marginBottom: "24px",
-              }}
-            >
-              <span
-                className="badge-dot"
-                style={{
-                  display: "inline-block",
-                  width: "8px",
-                  height: "8px",
-                  borderRadius: "50%",
-                  background: "#76B900",
-                  animation: "pulse-dot 2s ease-in-out infinite",
-                }}
-              ></span>
+            
+             <span className="inline-block font-mono font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#76B900] mb-4 bg-[#76B900]/10 px-4 py-1.5 rounded-full"> 
               NVIDIA Elite Partner &middot; India
-            </div>
+              </span>           
 
             <h1
               className="hero-title"
@@ -647,9 +611,8 @@ const Partnership = () => {
             <p className="eyebrow font-body font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
               Elite Partnership
             </p>
-            <h2 className="section-title font-display font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
-              Why the NVIDIA Partnership Matters
-            </h2>
+            <h2 class="text-4xl font-bold text-slate-900 lg:text-5xl">Why the NVIDIA <br/><span class="text-green-600">Partnership Matters</span></h2>
+        
             <p className="section-body text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch]">
               As an NVIDIA Elite Partner, we offer clients direct access to
               NVIDIA's architecture teams, priority hardware allocation, and
@@ -657,7 +620,7 @@ const Partnership = () => {
               results.
             </p>
           </div>
-          <div className="flex-shrink-0">
+          <div className="flex-shrink-10">
             <img
               src="elite.jpg"
               alt="NVIDIA Elite Partner"
