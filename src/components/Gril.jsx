@@ -495,19 +495,98 @@ const WildcardEntry = () => {
 // ============================================================
 const GRILHistory = () => {
   // ----- GALLERY 1: ABESIT (5 images) -----
-  const abesitGalleryImages = [images.abesit];
+  const abesitGalleryImages = [
+    images.abesit,
+    images.abesit1,
+    images.abesit2,
+    images.abesit3,
+    images.abesit4,
+  
+  ];
 
   // ----- GALLERY 2: GLBAJAJ (13 images) -----
-  const glbajajGalleryImages = [images.glbajaj];
+  const glbajajGalleryImages = [
+    images.glbj1,
+    images.glbj2,
+    images.glbj3,
+    images.glbj4,
+    images.glbj6,
+    images.glbj7,
+    images.glbj8,
+    images.glbj9,
+    images.glbj10,
+    images.glbj11,
+    images.glbj12,
+    images.glbj13,
+  ];
 
   // ----- GALLERY 3: RV College (9 images) -----
-  const rvGalleryImages = [images.rv];
+  const rvGalleryImages = [
+
+    images.rv1,
+    images.rv2,
+    images.rv3,
+    images.rv4,
+    images.rv5,
+    images.rv6,
+    images.rv7,
+    images.rv8,
+    images.rv9,
+  ];
 
   // ----- GALLERY 4: KIET (29 images) -----
-  const kietGalleryImages = [images.kiet1];
+  const kietGalleryImages = [ 
+    images.kiet1,
+    images.kiet2,
+    images.kiet3,
+    images.kiet4,
+    images.kiet5,
+    images.kiet6,
+    images.kiet7,
+    images.kiet8,
+    images.kiet9,
+    images.kiet10,
+    images.kiet11,
+    images.kiet12,
+    images.kiet13,
+    images.kiet14,
+    images.kiet15,
+    images.kiet16,
+    images.kiet17,
+    images.kiet18,
+    images.kiet19,
+    images.kiet20,
+    images.kiet21,
+    images.kiet22,
+    images.kiet23,
+    images.kiet24,
+    images.kiet25,
+    images.kiet26,
+    images.kiet27,
+    images.kiet28,
+    images.kiet29
+  
+  
+  ];
 
   // ----- GALLERY 5: GTC (13 images) -----
-  const gtcGalleryImages = [images.gt1];
+  const gtcGalleryImages = [
+    images.gt1,
+    images.gt2,
+    images.gt3,
+    images.gt4,
+    images.gt5,
+    images.gt6,
+    images.gt7,
+    images.gt8,
+    images.gt9,
+    images.gt10,
+    images.gt11,
+    images.gt12,
+    images.gt13,
+    
+  
+  ];
 
   // ----- Lightbox state -----
   const [lightboxState, setLightboxState] = useState({
