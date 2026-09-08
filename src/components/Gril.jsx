@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, React, useEffect } from "react";
 import {
   ChevronRight,
   Users,
@@ -18,6 +18,8 @@ import {
   Download,
   FileText,
   ExternalLink,
+  X,
+  ChevronLeft,
 } from "lucide-react";
 
 // ============================================================
@@ -27,12 +29,143 @@ import images from "../../public/images.js";
 import SEO from "./SEO.jsx";
 
 // ============================================================
+// GALLERY LIGHTBOX COMPONENT
+// ============================================================
+const GalleryLightbox = ({
+  isOpen,
+  onClose,
+  images: galleryImages,
+  initialIndex = 0,
+  title,
+}) => {
+  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+
+  // Reset index when gallery opens with new initialIndex
+  useEffect(() => {
+    if (isOpen) {
+      setCurrentIndex(initialIndex);
+    }
+  }, [isOpen, initialIndex]);
+
+  // Handle keyboard events
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") {
+        onClose();
+      } else if (e.key === "ArrowLeft") {
+        goToPrevious();
+      } else if (e.key === "ArrowRight") {
+        goToNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isOpen, currentIndex]);
+
+  // Prevent body scroll when modal is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  const goToPrevious = () => {
+    setCurrentIndex((prev) =>
+      prev === 0 ? galleryImages.length - 1 : prev - 1,
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentIndex((prev) =>
+      prev === galleryImages.length - 1 ? 0 : prev + 1,
+    );
+  };
+
+  if (!isOpen || !galleryImages || galleryImages.length === 0) return null;
+
+  const currentImage = galleryImages[currentIndex];
+
+  return (
+    <div
+      className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center"
+      onClick={(e) => {
+        // Close only if clicking the backdrop (not the image or controls)
+        if (e.target === e.currentTarget) {
+          onClose();
+        }
+      }}
+    >
+      {/* Close button */}
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 z-10 text-white hover:text-gray-300 transition-colors p-2 rounded-full hover:bg-white/10"
+        aria-label="Close gallery"
+      >
+        <X className="w-8 h-8" />
+      </button>
+
+      {/* Title (if provided) */}
+      {title && (
+        <div className="absolute top-4 left-4 z-10 text-white text-sm font-medium opacity-80 max-w-[70%]">
+          {title}
+        </div>
+      )}
+
+      {/* Image counter */}
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 text-white text-sm font-medium bg-black/50 px-4 py-2 rounded-full">
+        {currentIndex + 1} / {galleryImages.length}
+      </div>
+
+      {/* Main image */}
+      <div className="relative w-full h-full flex items-center justify-center p-4 md:p-8">
+        <img
+          src={currentImage}
+          alt={`Gallery image ${currentIndex + 1}`}
+          className="max-h-[85vh] max-w-[95vw] object-contain rounded-lg"
+        />
+
+        {/* Navigation buttons - only show if more than 1 image */}
+        {galleryImages.length > 1 && (
+          <>
+            {/* Previous button */}
+            <button
+              onClick={goToPrevious}
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors p-2 rounded-full hover:bg-white/10 bg-black/30"
+              aria-label="Previous image"
+            >
+              <ChevronLeft className="w-8 h-8" />
+            </button>
+
+            {/* Next button */}
+            <button
+              onClick={goToNext}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white hover:text-gray-300 transition-colors p-2 rounded-full hover:bg-white/10 bg-black/30"
+              aria-label="Next image"
+            >
+              <ChevronRight className="w-8 h-8" />
+            </button>
+          </>
+        )}
+      </div>
+    </div>
+  );
+};
+
+// ============================================================
 // SECTION 1 — KNOWING GRIL (Hero)
 // ============================================================
 const KnowingGRIL = () => {
   return (
     <section className="py-16 md:py-20 lg:py-28 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left: Content */}
           <div>
@@ -90,7 +223,7 @@ const KnowingGRIL = () => {
 const WhyGRIL = () => {
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
           Why GRIL!
         </h2>
@@ -171,7 +304,7 @@ const WhyGRIL = () => {
 const GRILPlatform = () => {
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-gray-50 border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
           The Platform
         </h2>
@@ -227,7 +360,7 @@ const GRILPlatform = () => {
 const SelectionProcess = () => {
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-start">
           {/* Section Title */}
           <div className="md:col-span-4 lg:col-span-3">
@@ -332,38 +465,79 @@ const SelectionProcess = () => {
 // ============================================================
 const WildcardEntry = () => {
   return (
-  <section className="py-16 md:py-20 lg:py-24 bg-gray-50 border-b border-gray-200">
-  <div className="max-w-7xl mx-auto px-6 lg:px-8">
-    <div className="flex justify-center">
-      <div className="w-full max-w-3xl">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
-          WILDCARD ENTRY!!
-        </h2>
+    <section className="py-16 md:py-20 lg:py-24 bg-gray-50 border-b border-gray-200">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-center">
+          <div className="w-full max-w-7xl">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 text-center">
+              WILDCARD ENTRY!!
+            </h2>
 
-        <p className="text-gray-700 leading-relaxed text-center">
-          Wildcard Entries though limited but are an excellent opportunity.
-          In case you have deployed your AI/ML project other than notebooks
-          like Jupyter, Google Colab, Kaggle, etc., you may be entitled for
-          WILDCARD ENTRY for undertaking Training and/or Projects to be
-          deployed on GPUs. STIPEND may be offered for outstanding
-          performers. However, the selection shall be based on a personal
-          interview, for which you'll need to submit your resume along with
-          the details of the AI project undertaken by you.
-        </p>
+            <p className="text-gray-700 leading-relaxed text-center">
+              Wildcard Entries though limited but are an excellent opportunity.
+              In case you have deployed your AI/ML project other than notebooks
+              like Jupyter, Google Colab, Kaggle, etc., you may be entitled for
+              WILDCARD ENTRY for undertaking Training and/or Projects to be
+              deployed on GPUs. STIPEND may be offered for outstanding
+              performers. However, the selection shall be based on a personal
+              interview, for which you'll need to submit your resume along with
+              the details of the AI project undertaken by you.
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
   );
 };
 
 // ============================================================
-// SECTION 6 — GRIL 2022-23
+// SECTION 6 — GRIL 2022-23 (UPDATED WITH LIGHTBOX)
 // ============================================================
 const GRILHistory = () => {
+  // ----- GALLERY 1: ABESIT (5 images) -----
+  const abesitGalleryImages = [images.abesit];
+
+  // ----- GALLERY 2: GLBAJAJ (13 images) -----
+  const glbajajGalleryImages = [images.glbajaj];
+
+  // ----- GALLERY 3: RV College (9 images) -----
+  const rvGalleryImages = [images.rv];
+
+  // ----- GALLERY 4: KIET (29 images) -----
+  const kietGalleryImages = [images.kiet1];
+
+  // ----- GALLERY 5: GTC (13 images) -----
+  const gtcGalleryImages = [images.gt1];
+
+  // ----- Lightbox state -----
+  const [lightboxState, setLightboxState] = useState({
+    isOpen: false,
+    images: [],
+    initialIndex: 0,
+    title: "",
+  });
+
+  const openGallery = (images, initialIndex = 0, title = "") => {
+    setLightboxState({
+      isOpen: true,
+      images,
+      initialIndex,
+      title,
+    });
+  };
+
+  const closeGallery = () => {
+    setLightboxState({
+      isOpen: false,
+      images: [],
+      initialIndex: 0,
+      title: "",
+    });
+  };
+
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-16">
           {/* Left: Image - Sticky on large screens */}
           <div className="lg:w-5/12 w-full">
@@ -380,8 +554,6 @@ const GRILHistory = () => {
           <div className="lg:w-7/12 w-full space-y-8">
             {/* Header Section */}
             <div>
-             
-
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
                 GRIL 2022-24
               </h2>
@@ -403,10 +575,15 @@ const GRILHistory = () => {
             <div className="space-y-4 mt-6">
               {/* GRIL Orientation @ ABESIT */}
               <div className="group">
-                <a
-                  href="images/abesit-gallery.jpg"
-                  data-lightbox="photos1"
-                  className="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200"
+                <button
+                  onClick={() =>
+                    openGallery(
+                      abesitGalleryImages,
+                      0,
+                      "GRIL Orientation 2023-24 @ ABESIT, Ghaziabad",
+                    )
+                  }
+                  className="w-full flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200 text-left"
                 >
                   <span className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-lg flex items-center justify-center text-white text-sm font-bold">
                     01
@@ -418,7 +595,7 @@ const GRILHistory = () => {
                   </span>
 
                   <svg
-                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors"
+                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -430,34 +607,20 @@ const GRILHistory = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </a>
-
-                {/* Hidden images for lightbox */}
-                <div className="hidden">
-                  <a href="images/abesit1-gallery.jpg" data-lightbox="photos1">
-                    <img src="images/abesit1-gallery.jpg" alt="ABESIT 1" />
-                  </a>
-
-                  <a href="images/abesit2-gallery.jpg" data-lightbox="photos1">
-                    <img src="images/abesit2-gallery.jpg" alt="ABESIT 2" />
-                  </a>
-
-                  <a href="images/abesit3-gallery.jpg" data-lightbox="photos1">
-                    <img src="images/abesit3-gallery.jpg" alt="ABESIT 3" />
-                  </a>
-
-                  <a href="images/abesit4-gallery.jpg" data-lightbox="photos1">
-                    <img src="images/abesit4-gallery.jpg" alt="ABESIT 4" />
-                  </a>
-                </div>
+                </button>
               </div>
 
               {/* GRIL Orientation @ GLBAJAJ */}
               <div className="group">
-                <a
-                  href="images/glbajaj-gallery.jpg"
-                  data-lightbox="photos"
-                  className="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200"
+                <button
+                  onClick={() =>
+                    openGallery(
+                      glbajajGalleryImages,
+                      0,
+                      "GRIL Orientation 2023-24 @ GLBAJAJ, Gr. Noida",
+                    )
+                  }
+                  className="w-full flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200 text-left"
                 >
                   <span className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-lg flex items-center justify-center text-white text-sm font-bold">
                     02
@@ -469,7 +632,7 @@ const GRILHistory = () => {
                   </span>
 
                   <svg
-                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors"
+                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -481,69 +644,20 @@ const GRILHistory = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </a>
-
-                <div className="hidden">
-                  <a href="images/glbajaj-gallery10.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery10.jpg" alt="GLBAJAJ 1" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery11.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery11.jpg" alt="GLBAJAJ 2" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery12.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery12.jpg" alt="GLBAJAJ 3" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery7.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery7.jpg" alt="GLBAJAJ 4" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery13.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery13.jpg" alt="GLBAJAJ 5" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery1.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery1.jpg" alt="GLBAJAJ 6" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery8.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery8.jpg" alt="GLBAJAJ 7" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery9.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery9.jpg" alt="GLBAJAJ 8" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery2.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery2.jpg" alt="GLBAJAJ 9" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery3.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery3.jpg" alt="GLBAJAJ 10" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery4.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery4.jpg" alt="GLBAJAJ 11" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery5.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery5.jpg" alt="GLBAJAJ 12" />
-                  </a>
-
-                  <a href="images/glbajaj-gallery6.jpg" data-lightbox="photos">
-                    <img src="images/glbajaj-gallery6.jpg" alt="GLBAJAJ 13" />
-                  </a>
-                </div>
+                </button>
               </div>
 
               {/* GRIL AI Lab @ RV College */}
               <div className="group">
-                <a
-                  href="images/rv-college-pic1.jpg"
-                  data-lightbox="photos"
-                  className="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200"
+                <button
+                  onClick={() =>
+                    openGallery(
+                      rvGalleryImages,
+                      0,
+                      "GRIL AI Lab 2024 @ RV College, Bengaluru",
+                    )
+                  }
+                  className="w-full flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200 text-left"
                 >
                   <span className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-lg flex items-center justify-center text-white text-sm font-bold">
                     03
@@ -555,7 +669,7 @@ const GRILHistory = () => {
                   </span>
 
                   <svg
-                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors"
+                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -567,49 +681,20 @@ const GRILHistory = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </a>
-
-                <div className="hidden">
-                  <a href="images/rv-college-pic2.jpg" data-lightbox="photos">
-                    <img src="images/rv-college-pic2.jpg" alt="RV 1" />
-                  </a>
-
-                  <a href="images/rv-college-pic3.jpg" data-lightbox="photos">
-                    <img src="images/rv-college-pic3.jpg" alt="RV 2" />
-                  </a>
-
-                  <a href="images/rv-college-pic4.jpg" data-lightbox="photos">
-                    <img src="images/rv-college-pic4.jpg" alt="RV 3" />
-                  </a>
-
-                  <a href="images/rv-college-pic5.jpg" data-lightbox="photos">
-                    <img src="images/rv-college-pic5.jpg" alt="RV 4" />
-                  </a>
-
-                  <a href="images/rv-college-pic6.jpg" data-lightbox="photos">
-                    <img src="images/rv-college-pic6.jpg" alt="RV 5" />
-                  </a>
-
-                  <a href="images/rv-college-pic7.jpg" data-lightbox="photos">
-                    <img src="images/rv-college-pic7.jpg" alt="RV 6" />
-                  </a>
-
-                  <a href="images/rv-college-pic8.jpg" data-lightbox="photos">
-                    <img src="images/rv-college-pic8.jpg" alt="RV 7" />
-                  </a>
-
-                  <a href="images/rv-college-pic9.jpg" data-lightbox="photos">
-                    <img src="images/rv-college-pic9.jpg" alt="RV 8" />
-                  </a>
-                </div>
+                </button>
               </div>
 
               {/* GRIL AI Lab @ KIET */}
               <div className="group">
-                <a
-                  href="images/gallery/kiet1.webp"
-                  data-lightbox="photos"
-                  className="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200"
+                <button
+                  onClick={() =>
+                    openGallery(
+                      kietGalleryImages,
+                      0,
+                      "GRIL AI Lab 2024 @ KIET Group of Institutions",
+                    )
+                  }
+                  className="w-full flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200 text-left"
                 >
                   <span className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-lg flex items-center justify-center text-white text-sm font-bold">
                     04
@@ -621,7 +706,7 @@ const GRILHistory = () => {
                   </span>
 
                   <svg
-                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors"
+                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -633,33 +718,14 @@ const GRILHistory = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </a>
-
-                <div className="hidden">
-                  {[
-                    2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18,
-                    19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
-                  ].map((num) => (
-                    <a
-                      key={num}
-                      href={`images/gallery/kiet${num}.webp`}
-                      data-lightbox="photos"
-                    >
-                      <img
-                        src={`images/gallery/kiet${num}.webp`}
-                        alt={`KIET ${num}`}
-                      />
-                    </a>
-                  ))}
-                </div>
+                </button>
               </div>
 
               {/* GTC - 2024 */}
               <div className="group">
-                <a
-                  href="images/gallery/gt1.webp"
-                  data-lightbox="photos"
-                  className="flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200"
+                <button
+                  onClick={() => openGallery(gtcGalleryImages, 0, "GTC - 2024")}
+                  className="w-full flex items-center gap-3 p-4 bg-gray-50 hover:bg-gradient-to-r hover:from-emerald-50 hover:to-green-50 rounded-xl transition-all duration-300 border border-gray-100 hover:border-emerald-200 text-left"
                 >
                   <span className="flex-shrink-0 w-10 h-10 bg-gradient-to-r from-emerald-600 to-emerald-800 rounded-lg flex items-center justify-center text-white text-sm font-bold">
                     05
@@ -670,7 +736,7 @@ const GRILHistory = () => {
                   </span>
 
                   <svg
-                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors"
+                    className="w-5 h-5 text-gray-400 group-hover:text-emerald-700 transition-colors flex-shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -682,27 +748,21 @@ const GRILHistory = () => {
                       d="M14 5l7 7m0 0l-7 7m7-7H3"
                     />
                   </svg>
-                </a>
-
-                <div className="hidden">
-                  {[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13].map((num) => (
-                    <a
-                      key={num}
-                      href={`images/gallery/gt${num}.webp`}
-                      data-lightbox="photos"
-                    >
-                      <img
-                        src={`images/gallery/gt${num}.webp`}
-                        alt={`GTC ${num}`}
-                      />
-                    </a>
-                  ))}
-                </div>
+                </button>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Lightbox Component */}
+      <GalleryLightbox
+        isOpen={lightboxState.isOpen}
+        onClose={closeGallery}
+        images={lightboxState.images}
+        initialIndex={lightboxState.initialIndex}
+        title={lightboxState.title}
+      />
     </section>
   );
 };
@@ -732,7 +792,7 @@ const GRILProjects = () => {
 
   return (
     <section className="py-16 md:py-20 lg:py-24 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
           GRIL Projects
         </h2>
@@ -768,7 +828,12 @@ const GRILPage = () => {
       <SEO
         title="GRIL"
         description="GRIL (Global Research & Innovation Lab) — Global Infoventures' NVIDIA-powered initiative supporting AI research and innovation at academic institutions."
-        keywords={["GRIL", "Global Research Innovation Lab", "NVIDIA university program", "AI research lab India"]}
+        keywords={[
+          "GRIL",
+          "Global Research Innovation Lab",
+          "NVIDIA university program",
+          "AI research lab India",
+        ]}
         path="/gril"
       />
       <KnowingGRIL />

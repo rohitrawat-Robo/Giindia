@@ -49,6 +49,11 @@ import dgxB200 from '../public/dgxB200.png';
 import sharad from '../public/sharad.jpg';
 import aashish from '../public/aashish.jpg';
 import b200 from '../public/b200.png';
+import abesit from '../public/abesit-gallery.jpg';
+import glbajaj from '../public/glbajaj-gallery.jpg';
+import gt1 from '../public/gt1.webp';
+import kiet1 from '../public/kiet1.webp';
+import rv from '../public/rv-college-pic1.jpg';
 
 export default {
         gi,
@@ -100,6 +105,11 @@ export default {
         aashish,
         sharad,
         dgxB200,
-        b200
+        b200,
+        abesit,
+        glbajaj,
+        gt1,
+        rv,
+        kiet1
 
 }
