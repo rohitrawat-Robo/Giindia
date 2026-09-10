@@ -1,4 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
+import FeaturedEvents from "../components/FeaturedEvents.jsx";
+
 import {
   FaMicrochip,
   FaRankingStar,
@@ -647,7 +649,6 @@ const Partnership = () => {
               className="w-80 lg:w-[420px] h-auto object-contain mr-38"
             />
           </div>
-          
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6" id="partnerGrid">
           {data.partners.map((p, i) => {
@@ -1376,6 +1377,11 @@ const Future = () => {
   );
 };
 
+{
+  /* Featured Events Section (real events, pulled from src/data/featuredEvents.js) */
+}
+<FeaturedEvents />;
+
 const Contact = () => {
   return (
     <section className="py-24 bg-[#F5F7FA]" id="contact">
@@ -1610,6 +1616,7 @@ const Partner = () => {
       <Timeline />
       <Stories />
       <Future />
+      <FeaturedEvents />
       <Contact />
     </div>
   );

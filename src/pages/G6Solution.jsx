@@ -6,6 +6,169 @@ import Soultions from "../components/Solutions.jsx";
 import FeaturedEvents from "../components/FeaturedEvents.jsx";
 import SEO from "../components/SEO.jsx";
 
+const featureTableData = [
+  {
+    title: "Live Attendance Management",
+    description: "Real-time student & staff attendance tracking",
+  },
+  {
+    title: "Automated Attendance Reports",
+    description: "Attendance reports without manual calculation",
+  },
+  {
+    title: "Student Information Management",
+    description: "Complete student records in one place",
+  },
+  {
+    title: "Admission Management",
+    description: "Streamline the complete admission process",
+  },
+  {
+    title: "Fee Management",
+    description: "Automated fee collection, tracking & receipts",
+  },
+  {
+    title: "Finance & Accounting",
+    description: "Complete financial management and reporting",
+  },
+  {
+    title: "Examination Management",
+    description: "Exams, marks, grades and result management",
+  },
+  {
+    title: "Online Result Generation",
+    description: "Generate results quickly and accurately",
+  },
+  {
+    title: "Time Table Management",
+    description: "Create and manage class schedules easily",
+  },
+  {
+    title: "Faculty Management",
+    description: "Manage complete faculty information and activities",
+  },
+  {
+    title: "Employee Management",
+    description: "Centralized employee records and administration",
+  },
+  {
+    title: "Leave Management",
+    description: "Automated student and employee leave tracking",
+  },
+  {
+    title: "Hostel Management",
+    description: "Rooms, students, occupancy and hostel records",
+  },
+  {
+    title: "Transport Management",
+    description: "Routes, vehicles, drivers and student transport",
+  },
+  {
+    title: "Library Management",
+    description: "Books, issue/return and complete library records",
+  },
+  {
+    title: "Inventory Management",
+    description: "Track assets, stock and institutional inventory",
+  },
+  {
+    title: "Mess Management",
+    description: "Manage mess operations, menus and records",
+  },
+  {
+    title: "Department Management",
+    description: "Manage multiple departments from one platform",
+  },
+  {
+    title: "HR Management",
+    description: "Employee administration and HR processes",
+  },
+  {
+    title: "Payroll Management",
+    description: "Simplified salary and payroll processing",
+  },
+  {
+    title: "Automated Notifications",
+    description: "Send important updates automatically",
+  },
+  {
+    title: "SMS & Email Integration",
+    description: "Connect with students, parents and staff instantly",
+  },
+  {
+    title: "Parent Portal",
+    description: "Give parents access to attendance, fees and academic updates",
+  },
+  {
+    title: "Student Portal",
+    description: "Students can access their information anytime",
+  },
+  {
+    title: "Faculty Portal",
+    description: "Dedicated platform for teachers and faculty members",
+  },
+  {
+    title: "Admin Dashboard",
+    description: "Complete institution overview from one dashboard",
+  },
+  {
+    title: "Real-Time Analytics",
+    description: "Get actionable insights from live data",
+  },
+  {
+    title: "Worldwide Reports",
+    description: "Generate detailed reports anytime, anywhere",
+  },
+  {
+    title: "Custom Report Generation",
+    description: "Create reports according to institutional requirements",
+  },
+  {
+    title: "Automated Calculations",
+    description: "No need for manual calculations or spreadsheets",
+  },
+  {
+    title: "Document Management",
+    description: "Securely manage institutional documents",
+  },
+  {
+    title: "ID Card Management",
+    description: "Generate student and employee ID cards",
+  },
+  {
+    title: "Certificate Management",
+    description: "Generate and manage certificates digitally",
+  },
+  {
+    title: "Communication Management",
+    description: "Centralized communication between institution and users",
+  },
+  {
+    title: "Role-Based Access",
+    description: "Give users access according to their responsibilities",
+  },
+  {
+    title: "Multi-Campus Management",
+    description: "Manage multiple campuses from a single system",
+  },
+  {
+    title: "Cloud-Based Access",
+    description: "Access your ERP from anywhere, anytime",
+  },
+  {
+    title: "Data Security",
+    description: "Secure and controlled access to institutional data",
+  },
+  {
+    title: "Automation-Driven Workflows",
+    description: "Reduce repetitive tasks and manual work",
+  },
+  {
+    title: "Complete College Management",
+    description: "One integrated ERP for managing the entire institution",
+  },
+];
+
 const HeroSection = ({ aboutRef }) => {
   const canvasRef = useRef(null);
 
@@ -340,8 +503,6 @@ const HeroSection = ({ aboutRef }) => {
       {/* About Section */}
       <AboutUs embedded />
 
-      {/* Featured Events Section (real events, pulled from src/data/featuredEvents.js) */}
-      <FeaturedEvents />
 
       {/* Key Components Section - UPDATED */}
       <section className="key-components-section pt-8 pb-16 md:pt-10 md:pb-20 bg-white">
@@ -662,215 +823,84 @@ const HeroSection = ({ aboutRef }) => {
 
       {/* Key Features Section */}
       <section
-        className="section section-l section-product bg-white py-20"
-        id="solution"
+        className="section section-l bg-white py-20 md:py-24"
+        id="features"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Heading */}
-          <div className="section-head text-center wide-auto-sm mb-12 md:mb-16">
+          <div className="section-head text-center mb-12 md:mb-16">
             <h2
-              className="title text-3xl md:text-4xl font-bold text-slate-900"
+              className="title text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900"
               data-animate="fadeInUp"
               data-delay=".1"
             >
               Key Features
             </h2>
+
+            <p
+              className="mt-4 max-w-2xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed"
+              data-animate="fadeInUp"
+              data-delay=".2"
+            >
+              Explore the powerful features available in the G6 Education ERP platform.
+            </p>
           </div>
 
-          {/* Features Grid */}
-          <div className="nk-block nk-block-features-s3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              {/* Global Single Platform */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".3"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
-                  <span className="text-3xl">☁️</span>
-                </div>
+          {/* Feature Table */}
+          <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-lg">
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[700px] border-collapse">
+                <thead>
+                  <tr className="bg-[#08193A] text-white">
+                    <th className="px-5 py-4 text-left text-xs md:text-sm font-semibold uppercase tracking-wider w-[80px]">
+                      #
+                    </th>
+                    <th className="px-5 py-4 text-left text-xs md:text-sm font-semibold uppercase tracking-wider w-[280px] md:w-[320px]">
+                      Feature
+                    </th>
+                    <th className="px-5 py-4 text-left text-xs md:text-sm font-semibold uppercase tracking-wider">
+                      Description
+                    </th>
+                  </tr>
+                </thead>
 
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Global Single Platform
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Anytime-Anywhere Access
-                  </p>
-                </div>
-              </motion.div>
+                <tbody>
+                  {featureTableData.map((feature, index) => (
+                    <motion.tr
+                      key={index}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{
+                        duration: 0.4,
+                        delay: index * 0.03,
+                      }}
+                      className="group border-b border-slate-100 last:border-b-0 hover:bg-slate-50 transition-colors duration-200"
+                    >
+                      {/* Number */}
+                      <td className="px-5 py-4 align-top">
+                        <span className="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#76B900]/10 text-[#76B900] font-bold text-sm transition-colors duration-200 group-hover:bg-[#76B900] group-hover:text-white">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                      </td>
 
-              {/* Responsive Interfaces */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
-                  <span className="text-3xl">🛡️</span>
-                </div>
+                      {/* Feature */}
+                      <td className="px-5 py-4 align-top">
+                        <span className="font-semibold text-slate-900 text-sm md:text-base">
+                          {feature.title}
+                        </span>
+                      </td>
 
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Responsive Interfaces
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Universal and Interactive
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* All-in-One Mobile App */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".5"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
-                  <span className="text-3xl">📋</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    All-in-One Mobile App
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Complete mobile solution
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Digital Identification */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".6"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
-                  <span className="text-3xl">🌐</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Digital Identification
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Secure identity management
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Powerful Business Intelligence */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".7"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
-                  <span className="text-3xl">📊</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Powerful Business Intelligence
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Data-driven insights
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Multi-Tier Security */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".8"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
-                  <span className="text-3xl">🔒</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Multi-Tier Security
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Enterprise-grade protection
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* High RoI */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".9"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
-                  <span className="text-3xl">💰</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    High RoI
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Maximum return on investment
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Comprehensive Dashboards */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay="1.0"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
-                  <span className="text-3xl">📈</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Comprehensive Dashboards
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Real-time analytics
-                  </p>
-                </div>
-              </motion.div>
+                      {/* Description */}
+                      <td className="px-5 py-4 align-top">
+                        <span className="text-slate-600 text-sm md:text-base leading-relaxed">
+                          {feature.description}
+                        </span>
+                      </td>
+                    </motion.tr>
+                  ))}
+                </tbody>
+              </table>
             </div>
           </div>
         </div>

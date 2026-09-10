@@ -15,5 +15,11 @@
   animation: fadeInUp 0.6s ease-out both;
 }
 
+body{ 
+  
+  font-family:'Fraunces',serif, "Google Sans", sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-optical-sizing: auto;   
+  font-style: normal;   
+}
 
 
