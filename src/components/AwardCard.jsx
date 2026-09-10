@@ -52,13 +52,13 @@ const AwardCard = ({
 
           {/* Date */}
           {date && (
-            <p className="text-xs font-bold uppercase tracking-wider text-[#76B900] mb-2">
+            <p className="text-xs font-bold uppercase tracking-wider text-[#00a63e] mb-2">
               {date}
             </p>
           )}
 
           {/* Title */}
-          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#76B900] transition-colors duration-300">
+          <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-[#00a63e] transition-colors duration-300">
             {title}
           </h3>
 
@@ -70,7 +70,7 @@ const AwardCard = ({
           )}
 
           {/* View Award */}
-          <div className="flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-[#76B900] transition-colors duration-300">
+          <div className="flex items-center gap-2 text-sm font-semibold text-gray-900 group-hover:text-[#00a63e] transition-colors duration-300">
             <span>
               View Award
             </span>

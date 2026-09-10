@@ -278,7 +278,7 @@ const Hero = () => {
         alignItems: "center",
         background: "#081C3A",
         overflow: "hidden",
-        fontFamily: '"Manrope", sans-serif',
+
       }}
     >
       <canvas
@@ -336,16 +336,16 @@ const Hero = () => {
         >
           <div className="hero-copy">
             <span
-              className="font-manrope inline-block font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#76B900] mb-4 bg-[#76B900]/10 px-4 py-1.5 rounded-full"
-              style={{ fontFamily: '"Manrope", sans-serif' }}
+              className=" inline-block font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#00a63e] mb-4 bg-[#00a63e]/10 px-4 py-1.5 rounded-full"
+
             >
               NVIDIA Elite Partner &middot; India
             </span>
 
             <h1
-              className="hero-title font-manrope"
+              className="hero-title "
               style={{
-                fontFamily: '"Manrope", sans-serif',
+
                 fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
                 fontWeight: "800",
                 lineHeight: "1.1",
@@ -359,7 +359,7 @@ const Hero = () => {
               <span
                 className="text-grad"
                 style={{
-                  background: "linear-gradient(135deg, #76B900, #00D4FF)",
+                  background: "linear-gradient(135deg, #00a63e, #00D4FF)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -370,9 +370,9 @@ const Hero = () => {
             </h1>
 
             <p
-              className="hero-sub font-manrope"
+              className="hero-sub "
               style={{
-                fontFamily: '"Manrope", sans-serif',
+
                 fontSize: "1.125rem",
                 lineHeight: "1.7",
                 color: "rgba(255,255,255,0.7)",
@@ -397,15 +397,15 @@ const Hero = () => {
             >
               <a
                 href="#contact"
-                className="btn btn-gi-primary btn-ripple font-manrope"
+                className="btn btn-gi-primary btn-ripple "
                 style={{
-                  fontFamily: '"Manrope", sans-serif',
+
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
                   padding: "14px 34px",
                   borderRadius: "12px",
-                  background: "linear-gradient(135deg, #76B900, #5A8C00)",
+                  background: "linear-gradient(135deg, #00a63e, #5A8C00)",
                   color: "#FFFFFF",
                   fontWeight: "700",
                   fontSize: "1rem",
@@ -420,9 +420,9 @@ const Hero = () => {
               </a>
               <a
                 href="#capabilities"
-                className="btn btn-gi-ghost btn-ripple font-manrope"
+                className="btn btn-gi-ghost btn-ripple "
                 style={{
-                  fontFamily: '"Manrope", sans-serif',
+
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
@@ -453,9 +453,9 @@ const Hero = () => {
               }}
             >
               <div
-                className="trust-chip font-manrope"
+                className="trust-chip "
                 style={{
-                  fontFamily: '"Manrope", sans-serif',
+
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "8px",
@@ -471,9 +471,9 @@ const Hero = () => {
                 <FaMicrochip /> NVIDIA Elite Partner
               </div>
               <div
-                className="trust-chip font-manrope"
+                className="trust-chip "
                 style={{
-                  fontFamily: '"Manrope", sans-serif',
+
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "8px",
@@ -524,56 +524,12 @@ const Hero = () => {
         </div>
       </div>
 
-      <div
-        className="hero-scroll-cue font-manrope"
-        style={{
-          fontFamily: '"Manrope", sans-serif',
-          position: "absolute",
-          bottom: "40px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          gap: "8px",
-          color: "rgba(255,255,255,0.3)",
-          fontSize: "0.7rem",
-          fontWeight: "600",
-          letterSpacing: "0.06em",
-          textTransform: "uppercase",
-        }}
-      >
-        <span
-          style={{
-            display: "block",
-            width: "24px",
-            height: "40px",
-            border: "2px solid rgba(255,255,255,0.2)",
-            borderRadius: "12px",
-            position: "relative",
-          }}
-        >
-          <span
-            style={{
-              position: "absolute",
-              top: "6px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "4px",
-              height: "12px",
-              borderRadius: "2px",
-              background: "#76B900",
-              animation: "cue-move 1.8s ease-in-out infinite",
-            }}
-          ></span>
-        </span>
-        Scroll
-      </div>
+
 
       {/* Keyframe animations */}
       <style>{`
-        .font-manrope {
-          font-family: "Manrope", sans-serif;
+        . {
+       
         }
         @keyframes pulse-dot {
           0%, 100% { opacity: 1; transform: scale(1); }
@@ -622,17 +578,17 @@ const Partnership = () => {
           {/* LEFT — Content */}
           <div className="w-full flex flex-col items-start">
             {/* Eyebrow */}
-            <p className="font-manrope font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-5">
+            <p className=" font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-5">
               Elite Partnership
             </p>
 
             {/* Heading */}
-            <h2 className="font-manrope text-4xl lg:text-5xl font-bold leading-[1.12] text-slate-900 max-w-[650px]">
+            <h2 className=" text-4xl lg:text-5xl font-bold leading-[1.12] text-slate-900 max-w-[650px]">
               Why the NVIDIA <br />
-              <span className="text-[#76B900]">Partnership Matters</span>
+              <span className="text-[#00a63e]">Partnership Matters</span>
             </h2>
 
-            <p className="font-manrope text-lg leading-[1.7] text-[#6B7F9E] w-full mt-6">
+            <p className=" text-lg leading-[1.7] text-[#6B7F9E] w-full mt-6">
               As an NVIDIA Elite Partner, we offer clients direct access to
               NVIDIA's architecture teams, priority hardware allocation, and
               certified technical expertise that ensures every design delivers
@@ -647,7 +603,7 @@ const Partnership = () => {
               className="w-80 lg:w-[420px] h-auto object-contain mr-38"
             />
           </div>
-          
+
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6" id="partnerGrid">
           {data.partners.map((p, i) => {
@@ -657,13 +613,13 @@ const Partnership = () => {
                 key={i}
                 className="glass-card partner-card bg-white rounded-2xl p-6 shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] border border-[rgba(8,28,58,0.08)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
               >
-                <div className="card-icon w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[rgba(118,185,0,0.1)] to-[rgba(0,212,255,0.05)] text-[#76B900] text-xl mb-4">
+                <div className="card-icon w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[rgba(118,185,0,0.1)] to-[rgba(0,212,255,0.05)] text-[#00a63e] text-xl mb-4">
                   <Icon />
                 </div>
-                <h3 className="card-title font-manrope font-bold text-[#081C3A] text-lg mb-2">
+                <h3 className="card-title  font-bold text-[#081C3A] text-lg mb-2">
                   {p.title}
                 </h3>
-                <p className="card-text font-manrope text-[#6B7F9E] text-sm leading-relaxed">
+                <p className="card-text  text-[#6B7F9E] text-sm leading-relaxed">
                   {p.text}
                 </p>
               </div>
@@ -680,13 +636,13 @@ const Journey = () => {
     <section className="py-24 bg-[#F5F7FA]" id="journey">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
-          <p className="eyebrow font-manrope font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
+          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
             Our Journey
           </p>
-          <h2 className="section-title font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
+          <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
             Our Journey with NVIDIA
           </h2>
-          <p className="section-body font-manrope text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch]">
+          <p className="section-body  text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch]">
             From our first partnership to becoming an NVIDIA Elite Partner,
             we've built India's most trusted AI infrastructure practice.
           </p>
@@ -695,15 +651,15 @@ const Journey = () => {
           {data.journey.map((j, i) => (
             <div
               key={i}
-              className="journey-card bg-white rounded-2xl p-7 shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] border-l-4 border-l-[#76B900] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
+              className="journey-card bg-white rounded-2xl p-7 shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] border-l-4 border-l-[#00a63e] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
             >
-              <span className="year-badge font-manrope font-extrabold text-[#76B900] text-xl block mb-2">
+              <span className="year-badge  font-extrabold text-[#00a63e] text-xl block mb-2">
                 {j.year}
               </span>
-              <h4 className="font-manrope font-bold text-[#081C3A] text-lg mb-1">
+              <h4 className=" font-bold text-[#081C3A] text-lg mb-1">
                 {j.title}
               </h4>
-              <p className="font-manrope text-[#6B7F9E] text-sm mb-0">
+              <p className=" text-[#6B7F9E] text-sm mb-0">
                 {j.desc}
               </p>
             </div>
@@ -738,15 +694,15 @@ const About = () => {
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="eyebrow font-manrope font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
+            <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
               About Global Infoventures
             </p>
-            <h2 className="section-title font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
+            <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
               Powering India's
               <br />
               AI Revolution
             </h2>
-            <p className="section-body font-manrope text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch] mb-8">
+            <p className="section-body  text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch] mb-8">
               Global Infoventures is a premier technology solutions provider and
               NVIDIA Elite Partner, specializing in AI infrastructure,
               high-performance computing (HPC), and enterprise-grade GPU
@@ -762,14 +718,14 @@ const About = () => {
                     key={idx}
                     className="flex gap-4 items-start p-4 rounded-xl bg-[#F5F7FA] border border-[rgba(8,28,58,0.08)] transition-all hover:bg-white hover:shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] hover:translate-x-1"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-white text-[#76B900] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white text-[#00a63e] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
                       <Icon />
                     </div>
                     <div>
-                      <strong className="block font-manrope text-[#081C3A]">
+                      <strong className="block  text-[#081C3A]">
                         {item.title}
                       </strong>
-                      <span className="font-manrope text-[#6B7F9E] text-sm">
+                      <span className=" text-[#6B7F9E] text-sm">
                         {item.desc}
                       </span>
                     </div>
@@ -778,7 +734,7 @@ const About = () => {
               })}
             </div>
           </div>
-          <div className="relative pl-8 before:content-[''] before:absolute before:left-2 before:top-4 before:bottom-14 before:w-0.5 before:bg-gradient-to-b before:from-[#76B900] before:to-[#00D4FF]">
+          <div className="relative pl-8 before:content-[''] before:absolute before:left-2 before:top-4 before:bottom-14 before:w-0.5 before:bg-gradient-to-b before:from-[#00a63e] before:to-[#00D4FF]">
             {[
               {
                 year: "2003",
@@ -803,13 +759,13 @@ const About = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="relative pl-8 pb-8 last:pb-0 before:content-[''] before:absolute before:-left-8 before:top-1 before:w-3.5 before:h-3.5 before:rounded-full before:bg-white before:border-4 before:border-[#76B900] before:shadow-[0_0_0_4px_rgba(118,185,0,0.1)]"
+                className="relative pl-8 pb-8 last:pb-0 before:content-[''] before:absolute before:-left-8 before:top-1 before:w-3.5 before:h-3.5 before:rounded-full before:bg-white before:border-4 before:border-[#00a63e] before:shadow-[0_0_0_4px_rgba(118,185,0,0.1)]"
               >
-                <span className="journey-year font-manrope font-extrabold text-[#76B900] text-lg block mb-1">
+                <span className="journey-year  font-extrabold text-[#00a63e] text-lg block mb-1">
                   {item.year}
                 </span>
                 <div
-                  className="journey-text font-manrope text-[#6B7F9E] leading-relaxed"
+                  className="journey-text  text-[#6B7F9E] leading-relaxed"
                   dangerouslySetInnerHTML={{ __html: item.text }}
                 ></div>
               </div>
@@ -823,16 +779,16 @@ const About = () => {
 
 const Capabilities = () => {
   return (
-    <section className="py-24 bg-white" id="capabilities">
+    <section className="py-24 bg-[#F5F7FA]" id="capabilities">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
-          <p className="eyebrow font-manrope font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
+          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
             Capabilities
           </p>
-          <h2 className="section-title font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
+          <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
             NVIDIA Solutions, End to End
           </h2>
-          <p className="section-body font-manrope text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch]">
+          <p className="section-body  text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch]">
             From a single certified workstation to a multi-rack SuperPOD, we
             design, size, deploy, and support every layer of the stack.
           </p>
@@ -843,15 +799,15 @@ const Capabilities = () => {
             return (
               <div
                 key={i}
-                className="capability-card bg-[#F5F7FA] rounded-2xl p-7 text-center border border-[rgba(8,28,58,0.08)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)] hover:border-[#76B900]"
+                className="capability-card bg-[#ffffff] rounded-2xl p-7 text-center border border-[rgba(8,28,58,0.08)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)] hover:border-[#00a63e]"
               >
-                <div className="icon-wrap w-14 h-14 rounded-xl bg-gradient-to-br from-[#76B900] to-[#5A8C00] flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                <div className="icon-wrap w-14 h-14 rounded-xl bg-gradient-to-br from-[#00a63e] to-[#5A8C00] flex items-center justify-center mx-auto mb-4 text-white text-2xl">
                   <Icon />
                 </div>
-                <h4 className="font-manrope font-bold text-[#081C3A] text-lg mb-2">
+                <h4 className=" font-bold text-[#081C3A] text-lg mb-2">
                   {c.title}
                 </h4>
-                <p className="font-manrope text-[#6B7F9E] text-sm mb-0">
+                <p className=" text-[#6B7F9E] text-sm mb-0">
                   {c.desc}
                 </p>
               </div>
@@ -899,14 +855,14 @@ const Timeline = () => {
   return (
     <section
       id="timeline"
-      className="relative overflow-hidden bg-[#F7F9FC] py-24 md:py-28"
+      className="relative overflow-hidden bg-white py-24 md:py-28"
     >
       {/* =====================================================
           BACKGROUND DECORATION
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[-180px] top-[10%] h-[360px] w-[360px] rounded-full bg-[#76B900]/[0.06] blur-3xl" />
+        <div className="absolute left-[-180px] top-[10%] h-[360px] w-[360px] rounded-full bg-[#00a63e]/[0.06] blur-3xl" />
 
         <div className="absolute right-[-180px] bottom-[5%] h-[360px] w-[360px] rounded-full bg-[#00D4FF]/[0.05] blur-3xl" />
 
@@ -918,7 +874,7 @@ const Timeline = () => {
           }}
         />
       </div>
-
+ 
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         {/* =====================================================
             HEADER
@@ -926,22 +882,22 @@ const Timeline = () => {
 
         <div className="mx-auto mb-20 max-w-[760px] text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-[#76B900]" />
+            <span className="h-px w-10 bg-[#00a63e]" />
 
-            <p className="font-manrope text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#76B900]">
+            <p className=" text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#00a63e]">
               Training Footprint
             </p>
 
-            <span className="h-px w-10 bg-[#76B900]" />
+            <span className="h-px w-10 bg-[#00a63e]" />
           </div>
 
-          <h2 className="font-manrope text-4xl font-extrabold leading-[1.05] tracking-[-0.035em] text-[#081C3A] sm:text-5xl md:text-6xl">
+          <h2 className=" text-4xl font-extrabold leading-[1.05] tracking-[-0.035em] text-[#081C3A] sm:text-5xl md:text-6xl">
             2024
-            <span className="mx-3 text-[#76B900]">–</span>
+            <span className="mx-3 text-[#00a63e]">–</span>
             2026
           </h2>
 
-          <p className="font-manrope mx-auto mt-6 max-w-[620px] text-base leading-relaxed text-[#6B7F9E] md:text-lg">
+          <p className=" mx-auto mt-6 max-w-[620px] text-base leading-relaxed text-[#6B7F9E] md:text-lg">
             Our training footprint across India's universities and research
             institutions, year by year.
           </p>
@@ -997,8 +953,8 @@ const Timeline = () => {
                 origin-left
                 rounded-full
                 bg-gradient-to-r
-                from-[#76B900]
-                via-[#76B900]
+                from-[#00a63e]
+                via-[#00a63e]
                 to-[#00D4FF]
                 transition-transform
                 duration-[1800ms]
@@ -1048,7 +1004,7 @@ const Timeline = () => {
                           -inset-2
                           rounded-full
                           border
-                          border-[#76B900]/20
+                          border-[#00a63e]/20
                         "
                       />
 
@@ -1065,17 +1021,17 @@ const Timeline = () => {
                           border-[7px]
                           border-white
                           bg-gradient-to-br
-                          from-[#76B900]
+                          from-[#00a63e]
                           to-[#4F8100]
                           shadow-[0_16px_40px_-12px_rgba(118,185,0,0.50)]
                         "
                       >
                         <div className="text-center">
-                          <span className="font-manrope block text-[10px] font-bold uppercase tracking-[0.16em] text-white/70">
+                          <span className=" block text-[10px] font-bold uppercase tracking-[0.16em] text-white/70">
                             Year
                           </span>
 
-                          <span className="font-manrope mt-1 block text-xl font-extrabold tracking-tight text-white">
+                          <span className=" mt-1 block text-xl font-extrabold tracking-tight text-white">
                             {year}
                           </span>
                         </div>
@@ -1124,11 +1080,11 @@ const Timeline = () => {
 
                     <div className="mb-5 flex items-center justify-between border-b border-[#E8EDF3] pb-4">
                       <div>
-                        <span className="font-manrope text-[9px] font-extrabold uppercase tracking-[0.15em] text-[#76B900]">
+                        <span className=" text-[9px] font-extrabold uppercase tracking-[0.15em] text-[#00a63e]">
                           Training Footprint
                         </span>
 
-                        <h3 className="font-manrope mt-1 text-lg font-extrabold text-[#081C3A]">
+                        <h3 className=" mt-1 text-lg font-extrabold text-[#081C3A]">
                           {year} Programs
                         </h3>
                       </div>
@@ -1136,7 +1092,7 @@ const Timeline = () => {
                       {/* Count */}
                       <div
                         className="
-                          font-manrope
+                          
                           flex
                           h-10
                           min-w-10
@@ -1183,7 +1139,7 @@ const Timeline = () => {
                               duration-500
                               ease-out
                               hover:-translate-y-0.5
-                              hover:border-[#76B900]/30
+                              hover:border-[#00a63e]/30
                               hover:bg-white
                               hover:shadow-[0_12px_30px_-18px_rgba(8,28,58,0.30)]
                               ${
@@ -1205,7 +1161,7 @@ const Timeline = () => {
                                 h-full
                                 w-[3px]
                                 bg-gradient-to-b
-                                from-[#76B900]
+                                from-[#00a63e]
                                 to-[#00D4FF]
                                 opacity-0
                                 transition-opacity
@@ -1217,7 +1173,7 @@ const Timeline = () => {
                             {/* Number */}
                             <div
                               className="
-                                font-manrope
+                                
                                 mr-3
                                 flex
                                 h-8
@@ -1227,15 +1183,15 @@ const Timeline = () => {
                                 justify-center
                                 rounded-lg
                                 border
-                                border-[#76B900]/20
+                                border-[#00a63e]/20
                                 bg-[#F2F7E9]
                                 text-[10px]
                                 font-extrabold
                                 text-[#5A8C00]
                                 transition-all
                                 duration-300
-                                group-hover:border-[#76B900]
-                                group-hover:bg-[#76B900]
+                                group-hover:border-[#00a63e]
+                                group-hover:bg-[#00a63e]
                                 group-hover:text-white
                               "
                             >
@@ -1244,13 +1200,13 @@ const Timeline = () => {
 
                             {/* Institution */}
                             <div className="min-w-0 flex-1">
-                              <span className="font-manrope mb-1 block text-[9px] font-bold uppercase tracking-[0.1em] text-[#9AA9BC]">
+                              <span className=" mb-1 block text-[9px] font-bold uppercase tracking-[0.1em] text-[#9AA9BC]">
                                 Institution
                               </span>
 
                               <h4
                                 className="
-                                  font-manrope
+                                  
                                   text-sm
                                   font-bold
                                   leading-snug
@@ -1268,9 +1224,9 @@ const Timeline = () => {
                     {/* Bottom Indicator */}
 
                     <div className="mt-5 flex items-center gap-2 border-t border-[#E8EDF3] pt-4">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#76B900]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#00a63e]" />
 
-                      <span className="font-manrope text-[9px] font-bold uppercase tracking-[0.12em] text-[#9AA9BC]">
+                      <span className=" text-[9px] font-bold uppercase tracking-[0.12em] text-[#9AA9BC]">
                         {institutions.length}{" "}
                         {institutions.length === 1
                           ? "Institution"
@@ -1293,13 +1249,13 @@ const Stories = () => {
     <section className="py-24 bg-[#F5F7FA]" id="stories">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
-          <p className="eyebrow font-manrope font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
+          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
             Customer Success
           </p>
-          <h2 className="section-title font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
+          <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
             Deployments That Delivered Results
           </h2>
-          <p className="section-body font-manrope text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch]">
+          <p className="section-body  text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch]">
             A closer look at how institutions turned infrastructure decisions
             into measurable outcomes.
           </p>
@@ -1310,15 +1266,15 @@ const Stories = () => {
             return (
               <div
                 key={i}
-                className="story-card bg-white rounded-2xl shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] p-7 border-t-4 border-t-[#76B900] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
+                className="story-card bg-white rounded-2xl shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] p-7 border-t-4 border-t-[#00a63e] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
               >
-                <div className="story-icon w-12 h-12 rounded-xl bg-[rgba(118,185,0,0.1)] text-[#76B900] flex items-center justify-center text-xl mb-4">
+                <div className="story-icon w-12 h-12 rounded-xl bg-[rgba(118,185,0,0.1)] text-[#00a63e] flex items-center justify-center text-xl mb-4">
                   <Icon />
                 </div>
-                <h4 className="font-manrope font-bold text-[#081C3A] text-lg mb-1">
+                <h4 className=" font-bold text-[#081C3A] text-lg mb-1">
                   {s.title}
                 </h4>
-                <p className="font-manrope text-[#6B7F9E] text-sm mb-0">
+                <p className=" text-[#6B7F9E] text-sm mb-0">
                   {s.desc}
                 </p>
               </div>
@@ -1339,13 +1295,13 @@ const Future = () => {
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(rgba(255,255,255,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[length:40px_40px]"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-[720px] mb-14">
-          <p className="eyebrow font-manrope font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
+          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
             Looking Ahead
           </p>
-          <h2 className="section-title font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-white leading-[1.15] mb-4">
+          <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-white leading-[1.15] mb-4">
             The Future of AI in India
           </h2>
-          <p className="section-body font-manrope text-lg leading-relaxed text-white/60 max-w-[52ch]">
+          <p className="section-body  text-lg leading-relaxed text-white/60 max-w-[52ch]">
             Global Infoventures is committed to driving AI adoption, research,
             and innovation across India's academic and enterprise landscape.
           </p>
@@ -1358,13 +1314,13 @@ const Future = () => {
                 key={i}
                 className="future-card bg-white/5 border border-white/10 rounded-2xl p-7 text-center transition-all hover:bg-white/10 hover:-translate-y-2 hover:border-[rgba(118,185,0,0.3)]"
               >
-                <div className="icon-wrap w-14 h-14 rounded-xl bg-[rgba(118,185,0,0.15)] flex items-center justify-center mx-auto mb-4 text-[#76B900] text-2xl">
+                <div className="icon-wrap w-14 h-14 rounded-xl bg-[rgba(118,185,0,0.15)] flex items-center justify-center mx-auto mb-4 text-[#00a63e] text-2xl">
                   <Icon />
                 </div>
-                <h4 className="font-manrope font-bold text-white text-lg mb-1">
+                <h4 className=" font-bold text-white text-lg mb-1">
                   {f.title}
                 </h4>
-                <p className="font-manrope text-white/55 text-sm mb-0">
+                <p className=" text-white/55 text-sm mb-0">
                   {f.desc}
                 </p>
               </div>
@@ -1382,13 +1338,13 @@ const Contact = () => {
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <p className="eyebrow font-manrope font-bold tracking-[0.12em] uppercase text-xs text-[#76B900] mb-4">
+            <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
               Get in Touch
             </p>
-            <h2 className="section-title font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
+            <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
               Let's Build Your AI Infrastructure
             </h2>
-            <p className="section-body font-manrope text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch] mb-6">
+            <p className="section-body  text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch] mb-6">
               Tell us about your workload and we'll respond within one business
               day.
             </p>
@@ -1405,7 +1361,7 @@ const Contact = () => {
                   desc: (
                     <a
                       href="tel:+919873904161"
-                      className="text-[#76B900] hover:text-[#5A8C00]"
+                      className="text-[#00a63e] hover:text-[#5A8C00]"
                     >
                       +91 9873904161
                     </a>
@@ -1417,7 +1373,7 @@ const Contact = () => {
                   desc: (
                     <a
                       href="mailto:info@giindia.com"
-                      className="text-[#76B900] hover:text-[#5A8C00]"
+                      className="text-[#00a63e] hover:text-[#5A8C00]"
                     >
                       info@giindia.com
                     </a>
@@ -1427,14 +1383,14 @@ const Contact = () => {
                 const Icon = item.icon;
                 return (
                   <div key={idx} className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-xl bg-white text-[#76B900] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white text-[#00a63e] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
                       <Icon />
                     </div>
                     <div>
-                      <strong className="font-manrope block text-[#081C3A] text-sm">
+                      <strong className=" block text-[#081C3A] text-sm">
                         {item.title}
                       </strong>
-                      <span className="font-manrope text-[#6B7F9E] text-sm">
+                      <span className=" text-[#6B7F9E] text-sm">
                         {item.desc}
                       </span>
                     </div>
@@ -1445,21 +1401,21 @@ const Contact = () => {
             <div className="flex flex-wrap gap-3">
               <a
                 href="tel:+919873904161"
-                className="font-manrope flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#76B900] hover:border-[#76B900]"
+                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#00a63e] hover:border-[#00a63e]"
               >
-                <FaPhone className="text-[#76B900]" /> Call Us
+                <FaPhone className="text-[#00a63e]" /> Call Us
               </a>
               <a
                 href="mailto:info@giindia.com"
-                className="font-manrope flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#76B900] hover:border-[#76B900]"
+                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#00a63e] hover:border-[#00a63e]"
               >
-                <FaEnvelope className="text-[#76B900]" /> Email
+                <FaEnvelope className="text-[#00a63e]" /> Email
               </a>
               <a
                 href="#"
-                className="font-manrope flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#76B900] hover:border-[#76B900]"
+                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#00a63e] hover:border-[#00a63e]"
               >
-                <FaWhatsapp className="text-[#76B900]" /> WhatsApp
+                <FaWhatsapp className="text-[#00a63e]" /> WhatsApp
               </a>
             </div>
           </div>
@@ -1467,40 +1423,40 @@ const Contact = () => {
             <form>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label className="font-manrope text-xs font-bold text-[#081C3A] block mb-1.5">
+                  <label className=" text-xs font-bold text-[#081C3A] block mb-1.5">
                     Full Name
                   </label>
                   <input
                     type="text"
                     placeholder="Your name"
-                    className="font-manrope w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#76B900] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
                   />
                 </div>
                 <div>
-                  <label className="font-manrope text-xs font-bold text-[#081C3A] block mb-1.5">
+                  <label className=" text-xs font-bold text-[#081C3A] block mb-1.5">
                     Work Email
                   </label>
                   <input
                     type="email"
                     placeholder="you@company.com"
-                    className="font-manrope w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#76B900] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
                   />
                 </div>
                 <div>
-                  <label className="font-manrope text-xs font-bold text-[#081C3A] block mb-1.5">
+                  <label className=" text-xs font-bold text-[#081C3A] block mb-1.5">
                     Organization
                   </label>
                   <input
                     type="text"
                     placeholder="Company / Institution"
-                    className="font-manrope w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#76B900] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
                   />
                 </div>
                 <div>
-                  <label className="font-manrope text-xs font-bold text-[#081C3A] block mb-1.5">
+                  <label className=" text-xs font-bold text-[#081C3A] block mb-1.5">
                     Interested In
                   </label>
-                  <select className="font-manrope w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#76B900] focus:bg-white">
+                  <select className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white">
                     <option>DGX Systems</option>
                     <option>GPU Clusters</option>
                     <option>AI Workstations</option>
@@ -1509,24 +1465,24 @@ const Contact = () => {
                   </select>
                 </div>
                 <div className="md:col-span-2">
-                  <label className="font-manrope text-xs font-bold text-[#081C3A] block mb-1.5">
+                  <label className=" text-xs font-bold text-[#081C3A] block mb-1.5">
                     Project Details
                   </label>
                   <textarea
                     rows={4}
                     placeholder="Tell us about your workload, timeline, and scale…"
-                    className="font-manrope w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm resize-y transition-all focus:outline-none focus:border-[#76B900] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm resize-y transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
                   ></textarea>
                 </div>
                 <div className="md:col-span-2">
                   <button
                     type="button"
-                    className="btn-ripple font-manrope w-full bg-gradient-to-br from-[#76B900] to-[#5A8C00] text-white font-bold py-3.5 px-8 rounded-xl shadow-[0_14px_30px_-10px_rgba(118,185,0,0.45)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_44px_-12px_rgba(118,185,0,0.55)]"
+                    className="btn-ripple  w-full bg-gradient-to-br from-[#00a63e] to-[#5A8C00] text-white font-bold py-3.5 px-8 rounded-xl shadow-[0_14px_30px_-10px_rgba(118,185,0,0.45)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_44px_-12px_rgba(118,185,0,0.55)]"
                   >
                     Book a Consultation <FaArrowRight className="inline ml-2" />
                   </button>
                   <div
-                    className="font-manrope mt-4 text-sm font-semibold text-[#76B900] min-h-[20px]"
+                    className=" mt-4 text-sm font-semibold text-[#00a63e] min-h-[20px]"
                     id="formNote"
                   ></div>
                 </div>
@@ -1558,12 +1514,12 @@ const Partner = () => {
       .transition-all { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
       .duration-600 { transition-duration: 600ms; }
       .ease-in-out { transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); }
-      /* Font: match the reference Hero component's Manrope typeface across the whole page */
-      .font-manrope, .font-display, .font-body {
-        font-family: "Manrope", sans-serif;
+      
+      ., .font-display, .font-body {
+       
       }
       .partner-container {
-        font-family: "Manrope", sans-serif;
+         
       }
     `;
     document.head.appendChild(style);

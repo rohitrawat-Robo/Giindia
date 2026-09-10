@@ -194,9 +194,9 @@ const HeroSection = ({ aboutRef }) => {
         />
 
         {/* Background Decorative Elements */}
-        <div className="absolute top-[-35%] right-[-8%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#76B900]/10 to-transparent pointer-events-none" />
+        <div className="absolute top-[-35%] right-[-8%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#00a63e]/10 to-transparent pointer-events-none" />
 
-        <div className="absolute bottom-[-25%] left-[-8%] w-[350px] h-[350px] rounded-full bg-gradient-to-tr from-[#76B900]/10 to-transparent pointer-events-none" />
+        <div className="absolute bottom-[-25%] left-[-8%] w-[350px] h-[350px] rounded-full bg-gradient-to-tr from-[#00a63e]/10 to-transparent pointer-events-none" />
 
         {/* Container */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -209,14 +209,14 @@ const HeroSection = ({ aboutRef }) => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               {/* Badge */}
-              <span className="inline-block font-mono font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#76B900] mb-4 bg-[#76B900]/10 px-4 py-1.5 rounded-full">
+              <span className="inline-block font-mono font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#00a63e] mb-4 bg-[#00a63e]/10 px-4 py-1.5 rounded-full">
                Education ERP (G6)
               </span>
 
               {/* Heading */}
-              <h1 className="font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] text-white leading-tight mb-4">
+              <h1 className="font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] text-white leading-tight mb-4">
                 Experience the power of{" "}
-                <span className="bg-gradient-to-r from-[#76B900] to-[#8FD400] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#00a63e] to-[#8FD400] bg-clip-text text-transparent">
                   G6
                 </span>
               </h1>
@@ -241,8 +241,8 @@ const HeroSection = ({ aboutRef }) => {
                 <a
                   href="#features"
                   className="group inline-flex items-center gap-2.5 px-7 py-3 rounded-xl
-                 font-manrope font-bold text-sm sm:text-base text-white
-                 bg-gradient-to-r from-[#76B900] to-[#5A8C00]
+                   font-bold text-sm sm:text-base text-white
+                 bg-gradient-to-r from-[#00a63e] to-[#5A8C00]
                  shadow-[0_8px_24px_-8px_rgba(118,185,0,0.4)]
                  hover:shadow-[0_14px_32px_-10px_rgba(118,185,0,0.5)]
                  hover:-translate-y-0.5 transition-all duration-300"
@@ -270,7 +270,7 @@ const HeroSection = ({ aboutRef }) => {
                   onClick={scrollToAbout}
                   className="inline-flex items-center gap-2 font-semibold
                  text-sm sm:text-base text-white
-                 hover:text-[#76B900] transition-colors duration-200"
+                 hover:text-[#00a63e] transition-colors duration-200"
                 >
                   <svg
                     width="15"
@@ -281,7 +281,7 @@ const HeroSection = ({ aboutRef }) => {
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-[#76B900]"
+                    className="text-[#00a63e]"
                   >
                     <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
                   </svg>
@@ -325,9 +325,7 @@ const HeroSection = ({ aboutRef }) => {
             animation: float 6s ease-in-out infinite;
           }
 
-          .font-manrope {
-            font-family: "Manrope", sans-serif;
-          }
+        
 
           @media (max-width: 1023px) {
             .hero-copy {
@@ -432,7 +430,7 @@ const HeroSection = ({ aboutRef }) => {
                   transition={{ duration: 0.6, delay: domain.delay - 0.3 }}
                 >
                   <div className="feature-icon dot mb-4">
-                    <div className="w-14 h-14 rounded-full bg-[#76B900]/10 flex items-center justify-center text-3xl">
+                    <div className="w-14 h-14 rounded-full bg-[#00a63e]/10 flex items-center justify-center text-3xl">
                       {domain.icon}
                     </div>
                   </div>
@@ -491,10 +489,10 @@ const HeroSection = ({ aboutRef }) => {
                 whileHover={{ y: -5 }}
               >
                 {/* Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-[#76B900]" />
+                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-[#00a63e]" />
 
                 {/* Number */}
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#76B900]/10 text-[#76B900] font-bold text-lg mb-6">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#00a63e]/10 text-[#00a63e] font-bold text-lg mb-6">
                   01
                 </div>
 
@@ -553,10 +551,10 @@ const HeroSection = ({ aboutRef }) => {
                 whileHover={{ y: -5 }}
               >
                 {/* Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-[#76B900]" />
+                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-[#00a63e]" />
 
                 {/* Number */}
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#76B900]/10 text-[#76B900] font-bold text-lg mb-6">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#00a63e]/10 text-[#00a63e] font-bold text-lg mb-6">
                   03
                 </div>
 
@@ -690,7 +688,7 @@ const HeroSection = ({ aboutRef }) => {
                 transition={{ duration: 0.6, delay: 0.3 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
+                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
                   <span className="text-3xl">☁️</span>
                 </div>
 
@@ -714,7 +712,7 @@ const HeroSection = ({ aboutRef }) => {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
+                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
                   <span className="text-3xl">🛡️</span>
                 </div>
 
@@ -738,7 +736,7 @@ const HeroSection = ({ aboutRef }) => {
                 transition={{ duration: 0.6, delay: 0.5 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
+                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
                   <span className="text-3xl">📋</span>
                 </div>
 
@@ -762,7 +760,7 @@ const HeroSection = ({ aboutRef }) => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
+                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
                   <span className="text-3xl">🌐</span>
                 </div>
 
@@ -786,7 +784,7 @@ const HeroSection = ({ aboutRef }) => {
                 transition={{ duration: 0.6, delay: 0.7 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
+                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
                   <span className="text-3xl">📊</span>
                 </div>
 
@@ -810,7 +808,7 @@ const HeroSection = ({ aboutRef }) => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
+                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
                   <span className="text-3xl">🔒</span>
                 </div>
 
@@ -834,7 +832,7 @@ const HeroSection = ({ aboutRef }) => {
                 transition={{ duration: 0.6, delay: 0.9 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
+                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
                   <span className="text-3xl">💰</span>
                 </div>
 
@@ -858,7 +856,7 @@ const HeroSection = ({ aboutRef }) => {
                 transition={{ duration: 0.6, delay: 1.0 }}
                 whileHover={{ y: -4 }}
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#76B900]/10">
+                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
                   <span className="text-3xl">📈</span>
                 </div>
 
@@ -904,7 +902,7 @@ const HeroSection = ({ aboutRef }) => {
               data-delay=".2"
             >
               <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm">
-                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#76B900] text-white text-xs font-bold">
+                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#00a63e] text-white text-xs font-bold">
                   ✓
                 </span>
                 <span className="text-sm md:text-base font-medium text-slate-700">
@@ -913,7 +911,7 @@ const HeroSection = ({ aboutRef }) => {
               </div>
 
               <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm">
-                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#76B900] text-white text-xs font-bold">
+                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#00a63e] text-white text-xs font-bold">
                   ✓
                 </span>
                 <span className="text-sm md:text-base font-medium text-slate-700">
@@ -922,7 +920,7 @@ const HeroSection = ({ aboutRef }) => {
               </div>
 
               <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm">
-                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#76B900] text-white text-xs font-bold">
+                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#00a63e] text-white text-xs font-bold">
                   ✓
                 </span>
                 <span className="text-sm md:text-base font-medium text-slate-700">
@@ -960,28 +958,28 @@ const HeroSection = ({ aboutRef }) => {
 
                     <ul className="space-y-3 text-slate-600">
                       <li className="flex items-start gap-3">
-                        <span className="text-[#76B900] font-bold mt-0.5">
+                        <span className="text-[#00a63e] font-bold mt-0.5">
                           ✓
                         </span>
                         <span>Digitization</span>
                       </li>
 
                       <li className="flex items-start gap-3">
-                        <span className="text-[#76B900] font-bold mt-0.5">
+                        <span className="text-[#00a63e] font-bold mt-0.5">
                           ✓
                         </span>
                         <span>Operations Control</span>
                       </li>
 
                       <li className="flex items-start gap-3">
-                        <span className="text-[#76B900] font-bold mt-0.5">
+                        <span className="text-[#00a63e] font-bold mt-0.5">
                           ✓
                         </span>
                         <span>Proper Record Keeping</span>
                       </li>
 
                       <li className="flex items-start gap-3">
-                        <span className="text-[#76B900] font-bold mt-0.5">
+                        <span className="text-[#00a63e] font-bold mt-0.5">
                           ✓
                         </span>
                         <span>Removal of Manpower Dependency</span>
