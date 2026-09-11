@@ -207,7 +207,7 @@ export default function Navbar() {
                   window.location.href = "/";
                 }
               }}
-              className="flex items-center transition-all duration-300 hover:opacity-80 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#76B900] focus:ring-offset-2 focus:ring-offset-[#08193A] rounded-lg flex-shrink-0"
+              className="flex items-center transition-all duration-300 hover:opacity-80 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#00a63e] focus:ring-offset-2 focus:ring-offset-[#08193A] rounded-lg flex-shrink-0"
               aria-label="Go to homepage"
             >
               <img
@@ -231,7 +231,7 @@ export default function Navbar() {
                     onClick={(e) => handleNavigation(item, e)}
                     target={item.external ? "_blank" : undefined}
                     rel={item.external ? "noopener noreferrer" : undefined}
-                    className="relative font-medium text-[15px] tracking-wide text-gray-200 hover:text-[#76B900] transition-all duration-300 focus:outline-none rounded-lg px-1 py-1"
+                    className="relative font-medium text-[15px] tracking-wide text-gray-200 hover:text-[#00a63e] transition-all duration-300 focus:outline-none rounded-lg px-1 py-1"
                   >
                     {item.label}
                   </Link>
@@ -243,10 +243,10 @@ export default function Navbar() {
             <div className="hidden lg:block flex-shrink-0">
               <Link
                 to="https://hr.servergi.com:8071/givapp/login"
-                className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#76B900] to-[#5A8C00] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 shadow-[0_4px_15px_-4px_rgba(118,185,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-6px_rgba(118,185,0,0.5)] focus:outline-none focus:ring-2 focus:ring-[#76B900] focus:ring-offset-2 focus:ring-offset-[#08193A] overflow-hidden"
+                className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#00a63e] to-[#5A8C00] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 shadow-[0_4px_15px_-4px_rgba(118,185,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-6px_rgba(118,185,0,0.5)] focus:outline-none focus:ring-2 focus:ring-[#00a63e] focus:ring-offset-2 focus:ring-offset-[#08193A] overflow-hidden"
                 aria-label="Login to your account"
               >
-                <span className="absolute inset-0 bg-gradient-to-r from-[#8FD400] to-[#76B900] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="absolute inset-0 bg-gradient-to-r from-[#8FD400] to-[#00a63e] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 
                 <span className="relative flex items-center gap-2">
                   Login
@@ -261,26 +261,26 @@ export default function Navbar() {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="flex flex-col gap-1.5 rounded-lg p-2 transition-colors lg:hidden focus:outline-none focus:ring-2 focus:ring-[#76B900] focus:ring-offset-2 focus:ring-offset-[#08193A]"
+              className="flex flex-col gap-1.5 rounded-lg p-2 transition-colors lg:hidden focus:outline-none focus:ring-2 focus:ring-[#00a63e] focus:ring-offset-2 focus:ring-offset-[#08193A]"
               aria-expanded={mobileOpen}
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? "Close menu" : "Open menu"}
             >
               <span
                 className={`block w-[26px] h-[2px] rounded-full transition-all duration-300 ${
-                  scrolled ? "bg-[#76B900]" : "bg-gray-200"
+                  scrolled ? "bg-[#00a63e]" : "bg-gray-200"
                 } ${mobileOpen ? "rotate-45 translate-y-[6px]" : ""}`}
               />
 
               <span
                 className={`block w-[26px] h-[2px] rounded-full transition-all duration-300 ${
-                  scrolled ? "bg-[#76B900]" : "bg-gray-200"
+                  scrolled ? "bg-[#00a63e]" : "bg-gray-200"
                 } ${mobileOpen ? "opacity-0" : ""}`}
               />
 
               <span
                 className={`block w-[26px] h-[2px] rounded-full transition-all duration-300 ${
-                  scrolled ? "bg-[#76B900]" : "bg-gray-200"
+                  scrolled ? "bg-[#00a63e]" : "bg-gray-200"
                 } ${mobileOpen ? "-rotate-45 -translate-y-[6px]" : ""}`}
               />
             </button>
@@ -304,7 +304,7 @@ export default function Navbar() {
               role="dialog"
               aria-label="Mobile navigation"
             >
-              <div className="flex h-20 items-center justify-between border-b border-[#76B900]/20 px-6">
+              <div className="flex h-20 items-center justify-between border-b border-[#00a63e]/20 px-6">
                 <Link
                   to="/"
                   onClick={(e) => {
@@ -329,7 +329,7 @@ export default function Navbar() {
 
                 <button
                   onClick={handleMobileClose}
-                  className="rounded-lg p-2 text-[#76B900] transition-all duration-200 hover:bg-[#76B900]/20 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#76B900]"
+                  className="rounded-lg p-2 text-[#00a63e] transition-all duration-200 hover:bg-[#00a63e]/20 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-[#00a63e]"
                   aria-label="Close menu"
                 >
                   <X size={24} />
@@ -349,7 +349,7 @@ export default function Navbar() {
                         }}
                         target={item.external ? "_blank" : undefined}
                         rel={item.external ? "noopener noreferrer" : undefined}
-                        className="block rounded-lg px-4 py-3 text-sm font-medium text-gray-300/90 transition-all duration-200 hover:bg-[#76B900]/10 hover:text-[#76B900]"
+                        className="block rounded-lg px-4 py-3 text-sm font-medium text-gray-300/90 transition-all duration-200 hover:bg-[#00a63e]/10 hover:text-[#00a63e]"
                       >
                         {item.label}
                       </Link>
@@ -357,13 +357,13 @@ export default function Navbar() {
                   })}
                 </div>
 
-                <div className="mt-6 border-t border-[#76B900]/20 pt-6">
+                <div className="mt-6 border-t border-[#00a63e]/20 pt-6">
                   <Link
                     to="/login"
                     onClick={handleMobileClose}
-                    className="group relative flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#76B900] to-[#5A8C00] px-6 py-3 font-semibold text-white transition-all duration-300 shadow-[0_4px_15px_-4px_rgba(118,185,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-6px_rgba(118,185,0,0.4)] focus:outline-none focus:ring-2 focus:ring-[#76B900] focus:ring-offset-2 focus:ring-offset-[#08193A] overflow-hidden"
+                    className="group relative flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#00a63e] to-[#5A8C00] px-6 py-3 font-semibold text-white transition-all duration-300 shadow-[0_4px_15px_-4px_rgba(118,185,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-6px_rgba(118,185,0,0.4)] focus:outline-none focus:ring-2 focus:ring-[#00a63e] focus:ring-offset-2 focus:ring-offset-[#08193A] overflow-hidden"
                   >
-                    <span className="absolute inset-0 bg-gradient-to-r from-[#8FD400] to-[#76B900] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                    <span className="absolute inset-0 bg-gradient-to-r from-[#8FD400] to-[#00a63e] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 
                     <span className="relative flex items-center gap-2">
                       Login

@@ -31,7 +31,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/global-infoventure/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#76B900] hover:text-white transition-all"
+                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#00a63e] hover:text-white transition-all"
                 aria-label="LinkedIn"
               >
                 <FaLinkedinIn />
@@ -40,7 +40,7 @@ export default function Footer() {
                 href="https://www.youtube.com/@globalinfoventurepvtltd"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#76B900] hover:text-white transition-all"
+                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#00a63e] hover:text-white transition-all"
                 aria-label="YouTube"
               >
                 <FaYoutube />
@@ -49,7 +49,7 @@ export default function Footer() {
                 href="https://www.instagram.com/global_infoventures?igsh=MW5hZHEwdWF3bnJyaw=="
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#76B900] hover:text-white transition-all"
+                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#00a63e] hover:text-white transition-all"
                 aria-label="Instagram"
               >
                 <FaInstagram />
@@ -58,7 +58,7 @@ export default function Footer() {
                 href="https://www.facebook.com/GlobalInfoventures/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#76B900] hover:text-white transition-all"
+                className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/50 hover:bg-[#00a63e] hover:text-white transition-all"
                 aria-label="Facebook"
               >
                 <FaFacebookF />
@@ -70,10 +70,10 @@ export default function Footer() {
           <div className="col-span-1">
             <h6 className="text-white font-bold text-sm mb-4">Quick Links</h6>
             <ul className="space-y-2.5">
-              <li><Link to="/" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Home</Link></li>
-              <li><Link to="/about" className="text-white/45 text-sm hover:text-[#76B900] transition-all">About Us</Link></li>
-              <li><Link to="/solutions" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Solutions</Link></li>
-              <li><Link to="/gril" className="text-white/45 text-sm hover:text-[#76B900] transition-all">GRIL</Link></li>
+              <li><Link to="/" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Home</Link></li>
+              <li><Link to="/about" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">About Us</Link></li>
+              <li><Link to="/solutions" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Solutions</Link></li>
+              <li><Link to="/gril" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">GRIL</Link></li>
             </ul>
           </div>
 
@@ -81,10 +81,10 @@ export default function Footer() {
           <div className="col-span-1">
             <h6 className="text-white font-bold text-sm mb-4">More</h6>
             <ul className="space-y-2.5">
-              <li><Link to="/events" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Events</Link></li>
-              <li><Link to="/etnow" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Award</Link></li>
-              <li><Link to="/nvidia-elite-partner" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Nvidia Elite Partner</Link></li>
-              <li><Link to="/career" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Career</Link></li>
+              <li><Link to="/events" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Events</Link></li>
+              <li><Link to="/etnow" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Award</Link></li>
+              <li><Link to="/nvidia-elite-partner" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Nvidia Elite Partner</Link></li>
+              <li><Link to="/career" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Career</Link></li>
             </ul>
           </div>
 
@@ -92,9 +92,9 @@ export default function Footer() {
           <div className="col-span-1">
             <h6 className="text-white font-bold text-sm mb-4">Contact</h6>
             <ul className="space-y-2.5">
-              <li><Link to="/contact" className="text-white/45 text-sm hover:text-[#76B900] transition-all">Contact Us</Link></li>
-              <li><a href="mailto:info@globalinfoventures.com" className="text-white/45 text-sm hover:text-[#76B900] transition-all">info@globalinfoventures.com</a></li>
-              <li><a href="tel:+911234567890" className="text-white/45 text-sm hover:text-[#76B900] transition-all">+91 1234567890</a></li>
+              <li><Link to="/contact" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Contact Us</Link></li>
+              <li><a href="mailto:info@globalinfoventures.com" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">info@globalinfoventures.com</a></li>
+              <li><a href="tel:+911234567890" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">+91 1234567890</a></li>
             </ul>
           </div>
         </div>
@@ -103,8 +103,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center py-4 text-sm text-white/30">
           <span>&copy; 2026 Global Infoventures Pvt. Ltd. All rights reserved.</span>
           <span className="footer-legal flex gap-4 mt-2 md:mt-0">
-            <a href="#" className="hover:text-[#76B900] transition-all">Privacy Policy</a>
-            <a href="#" className="hover:text-[#76B900] transition-all">Terms of Service</a>
+            <a href="#" className="hover:text-[#00a63e] transition-all">Privacy Policy</a>
+            <a href="#" className="hover:text-[#00a63e] transition-all">Terms of Service</a>
           </span>
         </div>
       </div>
