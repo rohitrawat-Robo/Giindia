@@ -135,10 +135,7 @@ const featureTableData = [
     title: "ID Card Management",
     description: "Generate student and employee ID cards",
   },
-  {
-    title: "Certificate Management",
-    description: "Generate and manage certificates digitally",
-  },
+ 
   {
     title: "Communication Management",
     description: "Centralized communication between institution and users",
@@ -297,7 +294,7 @@ const HeroSection = ({ aboutRef }) => {
     { id: 3, icon: images.c, label: "Analytics", delay: 1.1 },
     { id: 4, icon: images.d, label: "Security", delay: 1.2 },
     { id: 5, icon: images.e, label: "A I", delay: 1.3 },
-    { id: 6, icon: images.f, label: "Nvidia", delay: 1.4 },
+   /* { id: 6, icon: images.f, label: "Nvidia", delay: 1.4 },*/
   ];
 
   // Domains Data
@@ -433,28 +430,7 @@ const HeroSection = ({ aboutRef }) => {
                   </svg>
                 </a>
 
-                {/* How to Buy */}
-                <button
-                  onClick={scrollToAbout}
-                  className="inline-flex items-center gap-2 font-semibold
-                 text-sm sm:text-base text-white
-                 hover:text-[#76B900] transition-colors duration-200"
-                >
-                  <svg
-                    width="15"
-                    height="15"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="text-[#76B900]"
-                  >
-                    <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
-                  </svg>
-                  How to Buy
-                </button>
+               
               </div>
             </motion.div>
 
@@ -792,85 +768,7 @@ const HeroSection = ({ aboutRef }) => {
         </div>
       </section>
 
-      {/* Our Products Section */}
-      <section
-        className="section section-l section-product bg-gray-50 py-20"
-        id="products"
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="nk-block nk-block-features-s4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 items-center">
-              {/* Our Products Content */}
-              <div className="section-head text-left">
-                <h2
-                  className={`${sectionHeadingClass} mb-5`}
-                  data-animate="fadeInUp"
-                  data-delay=".1"
-                >
-                  Our Products
-                </h2>
-
-                <p
-                  className="text-base md:text-[17px] text-slate-600 leading-relaxed"
-                  data-animate="fadeInUp"
-                  data-delay=".2"
-                >
-                  All our products are Cloud-based hence accessible
-                  Anytime-Anywhere in the world. The device independent
-                  Responsive Technology allows them to be used on any device -
-                  Computers, Laptops, Tablets, Smartphones – with equal ease.
-                  The products are auto-upgraded to the latest software version
-                  and most updated Technology.
-                </p>
-              </div>
-
-              {/* AIMS Product */}
-              <motion.div
-                className="feature feature-s4 feature-center text-center flex flex-col items-center"
-                data-animate="fadeInUp"
-                data-delay=".3"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-              >
-                <div className="feature-img w-full mb-5">
-                  <img
-                    src={images.dashboard}
-                    alt="AIMS Pre Admission Solution - Software for University, School, College, Institute - India"
-                    className="rounded-xl shadow-md w-full h-[224px] "
-                  />
-                </div>
-
-                <h5 className="title title-sm text-lg md:text-xl font-bold text-slate-900">
-                  AIMS-Pre Admission Solution
-                </h5>
-              </motion.div>
-
-              {/* G-6 Product */}
-              <motion.div
-                className="feature feature-s4 feature-center text-center flex flex-col items-center"
-                data-animate="fadeInUp"
-                data-delay=".4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-              >
-                <div className="feature-img w-full mb-5">
-                  <img
-                    src={images.sim}
-                    alt="G-6 - Software for University, School, College, Institute - India"
-                    className="rounded-xl shadow-md w-full h-[350px]  "
-                  />
-                </div>
-
-                <h5 className="title title-sm text-lg md:text-xl font-bold text-slate-900">
-                  G-6
-                </h5>
-              </motion.div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       <Soultions />
 

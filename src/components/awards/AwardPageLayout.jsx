@@ -18,7 +18,7 @@ const AwardPageLayout = ({
             <div className="mb-8">
               <Link
                 to="/award"
-                className="inline-flex items-center gap-2 text-sm md:text-base text-gray-600 hover:text-[#00a63e] transition-colors duration-300 no-underline"
+                className="inline-flex items-center gap-2 text-sm md:text-base text-gray-600 hover:text-[#449d46] transition-colors duration-300 no-underline"
               >
                 <span className="text-lg">←</span>
                 <span>Back to Awards</span>
@@ -28,7 +28,7 @@ const AwardPageLayout = ({
             {/* Title */}
             <div className="text-center mb-8 md:mb-10">
               {subtitle && (
-                <p className="text-xs md:text-sm font-bold tracking-[0.12em] uppercase text-[#00a63e] mb-3">
+                <p className="text-xs md:text-sm font-bold tracking-[0.12em] uppercase text-[#449d46] mb-3">
                   {subtitle}
                 </p>
               )}

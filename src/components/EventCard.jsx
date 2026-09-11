@@ -14,7 +14,7 @@ export default function EventCard({ event }) {
       to={route}
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-slate-200
                  bg-white shadow-sm transition-all duration-300 hover:shadow-lg hover:-translate-y-1
-                 hover:border-[#00a63e]/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#00a63e]/40"
+                 hover:border-[#449d46]/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#449d46]/40"
     >
       {/* Image */}
       <div className="relative h-48 w-full overflow-hidden bg-slate-100">
@@ -50,7 +50,7 @@ export default function EventCard({ event }) {
         <div className="mt-3 space-y-1.5 text-sm text-slate-600">
           {date && (
             <div className="flex items-center gap-2">
-              <svg className="h-4 w-4 flex-shrink-0 text-[#00a63e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 flex-shrink-0 text-[#449d46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -64,7 +64,7 @@ export default function EventCard({ event }) {
 
           {location && (
             <div className="flex items-center gap-2">
-              <svg className="h-4 w-4 flex-shrink-0 text-[#00a63e]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="h-4 w-4 flex-shrink-0 text-[#449d46]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -78,7 +78,7 @@ export default function EventCard({ event }) {
           )}
         </div>
 
-        <div className="mt-auto pt-4 flex items-center gap-1.5 text-sm font-semibold text-[#00a63e]">
+        <div className="mt-auto pt-4 flex items-center gap-1.5 text-sm font-semibold text-[#449d46]">
           View Event
           <svg
             className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"

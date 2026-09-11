@@ -337,7 +337,7 @@ const Hero = () => {
           }}
         >
           <div className="hero-copy">
-            <span className=" inline-block font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#00a63e] mb-4 bg-[#00a63e]/10 px-4 py-1.5 rounded-full">
+            <span className=" inline-block font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#449d46] mb-4 bg-[#449d46]/10 px-4 py-1.5 rounded-full">
               NVIDIA Elite Partner &middot; India
             </span>
 
@@ -357,7 +357,7 @@ const Hero = () => {
               <span
                 className="text-grad"
                 style={{
-                  background: "linear-gradient(135deg, #00a63e, #00D4FF)",
+                  background: "linear-gradient(135deg, #449d46, #00D4FF)",
                   WebkitBackgroundClip: "text",
                   WebkitTextFillColor: "transparent",
                   backgroundClip: "text",
@@ -401,7 +401,7 @@ const Hero = () => {
                   gap: "10px",
                   padding: "14px 34px",
                   borderRadius: "12px",
-                  background: "linear-gradient(135deg, #00a63e, #5A8C00)",
+                  background: "linear-gradient(135deg, #449d46, #5A8C00)",
                   color: "#FFFFFF",
                   fontWeight: "700",
                   fontSize: "1rem",
@@ -569,14 +569,14 @@ const Partnership = () => {
           {/* LEFT — Content */}
           <div className="w-full flex flex-col items-start">
             {/* Eyebrow */}
-            <p className=" font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-5">
+            <p className=" font-bold tracking-[0.12em] uppercase text-xs text-[#449d46] mb-5">
               Elite Partnership
             </p>
 
             {/* Heading */}
             <h2 className=" text-4xl lg:text-5xl font-bold leading-[1.12] text-slate-900 max-w-[650px]">
               Why the NVIDIA <br />
-              <span className="text-[#00a63e]">Partnership Matters</span>
+              <span className="text-[#449d46]">Partnership Matters</span>
             </h2>
 
             <p className=" text-lg leading-[1.7] text-[#6B7F9E] w-full mt-6">
@@ -597,7 +597,7 @@ const Partnership = () => {
         </div>
         {/* What We Offer */}
         <div className="mb-10 justify-center text-center pb-4 pt-4"> 
-          <p className="font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
+          <p className="font-bold tracking-[0.12em] uppercase text-xs text-[#449d46] mb-4">
             Our Services
           </p>
 
@@ -621,7 +621,7 @@ const Partnership = () => {
               >
                 <div className="grid grid-cols-[44px_1fr] gap-x-3">
                   {/* Icon */}
-                  <div className="card-icon w-11 h-11 flex-shrink-0 rounded-xl flex items-center justify-center bg-gradient-to-br from-[rgba(118,185,0,0.1)] to-[rgba(0,212,255,0.05)] text-[#00a63e] text-xl">
+                  <div className="card-icon w-11 h-11 flex-shrink-0 rounded-xl flex items-center justify-center bg-gradient-to-br from-[rgba(118,185,0,0.1)] to-[rgba(0,212,255,0.05)] text-[#449d46] text-xl">
                     <Icon />
                   </div>
 
@@ -650,7 +650,7 @@ const Journey = () => {
     <section className="py-24 bg-[#f9fafb]" id="journey">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
-          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
+          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#449d46] mb-4">
             Our Journey
           </p>
           <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
@@ -665,9 +665,9 @@ const Journey = () => {
           {data.journey.map((j, i) => (
             <div
               key={i}
-              className="journey-card bg-white rounded-2xl p-7 shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] border-l-4 border-l-[#00a63e] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
+              className="journey-card bg-white rounded-2xl p-7 shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] border-l-4 border-l-[#449d46] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
             >
-              <span className="year-badge  font-extrabold text-[#00a63e] text-xl block mb-2">
+              <span className="year-badge  font-extrabold text-[#449d46] text-xl block mb-2">
                 {j.year}
               </span>
               <h4 className=" font-bold text-[#081C3A] text-lg mb-1">
@@ -706,7 +706,7 @@ const About = () => {
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
+            <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#449d46] mb-4">
               About Global Infoventures
             </p>
             <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
@@ -730,7 +730,7 @@ const About = () => {
                     key={idx}
                     className="flex gap-4 items-start p-4 rounded-xl bg-[#f9fafb] border border-[rgba(8,28,58,0.08)] transition-all hover:bg-white hover:shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] hover:translate-x-1"
                   >
-                    <div className="w-10 h-10 rounded-xl bg-white text-[#00a63e] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white text-[#449d46] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
                       <Icon />
                     </div>
                     <div>
@@ -746,7 +746,7 @@ const About = () => {
               })}
             </div>
           </div>
-          <div className="relative pl-8 before:content-[''] before:absolute before:left-2 before:top-4 before:bottom-14 before:w-0.5 before:bg-gradient-to-b before:from-[#00a63e] before:to-[#00D4FF]">
+          <div className="relative pl-8 before:content-[''] before:absolute before:left-2 before:top-4 before:bottom-14 before:w-0.5 before:bg-gradient-to-b before:from-[#449d46] before:to-[#00D4FF]">
             {[
               {
                 year: "2003",
@@ -771,9 +771,9 @@ const About = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="relative pl-8 pb-8 last:pb-0 before:content-[''] before:absolute before:-left-8 before:top-1 before:w-3.5 before:h-3.5 before:rounded-full before:bg-white before:border-4 before:border-[#00a63e] before:shadow-[0_0_0_4px_rgba(118,185,0,0.1)]"
+                className="relative pl-8 pb-8 last:pb-0 before:content-[''] before:absolute before:-left-8 before:top-1 before:w-3.5 before:h-3.5 before:rounded-full before:bg-white before:border-4 before:border-[#449d46] before:shadow-[0_0_0_4px_rgba(118,185,0,0.1)]"
               >
-                <span className="journey-year  font-extrabold text-[#00a63e] text-lg block mb-1">
+                <span className="journey-year  font-extrabold text-[#449d46] text-lg block mb-1">
                   {item.year}
                 </span>
                 <div
@@ -794,7 +794,7 @@ const Capabilities = () => {
     <section className="py-24 bg-[#f9fafb]" id="capabilities">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
-          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
+          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#449d46] mb-4">
             Capabilities
           </p>
           <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
@@ -811,9 +811,9 @@ const Capabilities = () => {
             return (
               <div
                 key={i}
-                className="capability-card bg-[#ffffff] rounded-2xl p-7 text-center border border-[rgba(8,28,58,0.08)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)] hover:border-[#00a63e]"
+                className="capability-card bg-[#ffffff] rounded-2xl p-7 text-center border border-[rgba(8,28,58,0.08)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)] hover:border-[#449d46]"
               >
-                <div className="icon-wrap w-14 h-14 rounded-xl bg-gradient-to-br from-[#00a63e] to-[#5A8C00] flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                <div className="icon-wrap w-14 h-14 rounded-xl bg-gradient-to-br from-[#449d46] to-[#5A8C00] flex items-center justify-center mx-auto mb-4 text-white text-2xl">
                   <Icon />
                 </div>
                 <h4 className=" font-bold text-[#081C3A] text-lg mb-2">
@@ -872,7 +872,7 @@ const Timeline = () => {
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute left-[-180px] top-[10%] h-[360px] w-[360px] rounded-full bg-[#00a63e]/[0.06] blur-3xl" />
+        <div className="absolute left-[-180px] top-[10%] h-[360px] w-[360px] rounded-full bg-[#449d46]/[0.06] blur-3xl" />
 
         <div className="absolute right-[-180px] bottom-[5%] h-[360px] w-[360px] rounded-full bg-[#00D4FF]/[0.05] blur-3xl" />
 
@@ -892,13 +892,13 @@ const Timeline = () => {
 
         <div className="mx-auto mb-20 max-w-[760px] text-center">
           <div className="mb-5 flex items-center justify-center gap-3">
-            <span className="h-px w-10 bg-[#00a63e]" />
+            <span className="h-px w-10 bg-[#449d46]" />
 
-            <p className=" text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#00a63e]">
+            <p className=" text-[11px] font-extrabold uppercase tracking-[0.18em] text-[#449d46]">
               Training Footprint
             </p>
 
-            <span className="h-px w-10 bg-[#00a63e]" />
+            <span className="h-px w-10 bg-[#449d46]" />
           </div>
 
           <h2 className=" text-4xl font-extrabold leading-[1.05] tracking-[-0.035em] text-[#081C3A] sm:text-5xl md:text-6xl">
@@ -963,8 +963,8 @@ const Timeline = () => {
                 origin-left
                 rounded-full
                 bg-gradient-to-r
-                from-[#00a63e]
-                via-[#00a63e]
+                from-[#449d46]
+                via-[#449d46]
                 to-[#00D4FF]
                 transition-transform
                 duration-[1800ms]
@@ -1014,7 +1014,7 @@ const Timeline = () => {
                           -inset-2
                           rounded-full
                           border
-                          border-[#00a63e]/20
+                          border-[#449d46]/20
                         "
                       />
 
@@ -1031,7 +1031,7 @@ const Timeline = () => {
                           border-[7px]
                           border-white
                           bg-gradient-to-br
-                          from-[#00a63e]
+                          from-[#449d46]
                           to-[#4F8100]
                           shadow-[0_16px_40px_-12px_rgba(118,185,0,0.50)]
                         "
@@ -1090,7 +1090,7 @@ const Timeline = () => {
 
                     <div className="mb-5 flex items-center justify-between border-b border-[#E8EDF3] pb-4">
                       <div>
-                        <span className=" text-[9px] font-extrabold uppercase tracking-[0.15em] text-[#00a63e]">
+                        <span className=" text-[9px] font-extrabold uppercase tracking-[0.15em] text-[#449d46]">
                           Training Footprint
                         </span>
 
@@ -1149,7 +1149,7 @@ const Timeline = () => {
                               duration-500
                               ease-out
                               hover:-translate-y-0.5
-                              hover:border-[#00a63e]/30
+                              hover:border-[#449d46]/30
                               hover:bg-white
                               hover:shadow-[0_12px_30px_-18px_rgba(8,28,58,0.30)]
                               ${
@@ -1171,7 +1171,7 @@ const Timeline = () => {
                                 h-full
                                 w-[3px]
                                 bg-gradient-to-b
-                                from-[#00a63e]
+                                from-[#449d46]
                                 to-[#00D4FF]
                                 opacity-0
                                 transition-opacity
@@ -1193,15 +1193,15 @@ const Timeline = () => {
                                 justify-center
                                 rounded-lg
                                 border
-                                border-[#00a63e]/20
+                                border-[#449d46]/20
                                 bg-[#F2F7E9]
                                 text-[10px]
                                 font-extrabold
                                 text-[#5A8C00]
                                 transition-all
                                 duration-300
-                                group-hover:border-[#00a63e]
-                                group-hover:bg-[#00a63e]
+                                group-hover:border-[#449d46]
+                                group-hover:bg-[#449d46]
                                 group-hover:text-white
                               "
                             >
@@ -1234,7 +1234,7 @@ const Timeline = () => {
                     {/* Bottom Indicator */}
 
                     <div className="mt-5 flex items-center gap-2 border-t border-[#E8EDF3] pt-4">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#00a63e]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#449d46]" />
 
                       <span className=" text-[9px] font-bold uppercase tracking-[0.12em] text-[#9AA9BC]">
                         {institutions.length}{" "}
@@ -1259,7 +1259,7 @@ const Stories = () => {
     <section className="py-24 bg-[#f9fafb]" id="stories">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
-          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
+          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#449d46] mb-4">
             Customer Success
           </p>
           <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
@@ -1276,9 +1276,9 @@ const Stories = () => {
             return (
               <div
                 key={i}
-                className="story-card bg-white rounded-2xl shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] p-7 border-t-4 border-t-[#00a63e] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
+                className="story-card bg-white rounded-2xl shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] p-7 border-t-4 border-t-[#449d46] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
               >
-                <div className="story-icon w-12 h-12 rounded-xl bg-[rgba(118,185,0,0.1)] text-[#00a63e] flex items-center justify-center text-xl mb-4">
+                <div className="story-icon w-12 h-12 rounded-xl bg-[rgba(118,185,0,0.1)] text-[#449d46] flex items-center justify-center text-xl mb-4">
                   <Icon />
                 </div>
                 <h4 className=" font-bold text-[#081C3A] text-lg mb-1">
@@ -1303,7 +1303,7 @@ const Future = () => {
       <div className="absolute inset-0 opacity-5 pointer-events-none bg-[linear-gradient(rgba(255,255,255,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.3)_1px,transparent_1px)] bg-[length:40px_40px]"></div>
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-[720px] mb-14">
-          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
+          <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#449d46] mb-4">
             Looking Ahead
           </p>
           <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-white leading-[1.15] mb-4">
@@ -1322,7 +1322,7 @@ const Future = () => {
                 key={i}
                 className="future-card bg-white/5 border border-white/10 rounded-2xl p-7 text-center transition-all hover:bg-white/10 hover:-translate-y-2 hover:border-[rgba(118,185,0,0.3)]"
               >
-                <div className="icon-wrap w-14 h-14 rounded-xl bg-[rgba(118,185,0,0.15)] flex items-center justify-center mx-auto mb-4 text-[#00a63e] text-2xl">
+                <div className="icon-wrap w-14 h-14 rounded-xl bg-[rgba(118,185,0,0.15)] flex items-center justify-center mx-auto mb-4 text-[#449d46] text-2xl">
                   <Icon />
                 </div>
                 <h4 className=" font-bold text-white text-lg mb-1">
@@ -1349,7 +1349,7 @@ const Contact = () => {
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
-            <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
+            <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#449d46] mb-4">
               Get in Touch
             </p>
             <h2 className="section-title  font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl text-[#081C3A] leading-[1.15] mb-4">
@@ -1372,7 +1372,7 @@ const Contact = () => {
                   desc: (
                     <a
                       href="tel:+919873904161"
-                      className="text-[#00a63e] hover:text-[#5A8C00]"
+                      className="text-[#449d46] hover:text-[#5A8C00]"
                     >
                       +91 9873904161
                     </a>
@@ -1384,7 +1384,7 @@ const Contact = () => {
                   desc: (
                     <a
                       href="mailto:info@giindia.com"
-                      className="text-[#00a63e] hover:text-[#5A8C00]"
+                      className="text-[#449d46] hover:text-[#5A8C00]"
                     >
                       info@giindia.com
                     </a>
@@ -1394,7 +1394,7 @@ const Contact = () => {
                 const Icon = item.icon;
                 return (
                   <div key={idx} className="flex gap-4 items-start">
-                    <div className="w-10 h-10 rounded-xl bg-white text-[#00a63e] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
+                    <div className="w-10 h-10 rounded-xl bg-white text-[#449d46] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
                       <Icon />
                     </div>
                     <div>
@@ -1412,21 +1412,21 @@ const Contact = () => {
             <div className="flex flex-wrap gap-3">
               <a
                 href="tel:+919873904161"
-                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#00a63e] hover:border-[#00a63e]"
+                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#449d46] hover:border-[#449d46]"
               >
-                <FaPhone className="text-[#00a63e]" /> Call Us
+                <FaPhone className="text-[#449d46]" /> Call Us
               </a>
               <a
                 href="mailto:info@giindia.com"
-                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#00a63e] hover:border-[#00a63e]"
+                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#449d46] hover:border-[#449d46]"
               >
-                <FaEnvelope className="text-[#00a63e]" /> Email
+                <FaEnvelope className="text-[#449d46]" /> Email
               </a>
               <a
                 href="#"
-                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#00a63e] hover:border-[#00a63e]"
+                className=" flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-[rgba(8,28,58,0.08)] font-semibold text-sm text-[#081C3A] shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] transition-all hover:-translate-y-1 hover:text-[#449d46] hover:border-[#449d46]"
               >
-                <FaWhatsapp className="text-[#00a63e]" /> WhatsApp
+                <FaWhatsapp className="text-[#449d46]" /> WhatsApp
               </a>
             </div>
           </div>
@@ -1440,7 +1440,7 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Your name"
-                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#449d46] focus:bg-white"
                   />
                 </div>
                 <div>
@@ -1450,7 +1450,7 @@ const Contact = () => {
                   <input
                     type="email"
                     placeholder="you@company.com"
-                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#449d46] focus:bg-white"
                   />
                 </div>
                 <div>
@@ -1460,14 +1460,14 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Company / Institution"
-                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#449d46] focus:bg-white"
                   />
                 </div>
                 <div>
                   <label className=" text-xs font-bold text-[#081C3A] block mb-1.5">
                     Interested In
                   </label>
-                  <select className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white">
+                  <select className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#449d46] focus:bg-white">
                     <option>DGX Systems</option>
                     <option>GPU Clusters</option>
                     <option>AI Workstations</option>
@@ -1482,18 +1482,18 @@ const Contact = () => {
                   <textarea
                     rows={4}
                     placeholder="Tell us about your workload, timeline, and scale…"
-                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm resize-y transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm resize-y transition-all focus:outline-none focus:border-[#449d46] focus:bg-white"
                   ></textarea>
                 </div>
                 <div className="md:col-span-2">
                   <button
                     type="button"
-                    className="btn-ripple  w-full bg-gradient-to-br from-[#00a63e] to-[#5A8C00] text-white font-bold py-3.5 px-8 rounded-xl shadow-[0_14px_30px_-10px_rgba(118,185,0,0.45)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_44px_-12px_rgba(118,185,0,0.55)]"
+                    className="btn-ripple  w-full bg-gradient-to-br from-[#449d46] to-[#5A8C00] text-white font-bold py-3.5 px-8 rounded-xl shadow-[0_14px_30px_-10px_rgba(118,185,0,0.45)] transition-all hover:-translate-y-1 hover:shadow-[0_20px_44px_-12px_rgba(118,185,0,0.55)]"
                   >
                     Book a Consultation <FaArrowRight className="inline ml-2" />
                   </button>
                   <div
-                    className=" mt-4 text-sm font-semibold text-[#00a63e] min-h-[20px]"
+                    className=" mt-4 text-sm font-semibold text-[#449d46] min-h-[20px]"
                     id="formNote"
                   ></div>
                 </div>

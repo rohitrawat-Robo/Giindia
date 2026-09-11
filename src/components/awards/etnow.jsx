@@ -80,7 +80,7 @@ const etnow = () => {
               <button
                 type="button"
                 onClick={() => navigate(-1)}
-                className="inline-flex items-center gap-2 text-sm md:text-base font-medium text-gray-600 hover:text-[#00a63e] transition-all duration-300 group"
+                className="inline-flex items-center gap-2 text-sm md:text-base font-medium text-gray-600 hover:text-[#449d46] transition-all duration-300 group"
               >
                 <span className="text-xl transition-transform duration-300 group-hover:-translate-x-1">
                   ←

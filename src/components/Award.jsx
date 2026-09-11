@@ -60,7 +60,7 @@ const Award = () => {
 
             <div className="text-center max-w-3xl mx-auto mb-12 md:mb-16">
 
-              <p className="text-xs md:text-sm font-bold tracking-[0.12em] uppercase text-[#00a63e] mb-4">
+              <p className="text-xs md:text-sm font-bold tracking-[0.12em] uppercase text-[#449d46] mb-4">
                 Recognition & Excellence
               </p>
 
