@@ -507,6 +507,61 @@ const HeroSection = ({ aboutRef }) => {
 
       {/* About Section */}
       <AboutUs embedded />
+      {/* Key Features Section */}
+      <section
+        className="section section-l bg-gray-100 py-16 md:py-20"
+        id="features"
+      >
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Heading */}
+          <div className="section-head text-center mb-10 md:mb-12">
+            <h2
+              className={sectionHeadingClass}
+              data-animate="fadeInUp"
+              data-delay=".1"
+            >
+              Key Features
+            </h2>
+
+            <p
+              className="mt-3 max-w-2xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed"
+              data-animate="fadeInUp"
+              data-delay=".2"
+            >
+              Explore the powerful features available in the G6 Education ERP
+              platform.
+            </p>
+          </div>
+
+          {/* 3 Column Feature List */}
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 max-w-7xl mx-auto">
+            {featureTableData.map((feature, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.35,
+                  delay: index * 0.02,
+                }}
+                className="group flex items-start gap-3 py-3 border-b border-slate-200/70"
+              >
+                {/* Feature Content */}
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-slate-900 text-sm md:text-base leading-snug">
+                    {feature.title}
+                  </h3>
+
+                  <p className="mt-1 text-slate-500 text-xs md:text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </div>
+              </motion.li>
+            ))}
+          </ul>
+        </div>
+      </section>
 
       {/* Key Components Section - UPDATED */}
       <section className="key-components-section pt-8 pb-16 md:pt-10 md:pb-20 bg-white">
@@ -810,7 +865,6 @@ const HeroSection = ({ aboutRef }) => {
                     className="rounded-xl shadow-md w-full h-[350px]  "
                   />
                 </div>
-                
 
                 <h5 className="title title-sm text-lg md:text-xl font-bold text-slate-900">
                   G-6
@@ -823,61 +877,6 @@ const HeroSection = ({ aboutRef }) => {
 
       <Soultions />
 
-      {/* Key Features Section */}
-      <section
-        className="section section-l bg-gradient-to-b from-white via-[#F6FAF1] to-white py-16 md:py-20"
-        id="features"
-      >
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Section Heading */}
-          <div className="section-head text-center mb-10 md:mb-12">
-            <h2
-              className={sectionHeadingClass}
-              data-animate="fadeInUp"
-              data-delay=".1"
-            >
-              Key Features
-            </h2>
-
-            <p
-              className="mt-3 max-w-2xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed"
-              data-animate="fadeInUp"
-              data-delay=".2"
-            >
-              Explore the powerful features available in the G6 Education ERP
-              platform.
-            </p>
-          </div>
-
-          {/* 3 Column Feature List */}
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 max-w-7xl mx-auto">
-            {featureTableData.map((feature, index) => (
-              <motion.li
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.35,
-                  delay: index * 0.02,
-                }}
-                className="group flex items-start gap-3 py-3 border-b border-slate-200/70"
-              >
-                {/* Feature Content */}
-                <div className="min-w-0">
-                  <h3 className="font-semibold text-slate-900 text-sm md:text-base leading-snug">
-                    {feature.title}
-                  </h3>
-
-                  <p className="mt-1 text-slate-500 text-xs md:text-sm leading-relaxed">
-                    {feature.description}
-                  </p>
-                </div>
-              </motion.li>
-            ))}
-          </ul>
-        </div>
-      </section>
       {/* Business Advantages Section */}
       <section
         className="section section-l section-problem bg-gray-50 py-20 md:py-24"
