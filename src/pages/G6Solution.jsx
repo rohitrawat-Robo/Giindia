@@ -377,7 +377,7 @@ const HeroSection = ({ aboutRef }) => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               {/* Badge */}
-              <span className="inline-block font-mono font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#76B900] mb-4 bg-[#76B900]/10 px-4 py-1.5 rounded-full">
+              <span className="inline-block  font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#76B900] mb-4 bg-[#76B900]/10 px-4 py-1.5 rounded-full">
                 Education ERP (G6)
               </span>
 
@@ -493,10 +493,7 @@ const HeroSection = ({ aboutRef }) => {
             animation: float 6s ease-in-out infinite;
           }
 
-          .font-manrope {
-            font-family: "Manrope", sans-serif;
-          }
-
+        
           @media (max-width: 1023px) {
             .hero-copy {
               text-align: center;

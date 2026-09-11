@@ -647,7 +647,7 @@ const Partnership = () => {
 
 const Journey = () => {
   return (
-    <section className="py-24 bg-[#F5F7FA]" id="journey">
+    <section className="py-24 bg-[#f9fafb]" id="journey">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
           <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
@@ -728,7 +728,7 @@ const About = () => {
                 return (
                   <div
                     key={idx}
-                    className="flex gap-4 items-start p-4 rounded-xl bg-[#F5F7FA] border border-[rgba(8,28,58,0.08)] transition-all hover:bg-white hover:shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] hover:translate-x-1"
+                    className="flex gap-4 items-start p-4 rounded-xl bg-[#f9fafb] border border-[rgba(8,28,58,0.08)] transition-all hover:bg-white hover:shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] hover:translate-x-1"
                   >
                     <div className="w-10 h-10 rounded-xl bg-white text-[#00a63e] flex items-center justify-center shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] flex-shrink-0">
                       <Icon />
@@ -791,7 +791,7 @@ const About = () => {
 
 const Capabilities = () => {
   return (
-    <section className="py-24 bg-[#F5F7FA]" id="capabilities">
+    <section className="py-24 bg-[#f9fafb]" id="capabilities">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
           <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
@@ -802,7 +802,7 @@ const Capabilities = () => {
           </h2>
           <p className="section-body  text-lg leading-relaxed text-[#6B7F9E] max-w-[52ch]">
             From a single certified workstation to a multi-rack SuperPOD, we
-            design, size, deploy, and support every layer of the stack.
+            design, size, deploy, and support npmevery layer of the stack.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -903,7 +903,7 @@ const Timeline = () => {
 
           <h2 className=" text-4xl font-extrabold leading-[1.05] tracking-[-0.035em] text-[#081C3A] sm:text-5xl md:text-6xl">
             2024
-            <span className="mx-3 text-[#00a63e]">–</span>
+            <span className="mx-3 text-[#000000]">–</span>
             2026
           </h2>
 
@@ -1256,7 +1256,7 @@ const Timeline = () => {
 
 const Stories = () => {
   return (
-    <section className="py-24 bg-[#F5F7FA]" id="stories">
+    <section className="py-24 bg-[#f9fafb]" id="stories">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="max-w-[720px] mb-14">
           <p className="eyebrow  font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
@@ -1345,7 +1345,7 @@ const Future = () => {
 
 const Contact = () => {
   return (
-    <section className="py-24 bg-[#F5F7FA]" id="contact">
+    <section className="py-24 bg-[#f9fafb]" id="contact">
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           <div>
@@ -1440,7 +1440,7 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Your name"
-                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
                   />
                 </div>
                 <div>
@@ -1450,7 +1450,7 @@ const Contact = () => {
                   <input
                     type="email"
                     placeholder="you@company.com"
-                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
                   />
                 </div>
                 <div>
@@ -1460,14 +1460,14 @@ const Contact = () => {
                   <input
                     type="text"
                     placeholder="Company / Institution"
-                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
                   />
                 </div>
                 <div>
                   <label className=" text-xs font-bold text-[#081C3A] block mb-1.5">
                     Interested In
                   </label>
-                  <select className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white">
+                  <select className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white">
                     <option>DGX Systems</option>
                     <option>GPU Clusters</option>
                     <option>AI Workstations</option>
@@ -1482,7 +1482,7 @@ const Contact = () => {
                   <textarea
                     rows={4}
                     placeholder="Tell us about your workload, timeline, and scale…"
-                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#F5F7FA] text-sm resize-y transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
+                    className=" w-full px-4 py-3 rounded-xl border border-[rgba(8,28,58,0.08)] bg-[#f9fafb] text-sm resize-y transition-all focus:outline-none focus:border-[#00a63e] focus:bg-white"
                   ></textarea>
                 </div>
                 <div className="md:col-span-2">

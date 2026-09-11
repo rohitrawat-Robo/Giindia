@@ -155,7 +155,11 @@ export default function Footer() {
           <div className="col-span-1">
             <h6 className="text-white font-bold text-sm mb-4">Contact</h6>
             <ul className="space-y-2.5">
-              <li><Link to="/contact" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Contact Us</Link></li>
+              
+              
+              <li><a href="mailto:info@globalinfoventures.com" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">Global Infoventures Pvt. Ltd.<br/>H-65 Sector 63, Noida</a></li>
+              
+
               <li><a href="mailto:info@globalinfoventures.com" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">info@globalinfoventures.com</a></li>
               <li><a href="tel:+911234567890" className="text-white/45 text-sm hover:text-[#00a63e] transition-all">+91 1234567890</a></li>
             </ul>
