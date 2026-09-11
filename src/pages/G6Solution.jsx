@@ -6,6 +6,174 @@ import Soultions from "../components/Solutions.jsx";
 import FeaturedEvents from "../components/FeaturedEvents.jsx";
 import SEO from "../components/SEO.jsx";
 
+const featureTableData = [
+  {
+    title: "Live Attendance Management",
+    description: "Real-time student & staff attendance tracking",
+  },
+  {
+    title: "Automated Attendance Reports",
+    description: "Attendance reports without manual calculation",
+  },
+  {
+    title: "Student Information Management",
+    description: "Complete student records in one place",
+  },
+  {
+    title: "Admission Management",
+    description: "Streamline the complete admission process",
+  },
+  {
+    title: "Fee Management",
+    description: "Automated fee collection, tracking & receipts",
+  },
+  {
+    title: "Finance & Accounting",
+    description: "Complete financial management and reporting",
+  },
+  {
+    title: "Examination Management",
+    description: "Exams, marks, grades and result management",
+  },
+  {
+    title: "Online Result Generation",
+    description: "Generate results quickly and accurately",
+  },
+  {
+    title: "Time Table Management",
+    description: "Create and manage class schedules easily",
+  },
+  {
+    title: "Faculty Management",
+    description: "Manage complete faculty information and activities",
+  },
+  {
+    title: "Employee Management",
+    description: "Centralized employee records and administration",
+  },
+  {
+    title: "Leave Management",
+    description: "Automated student and employee leave tracking",
+  },
+  {
+    title: "Hostel Management",
+    description: "Rooms, students, occupancy and hostel records",
+  },
+  {
+    title: "Transport Management",
+    description: "Routes, vehicles, drivers and student transport",
+  },
+  {
+    title: "Library Management",
+    description: "Books, issue/return and complete library records",
+  },
+  {
+    title: "Inventory Management",
+    description: "Track assets, stock and institutional inventory",
+  },
+  {
+    title: "Mess Management",
+    description: "Manage mess operations, menus and records",
+  },
+  {
+    title: "Department Management",
+    description: "Manage multiple departments from one platform",
+  },
+  {
+    title: "HR Management",
+    description: "Employee administration and HR processes",
+  },
+  {
+    title: "Payroll Management",
+    description: "Simplified salary and payroll processing",
+  },
+  {
+    title: "Automated Notifications",
+    description: "Send important updates automatically",
+  },
+  {
+    title: "SMS & Email Integration",
+    description: "Connect with students, parents and staff instantly",
+  },
+  {
+    title: "Parent Portal",
+    description: "Give parents access to attendance, fees and academic updates",
+  },
+  {
+    title: "Student Portal",
+    description: "Students can access their information anytime",
+  },
+  {
+    title: "Faculty Portal",
+    description: "Dedicated platform for teachers and faculty members",
+  },
+  {
+    title: "Admin Dashboard",
+    description: "Complete institution overview from one dashboard",
+  },
+  {
+    title: "Real-Time Analytics",
+    description: "Get actionable insights from live data",
+  },
+  {
+    title: "Worldwide Reports",
+    description: "Generate detailed reports anytime, anywhere",
+  },
+  {
+    title: "Custom Report Generation",
+    description: "Create reports according to institutional requirements",
+  },
+  {
+    title: "Automated Calculations",
+    description: "No need for manual calculations or spreadsheets",
+  },
+  {
+    title: "Document Management",
+    description: "Securely manage institutional documents",
+  },
+  {
+    title: "ID Card Management",
+    description: "Generate student and employee ID cards",
+  },
+  {
+    title: "Certificate Management",
+    description: "Generate and manage certificates digitally",
+  },
+  {
+    title: "Communication Management",
+    description: "Centralized communication between institution and users",
+  },
+  {
+    title: "Role-Based Access",
+    description: "Give users access according to their responsibilities",
+  },
+  {
+    title: "Multi-Campus Management",
+    description: "Manage multiple campuses from a single system",
+  },
+  {
+    title: "Cloud-Based Access",
+    description: "Access your ERP from anywhere, anytime",
+  },
+  {
+    title: "Data Security",
+    description: "Secure and controlled access to institutional data",
+  },
+  {
+    title: "Automation-Driven Workflows",
+    description: "Reduce repetitive tasks and manual work",
+  },
+  {
+    title: "Complete College Management",
+    description: "One integrated ERP for managing the entire institution",
+  },
+];
+
+// Shared heading style so every section title renders with the same
+// font family, weight, size and color — only the copy changes.
+const sectionHeadingClass =
+  "font-manrope font-extrabold text-3xl md:text-4xl lg:text-5xl text-slate-900 tracking-tight";
+
 const HeroSection = ({ aboutRef }) => {
   const canvasRef = useRef(null);
 
@@ -194,9 +362,9 @@ const HeroSection = ({ aboutRef }) => {
         />
 
         {/* Background Decorative Elements */}
-        <div className="absolute top-[-35%] right-[-8%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#00a63e]/10 to-transparent pointer-events-none" />
+        <div className="absolute top-[-35%] right-[-8%] w-[500px] h-[500px] rounded-full bg-gradient-to-br from-[#76B900]/10 to-transparent pointer-events-none" />
 
-        <div className="absolute bottom-[-25%] left-[-8%] w-[350px] h-[350px] rounded-full bg-gradient-to-tr from-[#00a63e]/10 to-transparent pointer-events-none" />
+        <div className="absolute bottom-[-25%] left-[-8%] w-[350px] h-[350px] rounded-full bg-gradient-to-tr from-[#76B900]/10 to-transparent pointer-events-none" />
 
         {/* Container */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -209,14 +377,14 @@ const HeroSection = ({ aboutRef }) => {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               {/* Badge */}
-              <span className="inline-block font-mono font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#00a63e] mb-4 bg-[#00a63e]/10 px-4 py-1.5 rounded-full">
-               Education ERP (G6)
+              <span className="inline-block  font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#76B900] mb-4 bg-[#76B900]/10 px-4 py-1.5 rounded-full">
+                Education ERP (G6)
               </span>
 
               {/* Heading */}
-              <h1 className="font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] text-white leading-tight mb-4">
+              <h1 className="font-manrope font-extrabold tracking-[-0.02em] text-3xl sm:text-4xl md:text-5xl lg:text-[3.2rem] text-white leading-tight mb-4">
                 Experience the power of{" "}
-                <span className="bg-gradient-to-r from-[#00a63e] to-[#8FD400] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#76B900] to-[#8FD400] bg-clip-text text-transparent">
                   G6
                 </span>
               </h1>
@@ -241,8 +409,8 @@ const HeroSection = ({ aboutRef }) => {
                 <a
                   href="#features"
                   className="group inline-flex items-center gap-2.5 px-7 py-3 rounded-xl
-                   font-bold text-sm sm:text-base text-white
-                 bg-gradient-to-r from-[#00a63e] to-[#5A8C00]
+                 font-manrope font-bold text-sm sm:text-base text-white
+                 bg-gradient-to-r from-[#76B900] to-[#5A8C00]
                  shadow-[0_8px_24px_-8px_rgba(118,185,0,0.4)]
                  hover:shadow-[0_14px_32px_-10px_rgba(118,185,0,0.5)]
                  hover:-translate-y-0.5 transition-all duration-300"
@@ -270,7 +438,7 @@ const HeroSection = ({ aboutRef }) => {
                   onClick={scrollToAbout}
                   className="inline-flex items-center gap-2 font-semibold
                  text-sm sm:text-base text-white
-                 hover:text-[#00a63e] transition-colors duration-200"
+                 hover:text-[#76B900] transition-colors duration-200"
                 >
                   <svg
                     width="15"
@@ -281,7 +449,7 @@ const HeroSection = ({ aboutRef }) => {
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    className="text-[#00a63e]"
+                    className="text-[#76B900]"
                   >
                     <path d="M13 3 5 14h6l-1 7 8-11h-6l1-7Z" />
                   </svg>
@@ -326,7 +494,6 @@ const HeroSection = ({ aboutRef }) => {
           }
 
         
-
           @media (max-width: 1023px) {
             .hero-copy {
               text-align: center;
@@ -338,17 +505,12 @@ const HeroSection = ({ aboutRef }) => {
       {/* About Section */}
       <AboutUs embedded />
 
-      {/* Featured Events Section (real events, pulled from src/data/featuredEvents.js) */}
-      <FeaturedEvents />
-
       {/* Key Components Section - UPDATED */}
       <section className="key-components-section pt-8 pb-16 md:pt-10 md:pb-20 bg-white">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
           <div className="mb-8 text-center md:mb-10">
-            <h2 className="text-3xl font-bold text-[#1940b0] md:text-4xl">
-              Key Components
-            </h2>
+            <h2 className={sectionHeadingClass}>Key Components</h2>
           </div>
 
           {/* Hexagon Grid */}
@@ -410,7 +572,7 @@ const HeroSection = ({ aboutRef }) => {
           {/* Section Head */}
           <div className="section-head text-center mb-12">
             <h2
-              className="title title-lg text-3xl md:text-4xl font-bold text-slate-900 animated"
+              className={sectionHeadingClass}
               data-animate="fadeInUp"
               data-delay=".6"
             >
@@ -430,7 +592,7 @@ const HeroSection = ({ aboutRef }) => {
                   transition={{ duration: 0.6, delay: domain.delay - 0.3 }}
                 >
                   <div className="feature-icon dot mb-4">
-                    <div className="w-14 h-14 rounded-full bg-[#00a63e]/10 flex items-center justify-center text-3xl">
+                    <div className="w-14 h-14 rounded-full bg-[#76B900]/10 flex items-center justify-center text-3xl">
                       {domain.icon}
                     </div>
                   </div>
@@ -458,7 +620,7 @@ const HeroSection = ({ aboutRef }) => {
           {/* Section Heading */}
           <div className="section-head text-center mb-12 md:mb-16">
             <h2
-              className="title text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900"
+              className={sectionHeadingClass}
               data-animate="fadeInUp"
               data-delay=".1"
             >
@@ -489,10 +651,10 @@ const HeroSection = ({ aboutRef }) => {
                 whileHover={{ y: -5 }}
               >
                 {/* Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-[#00a63e]" />
+                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-[#76B900]" />
 
                 {/* Number */}
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#00a63e]/10 text-[#00a63e] font-bold text-lg mb-6">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#76B900]/10 text-[#76B900] font-bold text-lg mb-6">
                   01
                 </div>
 
@@ -551,10 +713,10 @@ const HeroSection = ({ aboutRef }) => {
                 whileHover={{ y: -5 }}
               >
                 {/* Accent */}
-                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-[#00a63e]" />
+                <div className="absolute top-0 left-0 right-0 h-1 rounded-t-2xl bg-[#76B900]" />
 
                 {/* Number */}
-                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#00a63e]/10 text-[#00a63e] font-bold text-lg mb-6">
+                <div className="flex items-center justify-center w-12 h-12 rounded-xl bg-[#76B900]/10 text-[#76B900] font-bold text-lg mb-6">
                   03
                 </div>
 
@@ -586,7 +748,7 @@ const HeroSection = ({ aboutRef }) => {
               {/* Our Products Content */}
               <div className="section-head text-left">
                 <h2
-                  className="title text-3xl md:text-4xl font-bold text-slate-900 mb-5"
+                  className={`${sectionHeadingClass} mb-5`}
                   data-animate="fadeInUp"
                   data-delay=".1"
                 >
@@ -620,7 +782,7 @@ const HeroSection = ({ aboutRef }) => {
                   <img
                     src={images.dashboard}
                     alt="AIMS Pre Admission Solution - Software for University, School, College, Institute - India"
-                    className="rounded-xl shadow-md w-full h-[224px] "  
+                    className="rounded-xl shadow-md w-full h-[224px] "
                   />
                 </div>
 
@@ -636,16 +798,16 @@ const HeroSection = ({ aboutRef }) => {
                 data-delay=".4"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration:  0.6, delay: 0.4 }}
-                
+                transition={{ duration: 0.6, delay: 0.4 }}
               >
                 <div className="feature-img w-full mb-5">
-    <img
-      src={images.sim}
-      alt="G-6 - Software for University, School, College, Institute - India"
-      className="rounded-xl shadow-md w-full h-[350px]  "
-    />
-  </div>
+                  <img
+                    src={images.sim}
+                    alt="G-6 - Software for University, School, College, Institute - India"
+                    className="rounded-xl shadow-md w-full h-[350px]  "
+                  />
+                </div>
+                
 
                 <h5 className="title title-sm text-lg md:text-xl font-bold text-slate-900">
                   G-6
@@ -660,220 +822,59 @@ const HeroSection = ({ aboutRef }) => {
 
       {/* Key Features Section */}
       <section
-        className="section section-l section-product bg-white py-20"
-        id="solution"
+        className="section section-l bg-gradient-to-b from-white via-[#F6FAF1] to-white py-16 md:py-20"
+        id="features"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Heading */}
-          <div className="section-head text-center wide-auto-sm mb-12 md:mb-16">
+          <div className="section-head text-center mb-10 md:mb-12">
             <h2
-              className="title text-3xl md:text-4xl font-bold text-slate-900"
+              className={sectionHeadingClass}
               data-animate="fadeInUp"
               data-delay=".1"
             >
               Key Features
             </h2>
+
+            <p
+              className="mt-3 max-w-2xl mx-auto text-base md:text-lg text-slate-600 leading-relaxed"
+              data-animate="fadeInUp"
+              data-delay=".2"
+            >
+              Explore the powerful features available in the G6 Education ERP
+              platform.
+            </p>
           </div>
 
-          {/* Features Grid */}
-          <div className="nk-block nk-block-features-s3">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
-              {/* Global Single Platform */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".3"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 }}
-                whileHover={{ y: -4 }}
+          {/* 3 Column Feature List */}
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-3 max-w-7xl mx-auto">
+            {featureTableData.map((feature, index) => (
+              <motion.li
+                key={index}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.35,
+                  delay: index * 0.02,
+                }}
+                className="group flex items-start gap-3 py-3 border-b border-slate-200/70"
               >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
-                  <span className="text-3xl">☁️</span>
-                </div>
+                {/* Feature Content */}
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-slate-900 text-sm md:text-base leading-snug">
+                    {feature.title}
+                  </h3>
 
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Global Single Platform
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Anytime-Anywhere Access
+                  <p className="mt-1 text-slate-500 text-xs md:text-sm leading-relaxed">
+                    {feature.description}
                   </p>
                 </div>
-              </motion.div>
-
-              {/* Responsive Interfaces */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".4"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.4 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
-                  <span className="text-3xl">🛡️</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Responsive Interfaces
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Universal and Interactive
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* All-in-One Mobile App */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".5"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.5 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
-                  <span className="text-3xl">📋</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    All-in-One Mobile App
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Complete mobile solution
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Digital Identification */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".6"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.6 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
-                  <span className="text-3xl">🌐</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Digital Identification
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Secure identity management
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Powerful Business Intelligence */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".7"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.7 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
-                  <span className="text-3xl">📊</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Powerful Business Intelligence
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Data-driven insights
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Multi-Tier Security */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".8"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
-                  <span className="text-3xl">🔒</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Multi-Tier Security
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Enterprise-grade protection
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* High RoI */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay=".9"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.9 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
-                  <span className="text-3xl">💰</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    High RoI
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Maximum return on investment
-                  </p>
-                </div>
-              </motion.div>
-
-              {/* Comprehensive Dashboards */}
-              <motion.div
-                className="feature feature-s3 flex flex-col items-center justify-center text-center p-6 min-h-[210px] rounded-2xl bg-white border border-slate-100 shadow-sm hover:shadow-lg transition-all duration-300"
-                data-animate="fadeInUp"
-                data-delay="1.0"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="feature-icon flex items-center justify-center w-16 h-16 mb-5 rounded-full bg-[#00a63e]/10">
-                  <span className="text-3xl">📈</span>
-                </div>
-
-                <div className="feature-text">
-                  <h4 className="text-lg md:text-xl font-bold text-slate-900 mb-2">
-                    Comprehensive Dashboards
-                  </h4>
-                  <p className="text-sm md:text-base text-slate-600">
-                    Real-time analytics
-                  </p>
-                </div>
-              </motion.div>
-            </div>
-          </div>
+              </motion.li>
+            ))}
+          </ul>
         </div>
       </section>
-
       {/* Business Advantages Section */}
       <section
         className="section section-l section-problem bg-gray-50 py-20 md:py-24"
@@ -883,11 +884,11 @@ const HeroSection = ({ aboutRef }) => {
           {/* Section Heading */}
           <div className="section-head text-center mb-12 md:mb-16">
             <h2
-              className="title text-3xl md:text-4xl font-bold text-slate-900"
+              className={sectionHeadingClass}
               data-animate="fadeInUp"
               data-delay=".1"
             >
-              BUSINESS ADVANTAGES
+              Business Advantages
             </h2>
 
             <p className="mt-4 max-w-2xl mx-auto text-slate-600 leading-relaxed">
@@ -902,7 +903,7 @@ const HeroSection = ({ aboutRef }) => {
               data-delay=".2"
             >
               <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm">
-                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#00a63e] text-white text-xs font-bold">
+                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#76B900] text-white text-xs font-bold">
                   ✓
                 </span>
                 <span className="text-sm md:text-base font-medium text-slate-700">
@@ -911,7 +912,7 @@ const HeroSection = ({ aboutRef }) => {
               </div>
 
               <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm">
-                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#00a63e] text-white text-xs font-bold">
+                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#76B900] text-white text-xs font-bold">
                   ✓
                 </span>
                 <span className="text-sm md:text-base font-medium text-slate-700">
@@ -920,7 +921,7 @@ const HeroSection = ({ aboutRef }) => {
               </div>
 
               <div className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-white border border-slate-200 shadow-sm">
-                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#00a63e] text-white text-xs font-bold">
+                <span className="flex items-center justify-center w-5 h-5 rounded-full bg-[#76B900] text-white text-xs font-bold">
                   ✓
                 </span>
                 <span className="text-sm md:text-base font-medium text-slate-700">
@@ -958,28 +959,28 @@ const HeroSection = ({ aboutRef }) => {
 
                     <ul className="space-y-3 text-slate-600">
                       <li className="flex items-start gap-3">
-                        <span className="text-[#00a63e] font-bold mt-0.5">
+                        <span className="text-[#76B900] font-bold mt-0.5">
                           ✓
                         </span>
                         <span>Digitization</span>
                       </li>
 
                       <li className="flex items-start gap-3">
-                        <span className="text-[#00a63e] font-bold mt-0.5">
+                        <span className="text-[#76B900] font-bold mt-0.5">
                           ✓
                         </span>
                         <span>Operations Control</span>
                       </li>
 
                       <li className="flex items-start gap-3">
-                        <span className="text-[#00a63e] font-bold mt-0.5">
+                        <span className="text-[#76B900] font-bold mt-0.5">
                           ✓
                         </span>
                         <span>Proper Record Keeping</span>
                       </li>
 
                       <li className="flex items-start gap-3">
-                        <span className="text-[#00a63e] font-bold mt-0.5">
+                        <span className="text-[#76B900] font-bold mt-0.5">
                           ✓
                         </span>
                         <span>Removal of Manpower Dependency</span>

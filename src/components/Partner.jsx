@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
+import FeaturedEvents from "../components/FeaturedEvents.jsx";
+
 import {
   FaMicrochip,
-  FaRankingStar,
-  FaShieldHalved,
-  FaScrewdriverWrench,
+  FaUsers,
+  FaGraduationCap,
+  FaUserGear,
   FaServer,
   FaLayerGroup,
   FaLaptop,
@@ -31,26 +33,27 @@ import SEO from "./SEO.jsx";
 const data = {
   partners: [
     {
-      icon: FaMicrochip,
-      title: "Direct Architecture Access",
-      text: "Elite Partner status gives clients direct engineering engagement with NVIDIA's architecture teams.",
+      icon: FaServer,
+      title: "DGX Installation",
+      text: "Professional installation and configuration of NVIDIA DGX systems for a reliable and optimized AI infrastructure.",
     },
     {
-      icon: FaRankingStar,
-      title: "Priority Hardware Allocation",
-      text: "When GPU supply is constrained, our allocation tier keeps your projects moving on predictable timelines.",
+      icon: FaGraduationCap,
+      title: "Faculty Development Programme",
+      text: "Specialized training programmes designed to help faculty build practical expertise in AI, machine learning, and NVIDIA technologies.",
     },
     {
-      icon: FaShieldHalved,
-      title: "Certified Technical Expertise",
-      text: "Every engineer completes NVIDIA certification pathways—ensuring deep support for each engagement.",
+      icon: FaUsers,
+      title: "DGX User Training",
+      text: "Hands-on training for users to effectively operate DGX systems and maximize their AI and accelerated computing capabilities.",
     },
     {
-      icon: FaScrewdriverWrench,
-      title: "Full Lifecycle Support",
-      text: "From architecture workshops to production maintenance, we stay engaged across the entire lifecycle.",
+      icon: FaUserGear,
+      title: "DGX Admin Training",
+      text: "Comprehensive administrator training covering DGX system management, configuration, monitoring, and maintenance.",
     },
   ],
+
   journey: [
     {
       year: "2018",
@@ -278,7 +281,6 @@ const Hero = () => {
         alignItems: "center",
         background: "#081C3A",
         overflow: "hidden",
-
       }}
     >
       <canvas
@@ -335,17 +337,13 @@ const Hero = () => {
           }}
         >
           <div className="hero-copy">
-            <span
-              className=" inline-block font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#00a63e] mb-4 bg-[#00a63e]/10 px-4 py-1.5 rounded-full"
-
-            >
+            <span className=" inline-block font-semibold text-[0.7rem] tracking-[0.12em] uppercase text-[#00a63e] mb-4 bg-[#00a63e]/10 px-4 py-1.5 rounded-full">
               NVIDIA Elite Partner &middot; India
             </span>
 
             <h1
               className="hero-title "
               style={{
-
                 fontSize: "clamp(1.8rem, 4vw, 3.5rem)",
                 fontWeight: "800",
                 lineHeight: "1.1",
@@ -372,7 +370,6 @@ const Hero = () => {
             <p
               className="hero-sub "
               style={{
-
                 fontSize: "1.125rem",
                 lineHeight: "1.7",
                 color: "rgba(255,255,255,0.7)",
@@ -399,7 +396,6 @@ const Hero = () => {
                 href="#contact"
                 className="btn btn-gi-primary btn-ripple "
                 style={{
-
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
@@ -422,7 +418,6 @@ const Hero = () => {
                 href="#capabilities"
                 className="btn btn-gi-ghost btn-ripple "
                 style={{
-
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "10px",
@@ -455,7 +450,6 @@ const Hero = () => {
               <div
                 className="trust-chip "
                 style={{
-
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "8px",
@@ -473,7 +467,6 @@ const Hero = () => {
               <div
                 className="trust-chip "
                 style={{
-
                   display: "inline-flex",
                   alignItems: "center",
                   gap: "8px",
@@ -523,8 +516,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-
-
 
       {/* Keyframe animations */}
       <style>{`
@@ -603,25 +594,48 @@ const Partnership = () => {
               className="w-80 lg:w-[420px] h-auto object-contain mr-38"
             />
           </div>
-
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6" id="partnerGrid">
+        {/* What We Offer */}
+        <div className="mb-10 justify-center text-center pb-4 pt-4"> 
+          <p className="font-bold tracking-[0.12em] uppercase text-xs text-[#00a63e] mb-4">
+            Our Services
+          </p>
+
+          <h2 className="text-3xl sm:text-4xl font-extrabold leading-[1.15] text-[#081C3A]">
+            What We Offer
+          </h2>
+        </div>
+
+        {/* Service Cards */}
+        <div
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          id="partnerGrid"
+        >
           {data.partners.map((p, i) => {
             const Icon = p.icon;
+
             return (
               <div
                 key={i}
-                className="glass-card partner-card bg-white rounded-2xl p-6 shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] border border-[rgba(8,28,58,0.08)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
+                className="glass-card partner-card bg-white rounded-2xl p-5 shadow-[0_12px_32px_-12px_rgba(8,28,58,0.12)] border border-[rgba(8,28,58,0.08)] transition-all hover:-translate-y-2 hover:shadow-[0_20px_60px_-20px_rgba(8,28,58,0.15)]"
               >
-                <div className="card-icon w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-[rgba(118,185,0,0.1)] to-[rgba(0,212,255,0.05)] text-[#00a63e] text-xl mb-4">
-                  <Icon />
+                <div className="grid grid-cols-[44px_1fr] gap-x-3">
+                  {/* Icon */}
+                  <div className="card-icon w-11 h-11 flex-shrink-0 rounded-xl flex items-center justify-center bg-gradient-to-br from-[rgba(118,185,0,0.1)] to-[rgba(0,212,255,0.05)] text-[#00a63e] text-xl">
+                    <Icon />
+                  </div>
+
+                  {/* Title + Description */}
+                  <div className="min-w-0">
+                    <h3 className="card-title font-bold text-[#081C3A] text-lg leading-snug">
+                      {p.title}
+                    </h3>
+
+                    <p className="card-text mt-2 text-[#6B7F9E] text-sm leading-relaxed">
+                      {p.text}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="card-title  font-bold text-[#081C3A] text-lg mb-2">
-                  {p.title}
-                </h3>
-                <p className="card-text  text-[#6B7F9E] text-sm leading-relaxed">
-                  {p.text}
-                </p>
               </div>
             );
           })}
@@ -659,9 +673,7 @@ const Journey = () => {
               <h4 className=" font-bold text-[#081C3A] text-lg mb-1">
                 {j.title}
               </h4>
-              <p className=" text-[#6B7F9E] text-sm mb-0">
-                {j.desc}
-              </p>
+              <p className=" text-[#6B7F9E] text-sm mb-0">{j.desc}</p>
             </div>
           ))}
         </div>
@@ -807,9 +819,7 @@ const Capabilities = () => {
                 <h4 className=" font-bold text-[#081C3A] text-lg mb-2">
                   {c.title}
                 </h4>
-                <p className=" text-[#6B7F9E] text-sm mb-0">
-                  {c.desc}
-                </p>
+                <p className=" text-[#6B7F9E] text-sm mb-0">{c.desc}</p>
               </div>
             );
           })}
@@ -874,7 +884,7 @@ const Timeline = () => {
           }}
         />
       </div>
- 
+
       <div className="container relative z-10 mx-auto px-4 py-20 sm:px-6 lg:px-8 lg:py-10">
         {/* =====================================================
             HEADER
@@ -1274,9 +1284,7 @@ const Stories = () => {
                 <h4 className=" font-bold text-[#081C3A] text-lg mb-1">
                   {s.title}
                 </h4>
-                <p className=" text-[#6B7F9E] text-sm mb-0">
-                  {s.desc}
-                </p>
+                <p className=" text-[#6B7F9E] text-sm mb-0">{s.desc}</p>
               </div>
             );
           })}
@@ -1320,9 +1328,7 @@ const Future = () => {
                 <h4 className=" font-bold text-white text-lg mb-1">
                   {f.title}
                 </h4>
-                <p className=" text-white/55 text-sm mb-0">
-                  {f.desc}
-                </p>
+                <p className=" text-white/55 text-sm mb-0">{f.desc}</p>
               </div>
             );
           })}
@@ -1331,6 +1337,11 @@ const Future = () => {
     </section>
   );
 };
+
+{
+  /* Featured Events Section (real events, pulled from src/data/featuredEvents.js) */
+}
+<FeaturedEvents />;
 
 const Contact = () => {
   return (
@@ -1566,6 +1577,7 @@ const Partner = () => {
       <Timeline />
       <Stories />
       <Future />
+      <FeaturedEvents />
       <Contact />
     </div>
   );
