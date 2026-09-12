@@ -30,13 +30,12 @@ const Home = () => {
           {/* Left column */}
           <div>
             <span className="inline-block rounded-full border border-blue-500/40 bg-blue-500/10 px-4 py-1.5 text-xs font-semibold tracking-wider text-blue-300 ">
-              WELCOME TO GLOBAL INFOVENTURES
+              About Us
             </span>
 
             <h1 className="mt-6 text-5xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl">
-              Powering  <span className="text-blue-500">ERP & AI</span>
-              <br />
-              Innovation
+              WELCOME  <span className="text-blue-5001"> TO GLOBAL INFOVENTURES</span>
+              
             </h1>
 
             <p className="mt-6 max-w-lg text-base leading-relaxed text-slate-300 sm:text-lg">
@@ -61,7 +60,7 @@ const Home = () => {
       </section>
 
       {/* ===================== SOLUTION CARDS ===================== */}
-      <section className="bg-[#050b18] pb-24">
+     <section className="bg-[#050b18] pt-10 pb-42">
         <div className="container mx-auto grid grid-cols-1 gap-6 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
           {/* G6 Solutions Card */}
           <div className="relative flex h-full overflow-hidden rounded-2xl border border-blue-500/30 bg-gradient-to-b from-[#0b1a3a] to-[#050b18] p-8">
