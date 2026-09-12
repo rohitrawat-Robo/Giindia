@@ -54,7 +54,7 @@ import abesit1 from '../public/abesit1-gallery.jpg';
 import abesit2 from '../public/abesit2-gallery.jpg';
 import abesit3 from '../public/abesit3-gallery.jpg';
 import abesit4 from '../public/abesit4-gallery.jpg';
-
+import manoj from '../public/manoj.jpg';
 import glbj1 from '../public/glbajaj-gallery.jpg';
 import glbj2 from '../public/glbajaj-gallery2.jpg';
 import glbj3 from '../public/glbajaj-gallery3.jpg';
@@ -169,6 +169,7 @@ export default {
         video,
         DGX,
         aashish,
+        manoj,
         sharad,
         dgxB200,
         b200,

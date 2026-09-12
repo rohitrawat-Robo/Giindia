@@ -3,7 +3,21 @@ import images from "../../public/images.js";
 
 const Team = () => {
   const teamMembers = [
-   
+    {
+      name: "Manoj Kulshreshtha",
+      designation: "Technology & Innovation Leader",
+      experience: "25+ Years",
+      image: images.manoj,
+      description:
+        "Manoj brings extensive experience in technology leadership, innovation, and strategic digital transformation. He focuses on driving technology-led growth, building high-performance teams, and delivering impactful solutions across industries.",
+      focusAreas: [
+        "Technology Leadership",
+        "Innovation & Digital Transformation",
+        "Strategic Planning",
+        "Team Building",
+      ],
+      linkedin: "https://www.linkedin.com/in/manoj-kulshreshtha-044a2960/",
+    },
     {
       name: "Aashish Sharma",
       designation: "Business & Growth Leader",
@@ -18,22 +32,6 @@ const Team = () => {
         "Business Development",
       ],
       linkedin: "https://www.linkedin.com/in/aashish-sharma-18130713/",
-    },
-
-     {
-      name: "Sharad Srivastav",
-      designation: "Solution Sales & Business Development",
-      experience: "15+ Years",
-      image: images.sharad,
-      description:
-        "With extensive experience in solution sales and business development, Sharad contributes to strategic engagements and technology-driven solutions across AI, accelerated computing, and education technology.",
-      focusAreas: [
-        "Solution Sales",
-        "Business Development",
-        "AI & Accelerated Computing",
-        "Strategic Partnerships",
-      ],
-      linkedin: "https://www.linkedin.com/in/sharadsr/",
     },
   ];
 

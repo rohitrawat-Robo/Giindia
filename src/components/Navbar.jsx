@@ -243,7 +243,9 @@ export default function Navbar() {
             <div className="hidden lg:block flex-shrink-0">
               <Link
                 to="https://hr.servergi.com:8071/givapp/login"
-                className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#449d46] to-[#5A8C00] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 shadow-[0_4px_15px_-4px_rgba(118,185,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-6px_rgba(118,185,0,0.5)] focus:outline-none focus:ring-2 focus:ring-[#449d46] focus:ring-offset-2 focus:ring-offset-[#08193A] overflow-hidden"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative flex items-center gap-2 rounded-lg bg-gradient-to-r from-[#00a63e] to-[#5A8C00] px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 shadow-[0_4px_15px_-4px_rgba(118,185,0,0.3)] hover:-translate-y-0.5 hover:shadow-[0_8px_25px_-6px_rgba(118,185,0,0.5)] focus:outline-none focus:ring-2 focus:ring-[#00a63e] focus:ring-offset-2 focus:ring-offset-[#08193A] overflow-hidden"
                 aria-label="Login to your account"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-[#8FD400] to-[#449d46] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
