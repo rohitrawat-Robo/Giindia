@@ -1,5 +1,7 @@
 import React from "react";
 import { Star } from "lucide-react";
+import images from "../../public/images.js";
+
 
 // ----------------------------------------------------------------------
 // 1. TESTIMONIAL DATA
@@ -8,51 +10,51 @@ import { Star } from "lucide-react";
 const testimonials = [
   {
     name: "Rajesh Sharma",
-    role: "Principal",
-    organization: "Delhi Public School",
-    image: "/images/clients/client-1.jpg",
+    role: "Dean",
+    organization: "Delhi Public College",
+    image: images.user,
     testimonial:
-      "G6 ERP has completely transformed the way we manage our school operations. Attendance, student records, communication, and reports are now much easier to handle.",
+      "G6 ERP has completely transformed the way we manage our college operations. Attendance, student records, communication, and reports are now much easier to handle.",
   },
   {
     name: "Priya Verma",
-    role: "School Administrator",
-    organization: "St. Xavier's School",
-    image: "/images/clients/client-2.jpg",
+    role: "University Administrator",
+    organization: "St. Xavier's College",
+    image: images.user,
     testimonial:
       "The platform is simple, fast, and incredibly useful. Our administrative workload has reduced significantly since implementing G6 ERP.",
   },
   {
     name: "Amit Kumar",
     role: "Director",
-    organization: "Modern Academy",
-    image: "/images/clients/client-3.jpg",
+    organization: "Modern University",
+    image: images.user,
     testimonial:
       "G6 ERP gives us everything we need in one place. The real-time dashboards and automated reports have made decision-making much easier.",
   },
   {
     name: "Neha Singh",
-    role: "Vice Principal",
-    organization: "Green Valley School",
-    image: "/images/clients/client-4.jpg",
+    role: "Vice Dean",
+    organization: "Green Valley University",
+    image: images.user,
     testimonial:
-      "What impressed us most is how easy G6 ERP is for teachers and staff to use. We were able to get everyone onboarded quickly.",
+      "What impressed us most is how easy G6 ERP is for faculty and staff to use. We were able to get everyone onboarded quickly.",
   },
   {
     name: "Vikram Mehta",
-    role: "School Manager",
-    organization: "Bright Future Academy",
-    image: "/images/clients/client-5.jpg",
+    role: "Campus Manager",
+    organization: "Bright Future University",
+    image: images.user,
     testimonial:
       "From attendance management to student information, G6 ERP has helped us streamline our daily operations and save valuable time.",
   },
   {
     name: "Anjali Gupta",
-    role: "Principal",
-    organization: "Sunrise International School",
-    image: "/images/clients/client-6.jpg",
+    role: "Dean",
+    organization: "Sunrise International University",
+    image: images.user,
     testimonial:
-      "We finally have a centralized system for managing our school. G6 ERP has improved transparency, communication, and overall efficiency.",
+      "We finally have a centralized system for managing our college. G6 ERP has improved transparency, communication, and overall efficiency.",
   },
 ];
 
@@ -61,12 +63,19 @@ const testimonials = [
 // ----------------------------------------------------------------------
 
 const clients = [
-  { name: "Delhi Public School", image: "/images/clients/dps.png" },
-  { name: "St. Xavier's School", image: "/images/clients/st-xaviers.png" },
-  { name: "Modern Academy", image: "/images/clients/modern-academy.png" },
-  { name: "Green Valley School", image: "/images/clients/green-valley.png" },
-  { name: "Bright Future Academy", image: "/images/clients/bright-future.png" },
-  { name: "Sunrise International", image: "/images/clients/sunrise.png" },
+  { name: "ABESIT, Ghaziabad", image: images.abesitp },
+  { name: "BML University", image: images.bmlp },
+  { name: "BMS, Bengaluru", image: images.bmsp },
+  { name: "CSJMU, Kanpur", image: images.csjmp },
+  { name: "DBU, Punjab", image: images.dbup },
+  { name: "Galgotias University", image: images.gal },
+  { name: "GBU, Greater Noida", image: images.gbup },
+  { name: "GLBITM, Greater Noida", image: images.glbitmp },
+  { name: "Gujarat Technological University, Ahmedabad", image: images.gtup },
+  { name: "KIET, Ghaziabad", image: images.kiet },
+  { name: "Presidency University, Bengaluru", image: images.presidency },
+  { name: "Sharda University", image: images.sharda },
+  { name: "SRM, AP", image: images.srm },
 ];
 
 // ----------------------------------------------------------------------
@@ -167,7 +176,7 @@ const NvidiaTestimonial = () => {
             Trusted By
           </p>
           <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-[#081C3A] sm:text-4xl">
-            Powering Schools Across India
+            Powering Colleges & Universities Across India
           </h2>
         </div>
 
@@ -190,11 +199,11 @@ const NvidiaTestimonial = () => {
             Customer Testimonials
           </p>
           <h2 className="text-3xl font-extrabold tracking-[-0.02em] text-[#081C3A] sm:text-4xl">
-            Trusted by Schools.
-            <span className="block text-[#00a63e]">Loved by Educators.</span>
+            Trusted by Colleges.
+            <span className="block text-[#00a63e]">Loved by Faculty.</span>
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-[15px] leading-7 text-[#6B7F9E]">
-            See how schools and educational institutions are using G6 ERP
+            See how colleges and universities are using G6 ERP
             to simplify operations, improve efficiency, and create a better
             experience for everyone.
           </p>

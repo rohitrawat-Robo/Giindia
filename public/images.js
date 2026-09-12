@@ -119,9 +119,29 @@ import kiet26 from '../public/kiet26.webp';
 import kiet27 from '../public/kiet27.webp';
 import kiet28 from '../public/kiet28.webp';
 import kiet29 from '../public/kiet29.webp';
+import user from '../public/user.png';
+import abesitlogo from '../public/G6_logos/abesit.png';
+import dbu from '../public/G6_logos/dbu.png';
+import gbu from '../public/G6_logos/gbu.jpg';
+import glbitm from '../public/G6_logos/glbitm.jpg';
+import gtu from '../public/G6_logos/gtu.jpg';
+import abesitp from '../public/Partners_logo/abesit.png';
+import bmlp from '../public/Partners_logo/bml.png';
+import bmsp from '../public/Partners_logo/bms.png';
+import csjmp from '../public/Partners_logo/csjm.png';
+import dbup from '../public/Partners_logo/dbu.png';
+import gal from '../public/Partners_logo/gal.png';
+import gbup from '../public/Partners_logo/gbu.jpg';
+import glbitmp from '../public/Partners_logo/glbitm.jpg';
+import gtup from '../public/Partners_logo/gtu.jpg';
+import kiet from '../public/Partners_logo/kiet.png';
+import presidency from '../public/Partners_logo/presidency.jpg';
+import sharda from '../public/Partners_logo/sharda.jpg';
+import srm from '../public/Partners_logo/srm.jpg';
 
 
 export default {
+        user,
         gi,
         kle,
         university,
@@ -241,7 +261,26 @@ export default {
         kiet26,
         kiet27,
         kiet28,
-        kiet29
+        kiet29,
+        abesitlogo,
+        dbu,
+        gbu,
+        glbitm,
+        gtu,
+        abesitp,
+        bmlp,
+        bmsp,
+        csjmp,
+        dbup,
+        gal,
+        gbup,
+        glbitmp,
+        gtup,
+        kiet,
+        presidency,
+        sharda,
+        srm
+        
 
 
 }
