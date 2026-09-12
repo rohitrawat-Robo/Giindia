@@ -126,7 +126,7 @@ const data = {
       "Sharda University Admin Training",
       "Presidency University",
     ],
-    2026: ["CSJMU Kanpur", "BML Munjal University", "Galgotias University"],
+    2026: ["CSJMU Kanpur", "BML Munjal University", "Galgotias University", "Alliance University"],
   },
   stories: [
     {

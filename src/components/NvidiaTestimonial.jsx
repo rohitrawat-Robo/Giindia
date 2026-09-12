@@ -76,6 +76,7 @@ const clients = [
   { name: "Presidency University, Bengaluru", image: images.presidency },
   { name: "Sharda University", image: images.sharda },
   { name: "SRM, AP", image: images.srm },
+  { name: "Alliance University, AU", image: images.au },
 ];
 
 // ----------------------------------------------------------------------

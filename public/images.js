@@ -138,7 +138,7 @@ import kiet from '../public/Partners_logo/kiet.png';
 import presidency from '../public/Partners_logo/presidency.jpg';
 import sharda from '../public/Partners_logo/sharda.jpg';
 import srm from '../public/Partners_logo/srm.jpg';
-
+import au from '../public/Partners_logo/au.jpg';
 
 export default {
         user,
@@ -279,8 +279,9 @@ export default {
         kiet,
         presidency,
         sharda,
-        srm
-        
+        srm,
+        au
+
 
 
 }
