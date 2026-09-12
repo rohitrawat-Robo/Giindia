@@ -5,7 +5,7 @@ import AboutUs from "../components/About.jsx";
 import Soultions from "../components/Solutions.jsx";
 import FeaturedEvents from "../components/FeaturedEvents.jsx";
 import SEO from "../components/SEO.jsx";
-
+import GiTestimonial from "../components/GiTestimonial.jsx";
 const featureTableData = [
   {
     title: "Live Attendance Management",
@@ -469,7 +469,6 @@ const HeroSection = ({ aboutRef }) => {
             animation: float 6s ease-in-out infinite;
           }
 
-        
           @media (max-width: 1023px) {
             .hero-copy {
               text-align: center;
@@ -994,6 +993,9 @@ const HeroSection = ({ aboutRef }) => {
           </div>
         </div>
       </section>
+
+      {/* Testimonials Section */}
+      <GiTestimonial />
     </>
   );
 };

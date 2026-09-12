@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import FeaturedEvents from "../components/FeaturedEvents.jsx";
-
+import NvidiaTestimonial from "../components/NvidiaTestimonial.jsx";
 import {
   FaMicrochip,
   FaUsers,
@@ -1579,6 +1579,7 @@ const Partner = () => {
       <Future />
       <FeaturedEvents />
       <Contact />
+      <NvidiaTestimonial />
     </div>
   );
 };
