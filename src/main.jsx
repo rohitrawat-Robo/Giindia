@@ -7,7 +7,7 @@ import App from "./App";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <HelmetProvider>
-    <BrowserRouter>
+    <BrowserRouter basename="/dist">
       <App />
     </BrowserRouter>
   </HelmetProvider>
