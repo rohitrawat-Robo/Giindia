@@ -35,44 +35,10 @@ export default function Footer() {
           100%{background-position:42px 84px, 84px 42px;}
         }
 
-        .gi-glow{
-          position:absolute;
-          border-radius:50%;
-          filter:blur(90px);
-          pointer-events:none;
-          opacity:0.28;
-        }
-        .gi-glow-a{
-          width:420px;height:420px;
-          background:#449d46;
-          top:-180px;
-          left:8%;
-          animation:gi-drift-a 22s ease-in-out infinite alternate;
-        }
-        .gi-glow-b{
-          width:360px;height:360px;
-          background:#00d97e;
-          bottom:-160px;
-          right:6%;
-          animation:gi-drift-b 26s ease-in-out infinite alternate;
-        }
-
-        @keyframes gi-drift-a{
-          0%{transform:translate(0,0) scale(1);}
-          100%{transform:translate(60px,40px) scale(1.15);}
-        }
-        @keyframes gi-drift-b{
-          0%{transform:translate(0,0) scale(1);}
-          100%{transform:translate(-50px,-30px) scale(1.1);}
-        }
-
         @media (prefers-reduced-motion: reduce){
-          .gi-footer::before, .gi-glow-a, .gi-glow-b{animation:none;}
+          .gi-footer::before{animation:none;}
         }
       `}</style>
-
-      <div className="gi-glow gi-glow-a" />
-      <div className="gi-glow gi-glow-b" />
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Footer Top */}
