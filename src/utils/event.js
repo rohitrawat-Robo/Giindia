@@ -67,7 +67,7 @@ export function createEventSlug(name) {
 
 // Builds the public URL for one image inside an event's real folder.
 export function getEventImage(event, imageName) {
-  return `/events/${event.folder}/${imageName}`;
+  return `${import.meta.env.BASE_URL}events/${event.folder}/${imageName}`;
 }
 
 function pickRandom(list) {

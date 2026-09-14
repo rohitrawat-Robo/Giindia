@@ -135,7 +135,7 @@ const featureTableData = [
     title: "ID Card Management",
     description: "Generate student and employee ID cards",
   },
- 
+
   {
     title: "Communication Management",
     description: "Centralized communication between institution and users",
@@ -294,7 +294,7 @@ const HeroSection = ({ aboutRef }) => {
     { id: 3, icon: images.c, label: "Analytics", delay: 1.1 },
     { id: 4, icon: images.d, label: "Security", delay: 1.2 },
     { id: 5, icon: images.e, label: "A I", delay: 1.3 },
-   /* { id: 6, icon: images.f, label: "Nvidia", delay: 1.4 },*/
+    /* { id: 6, icon: images.f, label: "Nvidia", delay: 1.4 },*/
   ];
 
   // Domains Data
@@ -429,8 +429,6 @@ const HeroSection = ({ aboutRef }) => {
                     <path d="m13 6 6 6-6 6" />
                   </svg>
                 </a>
-
-               
               </div>
             </motion.div>
 
@@ -442,7 +440,7 @@ const HeroSection = ({ aboutRef }) => {
               transition={{ duration: 0.7, delay: 0.4 }}
             >
               <img
-                src="/G6.png"
+                src={images.G6}
                 alt="G6 AI Infrastructure"
                 className="w-[80%] sm:w-[70%] md:w-[75%] lg:w-full max-w-[600px] h-auto
                drop-shadow-[0_20px_40px_rgba(0,0,0,0.25)]
@@ -767,9 +765,9 @@ const HeroSection = ({ aboutRef }) => {
         </div>
       </section>
 
-      
-
-      <Soultions />
+      <section id="solutions">
+        <Soultions />
+      </section>
 
       {/* Business Advantages Section */}
       <section

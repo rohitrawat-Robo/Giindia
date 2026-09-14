@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ArrowRight } from "lucide-react";
 import images from "../../public/images.js";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
   const location = useLocation();
@@ -42,11 +43,15 @@ export default function Navbar() {
     { label: "G6 Solution", path: "/G6Solution" },
     { label: "Nvidia Elite Partner", path: "/nvidia-elite-partner" },
     { label: "About Us", path: "/G6Solution", scrollTo: "about" },
-    { label: "Solutions", path: "/G6Solution", scrollTo: "features" },
+    { label: "Solutions", path: "/G6Solution", scrollTo: "solutions" },
     { label: "GRIL", path: "/gril" },
     { label: "Events", path: "/events" },
     { label: "Award", path: "/award" },
-    { label: "Career", path: "/career", external: true },
+    {
+      label: "Career",
+      path: "https://www.giindia.com/career/",
+      external: true,
+    },
     { label: "Team", path: "/team" },
     { label: "Contact Us", path: "/contact" },
   ];
@@ -100,7 +105,7 @@ export default function Navbar() {
 
       if (location.pathname !== "/") {
         sessionStorage.setItem("scrollToTop", "true");
-        window.location.href = "/";
+        navigate("/");
       } else {
         scrollToTop();
       }
@@ -111,18 +116,17 @@ export default function Navbar() {
     if (item.scrollTo) {
       e.preventDefault();
 
-      // If already on G6 Solution page, scroll directly
       if (location.pathname === "/G6Solution") {
         scrollToSection(item.scrollTo);
       } else {
-        // Navigate to G6 Solution first, then scroll
         sessionStorage.setItem("scrollToSection", item.scrollTo);
-        window.location.href = "/G6Solution";
+        navigate("/G6Solution");
       }
 
       return;
     }
   };
+
   // Close mobile menu when any link is clicked
   const handleMobileClose = () => {
     setMobileOpen(false);
@@ -143,7 +147,7 @@ export default function Navbar() {
 
     // Check if we need to scroll to a specific section
     const scrollToId = sessionStorage.getItem("scrollToSection");
-    if (scrollToId && location.pathname === "/") {
+    if (scrollToId && location.pathname === "/G6Solution") {
       sessionStorage.removeItem("scrollToSection");
       console.log(`📦 Found stored scroll target: ${scrollToId}`);
 
@@ -204,10 +208,10 @@ export default function Navbar() {
                   scrollToTop();
                 } else {
                   sessionStorage.setItem("scrollToTop", "true");
-                  window.location.href = "/";
+                  navigate("/");
                 }
               }}
-              className="flex items-center transition-all duration-300 hover:opacity-80 hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-[#449d46] focus:ring-offset-2 focus:ring-offset-[#08193A] rounded-lg flex-shrink-0"
+              className="flex items-center transition-all duration-300 hover:opacity-80 hover:scale-[1.02] focus:outline-none focus:ring-0 rounded-lg flex-shrink-0"
               aria-label="Go to homepage"
             >
               <img
@@ -317,7 +321,7 @@ export default function Navbar() {
                       scrollToTop();
                     } else {
                       sessionStorage.setItem("scrollToTop", "true");
-                      window.location.href = "/";
+                      navigate("/");
                     }
                   }}
                   className="flex items-center gap-3"
